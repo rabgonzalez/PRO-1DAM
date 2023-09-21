@@ -11,4 +11,4 @@ mayor y escribirlo.
 
 <img src="images/diagrama-flujo.drawio.png">
 
-</div>git
+</div>
