@@ -9,4 +9,6 @@ mayor y escribirlo.
 
 ### Diagrama de Flujo
 
-</div>
+<img src="images/diagrama-flujo.drawio.png">
+
+</div>git
