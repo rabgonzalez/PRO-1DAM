@@ -19,6 +19,9 @@
 ## Descripción del ejercicio
 
 ## Diagrama de flujos
+<div align="center">
+<img src="images/Diagrama-flujo.png"/>
+</div>
 
 ## Pseudocódigo
 
