@@ -1,9 +1,9 @@
 /**
  * @author rabgonzalez
- * Ejercicio Numero 2
+ * Ejercicio Numero 4
  */
 import java.util.Scanner;
-public class Ejercicio2 {
+public class Ejercicio4 {
     /**
      * Descripcion del algoritmo
      * @param args
