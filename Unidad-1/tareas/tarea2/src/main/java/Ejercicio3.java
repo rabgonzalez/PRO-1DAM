@@ -20,7 +20,7 @@ public class Ejercicio3
         int n = 0;
         for(int i = 0; i <= 10; i++)
         {
-            System.out.println(n += i);
+            n += i;
         }
         System.out.println(n);
     }
