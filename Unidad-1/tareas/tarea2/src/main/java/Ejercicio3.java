@@ -9,11 +9,19 @@ import java.util.Scanner;
  * Ejercicio Numero 3
  */
 
-public class Ejercicio3 {
+public class Ejercicio3
+{
     /**
      * Descripcion del algoritmo
      * @param args
      */
-    public static void main(String[] args){
+    public static void main(String[] args)
+    {
+        int n = 0;
+        for(int i = 0; i <= 10; i++)
+        {
+            System.out.println(n += i);
+        }
+        System.out.println(n);
     }
 }
