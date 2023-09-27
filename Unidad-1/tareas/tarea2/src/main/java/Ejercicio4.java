@@ -12,16 +12,16 @@ public class Ejercicio4
      */
     public static void main(String[] args)
     {
-        int Numero;
+        int numero;
         System.out.println("Introduce un número:");
-        Numero = lectura.nextInt();
+        numero = lectura.nextInt();
 
-        if(Numero % 2 == 0)
+        if(numero % 2 == 0)
         {
-            System.out.println("El número " + Numero + " es par");
+            System.out.println("El número " + numero + " es par");
         }
         else{
-            System.out.println("El número " + Numero + " es impar");
+            System.out.println("El número " + numero + " es impar");
         }
     }
 }
