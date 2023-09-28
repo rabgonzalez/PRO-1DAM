@@ -7,7 +7,10 @@ import java.util.Scanner;
 
 public class Ejercicio2 {
     /**
-     * Descripcion del algoritmo
+     * Desarrolle un algoritmo que permita leer tres valores y almacenarlos en las variables A, B y C respectivamente. 
+     * El algoritmo debe imprimir cual es el mayor y cual es el menor. 
+     * Recuerde constatar que los tres valores introducidos por el teclado sean valores distintos. 
+     * Presente un mensaje de alerta en caso de que se detecte la introducción de valores iguales.
      * @param args
      */
 
@@ -28,7 +31,7 @@ public class Ejercicio2 {
            System.out.println("Ingresa el valor de C:");
            valorC = lectura.nextInt();
 
-           if (valorA == valorB || valorA == valorC)
+           if (valorA == valorB || valorA == valorC || valorB == valorC)
            {
                System.out.println("No repitas valores");
            }
@@ -43,19 +46,40 @@ public class Ejercicio2 {
 // vemos si el valor de la variable A es el mayor
        if (valorA > valorB && valorA > valorC)
        {
-            System.out.println("A es el mayor");
+            if (valorB > valorC)
+            {
+                System.out.println("A es el mayor, C es el menor");
+            }
+            else
+            {
+                System.out.println("A es el mayor, B es el menor");
+            }
        }
 
 // vemos si el valor de la variable B es el mayor
        else if(valorB > valorA && valorB > valorC)
        {
-            System.out.println("B es el mayor");
+            if (valorA > valorC)
+            {
+                System.out.println("B es el mayor, C es el menor");
+            }
+            else
+            {
+                System.out.println("B es el mayor, A es el menor");
+            }
        }
 
 // Si ni A ni B son las mayores, daremos por mayor a la variable C
        else
        {
-            System.out.println("C es el mayor");
+            if (valorA > valorB)
+            {
+                System.out.println("C es el mayor, B es el menor");
+            }
+            else
+            {
+                System.out.println("C es el mayor, A es el menor");
+            }
         }
     }
 }

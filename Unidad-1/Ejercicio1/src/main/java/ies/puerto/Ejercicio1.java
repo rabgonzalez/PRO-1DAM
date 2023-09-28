@@ -6,7 +6,7 @@ import java.util.Scanner;
 /**
  * Clase realiza el primer ejercicio de las tares
  */
-public class Main {
+public class Ejercicio1 {
     public static void main(String[] args) {
 
         int valorA;

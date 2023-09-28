@@ -1,6 +1,6 @@
 /**
  * @author rabgonzalez
- * Ejercicio Numero 2
+ * Ejercicio Numero 7
  */
 import java.util.Scanner;
 
@@ -8,6 +8,8 @@ public class Ejercicio7 {
 
     /**
      * Descripcion del algoritmo
+     * Algoritmo que nos lee una velocidad en km/h y la transforma a m/s
+     * Usamos una operacion de division
      * @param args
      */
     static Scanner lectura = new Scanner(System.in);

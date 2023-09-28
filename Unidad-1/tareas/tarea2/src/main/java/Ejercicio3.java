@@ -13,6 +13,8 @@ public class Ejercicio3
 {
     /**
      * Descripcion del algoritmo
+     * Algoritmo que suma todos los valores entre 1 y el 10
+     * Usamos un bucle for
      * @param args
      */
     public static void main(String[] args)

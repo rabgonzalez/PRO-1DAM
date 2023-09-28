@@ -1,6 +1,6 @@
 /**
  * @author rabgonzalez
- * Ejercicio Numero 2
+ * Ejercicio Numero 6
  */
 import java.util.Scanner;
 
@@ -8,6 +8,8 @@ public class Ejercicio6 {
 
     /**
      * Descripcion del algoritmo
+     * Algoritmo que lee un numero y nos dice si es primo o no
+     * usamos un for con condicional para sumar divisores y un condicional para comprobar si tiene 2 o mas divisores
      * @param args
      */
     static Scanner lectura = new Scanner(System.in);

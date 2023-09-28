@@ -8,6 +8,8 @@ public class Ejercicio4
     static Scanner lectura = new Scanner(System.in);
     /**
      * Descripcion del algoritmo
+     * Algoritmo que lee un numero y nos dice si es par o impar
+     * usamos un condional if y else
      * @param args
      */
     public static void main(String[] args)

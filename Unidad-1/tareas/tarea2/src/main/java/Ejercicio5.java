@@ -1,12 +1,14 @@
 /**
  * @author rabgonzalez
- * Ejercicio Numero 2
+ * Ejercicio Numero 5
  */
 import java.util.Scanner;
 public class Ejercicio5 {
 
     /**
      * Descripcion del algoritmo
+     * Algoritmo que lee 2 numeros y nos los clasifica de mayor a menor
+     * usamos un condicional if, else if y else
      * @param args
      */
     static Scanner lectura = new Scanner(System.in);
