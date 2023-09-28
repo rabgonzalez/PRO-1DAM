@@ -19,11 +19,20 @@ public class Ejercicio3
      */
     public static void main(String[] args)
     {
-        int n = 0;
+        int sumatorio = 0;
+        int numero = 0;
         for(int i = 0; i <= 10; i++)
         {
-            n += i;
+            sumatorio += i;
         }
-        System.out.println(n);
+        System.out.println(sumatorio);
+
+        sumatorio = 0;
+        while(numero <= 10)
+        {
+            sumatorio += numero;
+            numero++;
+        }
+        System.out.println(sumatorio);
     }
 }
