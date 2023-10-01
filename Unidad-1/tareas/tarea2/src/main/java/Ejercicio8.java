@@ -13,14 +13,18 @@ public class Ejercicio8 {
      */
     public static void main(String[] args)
     {
-        int sumatorio;
+        Scanner lectura = new Scanner(System.in);
+        int numero, sumatorio = 0;
 
-        for(int i = 0; i <= numero; i++)
+        System.out.println("Ingresa la cantidad de notas: ");
+        numero = lectura.nextInt();
+
+        for(int N = numero-1; N >= 0; N--)
         {
-            int numero;
+
             System.out.println("Ingresa el valor: ");
-            numero = lectura.nextInt();
-            numero += sumatorio;
+            sumatorio += lectura.nextInt();
+            System.out.println(N);
         }
         System.out.println(sumatorio / numero);
     }

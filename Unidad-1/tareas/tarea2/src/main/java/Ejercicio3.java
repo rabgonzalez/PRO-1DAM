@@ -2,7 +2,6 @@
  * @author rabgonzalez
  * Ejercicio Numero 2
  */
-import java.util.Scanner;
 
 /**
  * @author rabgonzalez
