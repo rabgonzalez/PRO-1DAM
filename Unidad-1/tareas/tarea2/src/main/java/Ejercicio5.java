@@ -7,16 +7,17 @@ public class Ejercicio5 {
 
     /**
      * Descripcion del algoritmo
-     * Algoritmo que lee 2 numeros y nos los clasifica de mayor a menor
-     * usamos un condicional if, else if y else
+     * Desarrolle un algoritmo que permita leer dos números y ordenarlos de menor a mayor, si es el caso.
      * @param args
      */
+
     static Scanner lectura = new Scanner(System.in);
     public static void main(String[] args)
     {
         int numero1, numero2;
         System.out.println("Introduce el primer valor:");
         numero1 = lectura.nextInt();
+        
         System.out.println("Introduce el segundo valor:");
         numero2 = lectura.nextInt();
 

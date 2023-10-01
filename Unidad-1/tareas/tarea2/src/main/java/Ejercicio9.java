@@ -7,10 +7,11 @@ public class Ejercicio9 {
 
     /**
      * Descripcion del algoritmo
-     * Algoritmo que nos lee una velocidad en km/h y la transforma a m/s
-     * Usamos una operacion de division
+     * Muestra los números del 1 al 100 (ambos incluidos). 
+     * Usa un bucle while.
      * @param args
      */
+    
     public static void main(String[] args)
     {
         int numero = 0;
