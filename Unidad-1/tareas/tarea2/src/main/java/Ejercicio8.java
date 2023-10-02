@@ -24,7 +24,6 @@ public class Ejercicio8 {
 
             System.out.println("Ingresa el valor: ");
             sumatorio += lectura.nextInt();
-            System.out.println(N);
         }
         System.out.println(sumatorio / numero);
     }
