@@ -14,8 +14,10 @@ El ejercicio consiste en escribir un programa que encuentre e imprima todos los 
     public static void main(String[] args)
     {
         int suma = 0;
+        // bucle de números (1-1000)
         for(int i = 1; i <= 1000; i++)
         {
+            // bucle de divisores (1-500)
             for(int n = 1; n <= i/2; n++)
             {
                 if(i % n == 0)
