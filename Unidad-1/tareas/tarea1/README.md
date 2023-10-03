@@ -12,13 +12,18 @@ Un número perfecto es aquel que es igual a la suma de sus divisores propios (ex
 ## Pseudocódigo
 Pasos=
 - Inicio
-- Declarar variables: __numero, sumatorio = 0__
-- Preguntar valor __numero__
-- Leer el valor __numero__
-- Creamos la varibale __N = numero-1__ y Añadimos un incremento negativo __N--__
-- Preguntar valores
-- Mientras __N >= 0__ Sumar valor al valor anterior
-- Cuando __N < 0__ Escribir __sumatorio / numero__
+- Declarar variables: __suma = 0, i = 1, n = 1__
+- Creamos un incremento __i++__
+- Creamos un incremento __n++__
+- Si __i % n = 0__ Sumar valor __suma__ a __n__
+- Fin_Si
+- Si __n <= i/2__ volver a paso 4
+- Fin_Si
+- Si __suma = i__ Escribir ___i___
+- Fin_Si
+- Reiniciar suma, __suma = 0__
+- Si __i <= 1000__ volver al paso 3
+- Fin_Si
 - Fin
 
 ## Referencias

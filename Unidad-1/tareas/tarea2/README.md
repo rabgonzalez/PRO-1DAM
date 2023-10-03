@@ -177,14 +177,19 @@ Desarrolle un algoritmo que permita calcular Promedio de Notas; finaliza cuando 
 
 ## Diagrama de flujos
 <div align="center">
-<img src="images/Diagrama-flujo.png"/>
+<img src="images/Diagrama-flujo8.png"/>
 </div>
 
 ## Pseudocódigo
 Pasos=
 - Inicio
-- Inicializar variables: __A__
-- Leer el valor
+- Declarar variables: __numero, sumatorio = 0__
+- Preguntar valor __numero__
+- Leer el valor __numero__
+- Creamos la varibale __N = numero-1__ y Añadimos un incremento negativo __N--__
+- Preguntar valores
+- Mientras __N >= 0__ Sumar valor al valor anterior
+- Cuando __N < 0__ Escribir __sumatorio / numero__
 - Fin
 
 ## Referencias
@@ -197,7 +202,7 @@ Muestra los números del 1 al 100 (ambos incluidos). Usa un bucle while.
 
 ## Diagrama de flujos
 <div align="center">
-<img src="images/Diagrama-flujo.png"/>
+<img src="images/Diagrama-flujo8.png"/>
 </div>
 
 ## Pseudocódigo
