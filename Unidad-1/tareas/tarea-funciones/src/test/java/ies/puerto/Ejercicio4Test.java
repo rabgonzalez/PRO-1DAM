@@ -13,7 +13,7 @@ public class Ejercicio4Test {
         int b = 3;
         int c = 6;
         int resultadoOK = 6;
-        int resultado = ejercicio4.numeroMayorDos(resultadoOK, 3);
+        int resultado = ejercicio4.numeroMayorDos(a, b, c);
         Assertions.assertEquals(resultadoOK, resultado, "No ha salido bien");
     }
 }
