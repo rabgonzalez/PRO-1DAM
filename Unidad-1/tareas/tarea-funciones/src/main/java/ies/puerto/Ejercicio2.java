@@ -8,9 +8,9 @@ package ies.puerto;
 public class Ejercicio2 {
 
     /**
-     * 
-     * @param radio
-     * @return
+     * calcular el area del circulo
+     * @param radio radio del circulo
+     * @return operacion que calcula el area del circulo teniendo el valor de PI y el radio
      */
 
     public double areaCirculo(int radio) {

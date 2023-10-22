@@ -6,6 +6,12 @@ package ies.puerto;
  */
 
 public class Ejercicio5 {
+    
+    /**
+     * verificar si un numero es primo
+     * @param numero valor del numero
+     * @return verificacion de si es primo o no
+     */
     public static boolean verificarPrimo(int numero){
         boolean resultado = false;
         int divisores = 0;

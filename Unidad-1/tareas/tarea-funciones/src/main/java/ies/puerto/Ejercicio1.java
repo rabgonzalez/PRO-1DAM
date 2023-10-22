@@ -8,10 +8,10 @@ package ies.puerto;
 public class Ejercicio1 {
  
     /**
-     * 
-     * @param base
-     * @param altura
-     * @return
+     * Calcular area del triangulo
+     * @param base base del triangulo
+     * @param altura altura dell triangulo
+     * @return operacion que calcula el area teniendo la base y la altura
      */
 
     public int areaTriangulo(int base, int altura) {
