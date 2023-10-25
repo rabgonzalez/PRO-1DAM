@@ -39,7 +39,7 @@
 
 1. Declaramos las variables de tipo entero: ___valorA, valorB, valorC, valorD, valorE___
 2. Declarar resultado de tipo entero
-3. Igualar resultado a 
+3. Igualar resultado a la suma de ___valorA + valorB + valorC + valorE + valorE___
 </details>
 
 <details>
