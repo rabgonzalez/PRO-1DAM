@@ -14,7 +14,7 @@ public class Ejercicio2Test {
 
     @Test
     public void verificarNumeroTestFalse(){
-        boolean resultado = ejercicio2.verificarNumero(9);
+        boolean resultado = ejercicio2.verificarNumero(-9);
         Assertions.assertFalse(resultado);
     }
 }
