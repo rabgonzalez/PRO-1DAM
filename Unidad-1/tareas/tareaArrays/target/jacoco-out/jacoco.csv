@@ -1,0 +1,6 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+trabajo-metodos-2,ies.puerto,Ejercicio5,0,18,0,2,0,5,0,3,0,2
+trabajo-metodos-2,ies.puerto,Ejercicio4,0,29,0,4,0,6,0,4,0,2
+trabajo-metodos-2,ies.puerto,Ejercicio3,4,45,2,6,1,10,2,5,0,3
+trabajo-metodos-2,ies.puerto,Ejercicio2,0,24,0,2,0,5,0,3,0,2
+trabajo-metodos-2,ies.puerto,Ejercicio1,0,21,0,2,0,5,0,3,0,2
