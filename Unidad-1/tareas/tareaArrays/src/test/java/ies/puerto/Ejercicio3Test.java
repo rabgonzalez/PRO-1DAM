@@ -23,7 +23,7 @@ public class Ejercicio3Test {
 
     @Test
     public void valorMenorTestOK(){
-    int[] numeros = {1, 2, 3, 4, 5};
-    valorMenorTest(numeros, 1);
+    int[] numeros = {7, 2, 3, 4, 5};
+    valorMenorTest(numeros, 2);
     }
 }
