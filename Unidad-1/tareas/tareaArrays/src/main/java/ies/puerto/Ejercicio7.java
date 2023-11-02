@@ -2,7 +2,7 @@ package ies.puerto;
 import java.util.Arrays;
 
 /**
- * Encuentra el valor máximo y mínimo en un array de enteros.
+ * Ordena un array de enteros en orden ascendente.
  * @author rabgonzalez
  */
 public class Ejercicio7 {

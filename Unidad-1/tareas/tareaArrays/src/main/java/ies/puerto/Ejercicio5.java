@@ -1,7 +1,7 @@
 package ies.puerto;
 
 /**
- * Encuentra el valor máximo y mínimo en un array de enteros.
+ * Dado un valor específico, encuentra su posición en el array o indica si no está presente.
  * @author rabgonzalez
  */
 public class Ejercicio5 {

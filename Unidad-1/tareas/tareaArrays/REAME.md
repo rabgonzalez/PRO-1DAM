@@ -2,10 +2,9 @@
 
 # Ejercicio 1
 <details>
-<summary>Pseudocodigo</summary>
+<summary>Test</summary>
 
-1. Declaramos la variable de tipo entero ___"numeroHoras"___
-2. Devolver ___numeroHoras * 10___ 
+[Ejercicio 1 Test](src/test/java/ies/puerto/Ejercicio1Test.java)
 </details>
 
 <details>
@@ -17,13 +16,9 @@
 
 # Ejercicio 2
 <details>
-<summary>Pseudocodigo</summary>
+<summary>Test</summary>
 
-1. Declaramos la variable de tipo entero ___"numero"___
-2. Declaramos la variable de tipo booleano ___"resultado"___
-3. Si ___numero > 0___ y ___numero % 2 == 0___ Igualar resultado a ___true___
-4. Fin_Si
-5. Devolver ___resultado___
+[Ejercicio 2 Test](src/test/java/ies/puerto/Ejercicio2Test.java)
 </details>
 
 <details>
@@ -34,18 +29,80 @@
 </details>
 
 # Ejercicio 3
-<details>
-<summary>Pseudocodigo</summary>
+<summary>Test</summary>
 
-1. Declaramos las variables de tipo entero: ___valorA, valorB, valorC, valorD, valorE___
-2. Declarar resultado de tipo entero
-3. Igualar resultado a la suma de ___valorA + valorB + valorC + valorE + valorE___
+[Ejercicio 3 Test](src/test/java/ies/puerto/Ejercicio3Test.java)
 </details>
 
 <details>
 <summary>Referencias</summary>
 
 [Ejercicio 3](src/main/java/ies/puerto/Ejercicio3.java)
+
+</details>
+
+# Ejercicio 4
+<summary>Test</summary>
+
+[Ejercicio 4 Test](src/test/java/ies/puerto/Ejercicio4Test.java)
+</details>
+
+<details>
+<summary>Referencias</summary>
+
+[Ejercicio 4](src/main/java/ies/puerto/Ejercicio4.java)
+
+</details>
+
+# Ejercicio 5
+<summary>Test</summary>
+
+[Ejercicio 5 Test](src/test/java/ies/puerto/Ejercicio5Test.java)
+</details>
+
+<details>
+<summary>Referencias</summary>
+
+[Ejercicio 5](src/main/java/ies/puerto/Ejercicio5.java)
+
+</details>
+
+# Ejercicio 6
+<summary>Test</summary>
+
+[Ejercicio 6 Test](src/test/java/ies/puerto/Ejercicio6Test.java)
+</details>
+
+<details>
+<summary>Referencias</summary>
+
+[Ejercicio 6](src/main/java/ies/puerto/Ejercicio6.java)
+
+</details>
+
+# Ejercicio 7
+<summary>Test</summary>
+
+[Ejercicio 7 Test](src/test/java/ies/puerto/Ejercicio7Test.java)
+</details>
+
+<details>
+<summary>Referencias</summary>
+
+[Ejercicio 7](src/main/java/ies/puerto/Ejercicio7.java)
+
+</details>
+
+# Ejercicio 8
+<summary>Test</summary>
+
+[Ejercicio 8 Test](src/test/java/ies/puerto/Ejercicio8Test.java)
+</details>
+
+<details>
+<summary>Referencias</summary>
+
+[Ejercicio 8](src/main/java/ies/puerto/Ejercicio8.java)
 
 </details>
 </text>
