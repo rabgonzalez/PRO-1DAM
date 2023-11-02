@@ -29,6 +29,7 @@
 </details>
 
 # Ejercicio 3
+<details>
 <summary>Test</summary>
 
 [Ejercicio 3 Test](src/test/java/ies/puerto/Ejercicio3Test.java)
@@ -42,6 +43,7 @@
 </details>
 
 # Ejercicio 4
+<details>
 <summary>Test</summary>
 
 [Ejercicio 4 Test](src/test/java/ies/puerto/Ejercicio4Test.java)
@@ -55,6 +57,7 @@
 </details>
 
 # Ejercicio 5
+<details>
 <summary>Test</summary>
 
 [Ejercicio 5 Test](src/test/java/ies/puerto/Ejercicio5Test.java)
@@ -68,6 +71,7 @@
 </details>
 
 # Ejercicio 6
+<details>
 <summary>Test</summary>
 
 [Ejercicio 6 Test](src/test/java/ies/puerto/Ejercicio6Test.java)
@@ -81,6 +85,7 @@
 </details>
 
 # Ejercicio 7
+<details>
 <summary>Test</summary>
 
 [Ejercicio 7 Test](src/test/java/ies/puerto/Ejercicio7Test.java)
@@ -94,6 +99,7 @@
 </details>
 
 # Ejercicio 8
+<details>
 <summary>Test</summary>
 
 [Ejercicio 8 Test](src/test/java/ies/puerto/Ejercicio8Test.java)
@@ -103,6 +109,34 @@
 <summary>Referencias</summary>
 
 [Ejercicio 8](src/main/java/ies/puerto/Ejercicio8.java)
+
+</details>
+
+# Ejercicio 9
+<details>
+<summary>Test</summary>
+
+[Ejercicio 9 Test](src/test/java/ies/puerto/Ejercicio9Test.java)
+</details>
+
+<details>
+<summary>Referencias</summary>
+
+[Ejercicio 9](src/main/java/ies/puerto/Ejercicio9.java)
+
+</details>
+
+# Ejercicio 10
+<details>
+<summary>Test</summary>
+
+[Ejercicio 10 Test](src/test/java/ies/puerto/Ejercicio10Test.java)
+</details>
+
+<details>
+<summary>Referencias</summary>
+
+[Ejercicio 10](src/main/java/ies/puerto/Ejercicio10.java)
 
 </details>
 </text>
