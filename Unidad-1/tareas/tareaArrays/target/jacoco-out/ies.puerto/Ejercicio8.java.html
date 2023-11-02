@@ -2,10 +2,24 @@
 import java.util.Arrays;
 
 /**
- * Encuentra el valor máximo y mínimo en un array de enteros.
+ * Elimina elementos duplicados de un array, 
+ * y muestra finalmente los valores iniciales del array y el resultado final.
  * @author rabgonzalez
  */
-<span class="nc" id="L8">public class Ejercicio8 {</span>
+<span class="fc" id="L9">public class Ejercicio8 {</span>
     
+    public int[] eliminarDuplicados(int[] array){
+<span class="fc" id="L12">        Arrays.sort(array);</span>
+<span class="fc" id="L13">        int[] duplicado = new int[array.length];</span>
+
+<span class="fc bfc" id="L15" title="All 2 branches covered.">        for(int i = 0; i &lt; array.length; i++){ </span>
+<span class="fc bfc" id="L16" title="All 2 branches covered.">            for(int j = i; j &lt; array.length; j++){</span>
+<span class="fc bfc" id="L17" title="All 2 branches covered.">                if(array[j] != array[i]){ </span>
+<span class="fc" id="L18">                    duplicado[j] = array[j];</span>
+                }
+            }
+        }
+<span class="fc" id="L22">        return duplicado;</span>
+    }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

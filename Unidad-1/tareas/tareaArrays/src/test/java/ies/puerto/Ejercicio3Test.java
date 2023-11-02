@@ -17,8 +17,8 @@ public class Ejercicio3Test {
 
     @Test
     public void valorMayorTestOK(){
-    int[] numeros = {1, 2, 3, 4, 5};
-    valorMayorTest(numeros, 5);
+    int[] numeros = {1, 2, 6, 4, 5};
+    valorMayorTest(numeros, 6);
     }
 
     @Test
