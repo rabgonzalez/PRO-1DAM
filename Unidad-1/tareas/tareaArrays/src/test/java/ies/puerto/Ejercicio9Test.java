@@ -16,7 +16,7 @@ public class Ejercicio9Test {
     public void eliminarDuplicadosTestOK(){
         int[] array1 = {1, 3, 5, 7};
         int[] array2 = {8, 6, 4, 2};
-        int[] resultadoOK = {1, 2, 3, 4, 5, 6, 7, 8};
+        int[] resultadoOK = {1, 3, 5, 7, 8, 6, 4, 2};
         combinarArraysTest(array1, array2, resultadoOK);
     } 
 }

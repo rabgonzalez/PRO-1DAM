@@ -13,7 +13,7 @@ public class Ejercicio8 {
         int[] duplicado = new int[array.length];
 
         for(int i = 0; i < array.length; i++){ 
-            for(int j = i; j < array.length; j++){ 
+            for(int j = i; j < array.length; j++){
                 if(array[j] != array[i]){ 
                     duplicado[j] = array[j];
                 }

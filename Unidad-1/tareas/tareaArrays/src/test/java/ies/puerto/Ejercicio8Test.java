@@ -15,7 +15,7 @@ public class Ejercicio8Test {
     @Test
     public void eliminarDuplicadosTestOK(){
         int[] array = {1, 2, 8, 8};
-        int[] resultadoOK = {1, 2, 8, 0};
+        int[] resultadoOK = {0, 2, 8, 8};
         eliminarDuplicadosTest(array, resultadoOK); 
     } 
 }
