@@ -1,5 +1,6 @@
 package ies.puerto;
 
+import java.util.Arrays;
 
 /**
  * Combina dos arrays ordenados en uno solo manteniendo el orden.
@@ -8,6 +9,8 @@ package ies.puerto;
 public class Ejercicio9 {
 
     public int[] combinarArrays(int[] array1, int[] array2){
+        Arrays.sort(array1);
+        Arrays.sort(array2);
         int[] combinacion = new int[array1.length + array2.length];
         
         for(int i = 0; i < array1.length; i++){
