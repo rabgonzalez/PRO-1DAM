@@ -10,7 +10,7 @@ mayor y escribirlo.
 
 ### Diagrama de Flujo
 
-<img src="../images/diagrama-flujo.drawio.png"/>
+<img src="images/diagrama-flujo.drawio.png"/>
 
 ### Pseudocodigo
 Pasos=
@@ -30,7 +30,7 @@ Desarrolle un algoritmo que permita leer tres valores y almacenarlos en las vari
 
 ### Diagrama de Flujo
 
-<img src="../images/Diagrama-flujo-2.png">
+<img src="images/Diagrama-flujo-2.png">
 
 ### Pseudocodigo
 Pasos=
