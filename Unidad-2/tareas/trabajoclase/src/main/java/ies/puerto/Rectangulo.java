@@ -6,6 +6,13 @@ public class Rectangulo{
     private int Largo;
     private int Ancho;
 
+    public Rectangulo(){}
+
+    public Rectangulo(int Largo, int Ancho){
+        this.Largo = Largo;
+        this.Ancho = Ancho;
+    }
+
     public int getLargo() {
         return this.Largo;
     }
@@ -22,11 +29,11 @@ public class Rectangulo{
         this.Ancho = Ancho;
     }
     
-    public int areaRectangulo(int Ancho, int Largo){
+    public int areaRectangulo(){
         return Ancho * Largo;
     }
 
-    public int perimetroRectangulo(int Ancho, int Largo){
+    public int perimetroRectangulo(){
         return 2*(Ancho + Largo);
     }
 }

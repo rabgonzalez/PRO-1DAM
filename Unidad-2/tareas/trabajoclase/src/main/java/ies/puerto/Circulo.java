@@ -7,6 +7,10 @@ public class Circulo{
 
     public Circulo(){}
 
+    public Circulo(double Radio){
+        this.Radio = Radio;
+    }
+
     public double getRadio(){
         return this.Radio;
     }
@@ -15,12 +19,12 @@ public class Circulo{
         this.Radio = Radio;
     }
 
-    public double areaCirculo(double Radio){
+    public double areaCirculo(){
         double PI = 3.14;
         return PI*(Radio*Radio);
     }
 
-    public double circunferenciaCirculo(double Radio){
+    public double circunferenciaCirculo(){
         double PI = 3.14;
         return 2*PI*Radio;
     }

@@ -16,10 +16,14 @@ public class Libro{
 
     public Libro(String Titulo, String Autor){
         this.Titulo = Titulo;
+        this.Autor = Autor;
     }
 
     public Libro(String Titulo, String Autor, int AnioPublicacion){
+        this.Titulo = Titulo;
+        this.Autor = Autor;
         this.AnioPublicacion = AnioPublicacion;
+
     }
 
     public String getTitulo(){
@@ -37,6 +41,4 @@ public class Libro{
     public String imprimir(){
         return "Titulo: " + Titulo + "Autor: " + Autor + "Año Publicacion: " + AnioPublicacion;
     }
-
-    Libro libro1 = new Libro("Titulo1", "Autor1", 2023);
 }

@@ -30,33 +30,18 @@ public class Tienda{
         this.Stock = Stock;
     }
 
-    public void mostrarProductos(){
-        System.out.println("Nombre: " + Nombre);
-        System.out.println("Precio: "+ Precio);
-        System.out.println("Stock? " + Stock);
+    public String mostrarProductos(){
+        return "Nombre: " + Nombre + " " + "Precio: " + Precio + " " + "Stock? " + Stock;
     }
     
     /**
      * Constructor para crear objetos
      */
-    public Tienda(String Nombre){
-        this.Nombre = Nombre;
-    }
-
-    public Tienda(String Nombre, int Precio){
-        this.Nombre = Nombre;
-        this.Precio = Precio;
-    }
+    public Tienda(){}
 
     public Tienda(String Nombre, int Precio, boolean Stock){
         this.Nombre = Nombre;
         this.Precio = Precio;
         this.Stock = Stock;
     }
-
-
-    Tienda producto1 = new Tienda("Plátano", 1, true);
-    Tienda producto2 = new Tienda("Silla", 25, true);
-    Tienda producto3 = new Tienda("Pizza", 3, false);
-    Tienda producto4 = new Tienda("iPhone", 1500, false);
 }
