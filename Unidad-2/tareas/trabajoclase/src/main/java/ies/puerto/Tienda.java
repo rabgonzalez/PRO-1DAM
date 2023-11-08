@@ -7,9 +7,6 @@ public class Tienda{
     private int Precio;
     private boolean Stock;
 
-    /**
-     * Getter y Setter
-     */
     public String getNombre() {
         return this.Nombre;
     }
@@ -33,10 +30,7 @@ public class Tienda{
     public String mostrarProductos(){
         return "Nombre: " + Nombre + " " + "Precio: " + Precio + " " + "Stock? " + Stock;
     }
-    
-    /**
-     * Constructor para crear objetos
-     */
+
     public Tienda(){}
 
     public Tienda(String Nombre, int Precio, boolean Stock){

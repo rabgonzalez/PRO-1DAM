@@ -7,18 +7,8 @@ public class Libro{
     private String Autor;
     private int AnioPublicacion;
 
-    public Libro(){
-    }
-
-    public Libro(String Titulo){
-        this.Titulo = Titulo;
-    }
-
-    public Libro(String Titulo, String Autor){
-        this.Titulo = Titulo;
-        this.Autor = Autor;
-    }
-
+    public Libro(){}
+    
     public Libro(String Titulo, String Autor, int AnioPublicacion){
         this.Titulo = Titulo;
         this.Autor = Autor;

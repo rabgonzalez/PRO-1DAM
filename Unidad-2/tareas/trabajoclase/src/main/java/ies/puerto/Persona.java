@@ -1,5 +1,6 @@
 package ies.puerto;
 /**
+ * Clase con sus objetos
  * @author rabgonzalez
  */
 public class Persona{
@@ -7,6 +8,25 @@ public class Persona{
     private int edad;
     private String email;
     private int telefono;
+    
+    /**
+     * Constructor por defecto
+     */
+    public Persona(){}
+        
+    /**
+     * Constructor de la clase
+     * @param nombre de la persona
+     * @param edad de la persona
+     * @param email de la persona
+     * @param telefono de la persona
+     */
+    public Persona(String nombre, int edad, String email, int telefono){
+        this.nombre =nombre;
+        this.edad = edad;
+        this.email = email;
+        this.telefono = telefono;
+    }
 
     /**
      * Getters/Setters
@@ -29,60 +49,10 @@ public class Persona{
         return this.email;
     }
 
-    /** 
-    public void imprimir(){
-        System.out.println("Nombre: " + nombre);
-        System.out.println("Edad: " + edad);
-        System.out.println("Email: " + email);
-        System.out.println("Telefono: " + telefono);
-    }
-    */
-        public Persona(){}
-
-        /**
-         * Constructor con el parámetro nombre
-         * @param nombre de la persona
-         */
-        public Persona(String nombre){
-            this.nombre =nombre;
-        }
-    
-        /**
-         * Constructor de la clase con el nombre y edad
-         * @param nombre de la persona
-         * @param edad de la persona
-         */
-        public Persona(String nombre, int edad){
-            this.nombre =nombre;
-            this.edad = edad;
-        }
-    
-        /**
-         * Constructor de la clase
-         * @param nombre de la persona
-         * @param edad de la persona
-         * @param email de la persona
-         */
-        public Persona(String nombre, int edad, String email){
-            this.nombre =nombre;
-            this.edad = edad;
-            this.email = email;
-        }
-    
-        /**
-         * Constructor de la clase
-         * @param nombre de la persona
-         * @param edad de la persona
-         * @param email de la persona
-         * @param telefono de la persona
-         */
-        public Persona(String nombre, int edad, String email, int telefono){
-            this.nombre =nombre;
-            this.edad = edad;
-            this.email = email;
-            this.telefono = telefono;
-        }
-
+    /**
+     * Metodo que imprime los resultados
+     * @return informacion persona
+     */
     public String imprimir(){
         return "Nombre: " + nombre + " " + "Edad: " + edad + " " + "Email: " + email + " " + "Telefono: " + telefono;
     }

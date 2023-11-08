@@ -8,6 +8,15 @@ public class Estudiante{
     private int Edad;
     private int Promedio;
 
+    public Estudiante(){}
+
+    public Estudiante(String Nombre, String Carrera, int Edad, int Promedio){
+        this.Nombre = Nombre;
+        this.Carrera = Carrera;
+        this.Edad = Edad;
+        this.Promedio = Promedio;
+    }
+
     public String getNombre(){
         return this.Nombre;
     }

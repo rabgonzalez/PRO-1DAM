@@ -1,0 +1,8 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+trabajoClase,ies.puerto,Rectangulo,3,37,0,0,1,12,1,7,1,7
+trabajoClase,ies.puerto,Banco,3,41,0,0,1,13,1,8,1,8
+trabajoClase,ies.puerto,Persona,3,41,0,0,1,13,1,7,1,7
+trabajoClase,ies.puerto,Circulo,7,28,0,0,3,8,2,4,2,4
+trabajoClase,ies.puerto,Estudiante,46,0,2,0,17,0,10,0,9,0
+trabajoClase,ies.puerto,Libro,3,29,0,0,1,9,1,5,1,5
+trabajoClase,ies.puerto,Tienda,3,37,0,0,1,13,1,7,1,7
