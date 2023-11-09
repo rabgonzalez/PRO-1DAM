@@ -1,24 +1,14 @@
 package ies.puerto;
 
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class LibroTest{
 
-    Libro libro1;
-    String Titulo;
-    String Autor;
-    int AnioPublicacion;
-
-    @BeforeEach
-    public void BeforeEach(){
-        libro1 = new Libro(Titulo, Autor, AnioPublicacion);
-    }
+    Libro libro1 = new Libro("Hola", "Yo", 2023);
 
     @Test
     public void LibroTestOK(){
-        libro1.imprimir();
         String resultado = libro1.imprimir();
         String resultadoOK = "Titulo: HolaAutor: YoAño Publicacion: 2023";
         Assertions.assertEquals(resultadoOK, resultado);
@@ -30,5 +20,13 @@ public class LibroTest{
         int resultado = libro1.getAnioPublicacion();
         int resultadoOK = 10;
         Assertions.assertEquals(resultadoOK, resultado, "mal");
+    }
+
+    @Test
+    public void cambiarAutor(){
+        libro1.setAutor("Tu");
+        String resultado = libro1.getAutor();
+        String resultadoOK = "Tu";
+        Assertions.assertEquals(resultado, resultadoOK);
     }
 }

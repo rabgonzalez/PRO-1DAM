@@ -5,13 +5,13 @@ import org.junit.jupiter.api.Test;
 
 public class ProductoTest{
 
-    Producto producto1 = new Producto("Plátano", 1, true);
-    Producto producto2 = new Producto("iPhone", 1500, false);
+    Producto producto1 = new Producto("Plátano", 1, 100);
+    Producto producto2 = new Producto("iPhone", 1500, 100);
 
     @Test
     public void mostrarProductosOK(){
         String resultado = producto1.mostrarProductos();
-        String resultadoOK = "Nombre: Plátano Precio: 1 Stock? true";
+        String resultadoOK = "Nombre: Plátano Precio: 1 Stock: 100";
         Assertions.assertEquals(resultado, resultadoOK);
     }
 
@@ -21,14 +21,6 @@ public class ProductoTest{
         String resultadoOK = "Plátano";
         Assertions.assertEquals(resultado, resultadoOK);
     }
-
-    @Test
-    public void getPrecioOK(){
-        int resultado = producto1.getPrecio();
-        int resultadoOK = 1;
-        Assertions.assertEquals(resultado, resultadoOK);
-    }
-
     @Test
     public void setPrecioOK(){
         producto1.setPrecio(1000);
@@ -38,17 +30,16 @@ public class ProductoTest{
     }
 
     @Test
-    public void getStockOK(){
-        boolean resultado = producto1.getStock();
-        boolean resultadoOK = true;
+    public void agregarProductosTest(){
+        int resultado = producto1.agregarProductos(10);
+        int resultadoOK = 110;
         Assertions.assertEquals(resultado, resultadoOK);
     }
 
     @Test
-    public void setStockOK(){
-        producto1.setStock(false);
-        boolean resultado = producto1.getStock();
-        boolean resultadoOK = false;
+    public void retirarProductosTest(){
+        int resultado = producto1.retirarProductos(50);
+        int resultadoOK = 50;
         Assertions.assertEquals(resultado, resultadoOK);
     }
 }

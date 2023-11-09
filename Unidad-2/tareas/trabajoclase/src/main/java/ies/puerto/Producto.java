@@ -5,11 +5,11 @@ package ies.puerto;
 public class Producto{
     private String Nombre;
     private int Precio;
-    private boolean Stock;
+    private int Stock;
 
     public Producto(){}
 
-    public Producto(String Nombre, int Precio, boolean Stock){
+    public Producto(String Nombre, int Precio, int Stock){
         this.Nombre = Nombre;
         this.Precio = Precio;
         this.Stock = Stock;
@@ -27,15 +27,23 @@ public class Producto{
         this.Precio = Precio;
     }
 
-    public boolean getStock() {
+    public int getStock() {
         return this.Stock;
     }
 
-    public void setStock(boolean Stock) {
+    public void setStock(int Stock) {
         this.Stock = Stock;
     }
 
     public String mostrarProductos(){
-        return "Nombre: " + Nombre + " " + "Precio: " + Precio + " " + "Stock? " + Stock;
+        return "Nombre: " + Nombre + " " + "Precio: " + Precio + " " + "Stock: " + Stock;
+    }
+
+    public int agregarProductos(int valorAgregado){
+        return Stock + valorAgregado;
+    }
+
+    public int retirarProductos(int valorRetirado){
+        return Stock - valorRetirado;
     }
 }

@@ -24,6 +24,10 @@ public class Libro{
         return this.Autor;
     }
 
+    public void setAutor(String Autor){
+        this.Autor = Autor;
+    }
+
     public int getAnioPublicacion(){
         return this.AnioPublicacion;
     }

@@ -7,7 +7,5 @@ public class Tienda{
 
    public Tienda(Producto producto){
     this.producto = producto;
-   }
-
-   
+   }  
 }
