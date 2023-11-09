@@ -37,16 +37,19 @@ public class Estudiante{
         return this.Promedio;
     }
 
-    public String detalles(String Nombre, int Edad, String Carrera){
+    public void setPromedio(int Promedio){
+        this.Promedio = Promedio;
+    }
+
+    public String detalles(){
         return "Nombre: " + Nombre + "Edad: " + Edad + "Carrera: " + Carrera;
     }
 
-    public boolean verificarAprobado(int Promedio){
+    public boolean verificarAprobado(){
+        boolean resultado = false;
         if(Promedio >= 5){
-            return true;
+            resultado = true;
         }
-        else{
-            return false;
-        }
+        return resultado;
     }
 }

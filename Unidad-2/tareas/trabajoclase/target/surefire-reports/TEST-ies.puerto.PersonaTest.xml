@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="ies.puerto.PersonaTest" time="0.062" tests="7" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="ies.puerto.PersonaTest" time="0.017" tests="7" errors="0" skipped="0" failures="0">
   <properties>
+    <property name="sun.desktop" value="gnome"/>
     <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
     <property name="java.specification.version" value="11"/>
     <property name="sun.cpu.isalist" value=""/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
-    <property name="java.class.path" value="/home/dam/rabgonzalez/programacion/Unidad-2/tareas/trabajoclase/target/test-classes:/home/dam/rabgonzalez/programacion/Unidad-2/tareas/trabajoclase/target/classes:/home/dam/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.6.0/junit-jupiter-api-5.6.0.jar:/home/dam/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/home/dam/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/dam/.m2/repository/org/junit/platform/junit-platform-commons/1.6.0/junit-platform-commons-1.6.0.jar:/home/dam/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.6.0/junit-jupiter-params-5.6.0.jar:/home/dam/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.6.0/junit-jupiter-engine-5.6.0.jar:/home/dam/.m2/repository/org/junit/platform/junit-platform-engine/1.6.0/junit-platform-engine-1.6.0.jar:"/>
+    <property name="java.class.path" value="/home/rabgonzalez/rabgonzalez/programacion/Unidad-2/tareas/trabajoclase/target/test-classes:/home/rabgonzalez/rabgonzalez/programacion/Unidad-2/tareas/trabajoclase/target/classes:/home/rabgonzalez/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.6.0/junit-jupiter-api-5.6.0.jar:/home/rabgonzalez/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/home/rabgonzalez/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/rabgonzalez/.m2/repository/org/junit/platform/junit-platform-commons/1.6.0/junit-platform-commons-1.6.0.jar:/home/rabgonzalez/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.6.0/junit-jupiter-params-5.6.0.jar:/home/rabgonzalez/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.6.0/junit-jupiter-engine-5.6.0.jar:/home/rabgonzalez/.m2/repository/org/junit/platform/junit-platform-engine/1.6.0/junit-platform-engine-1.6.0.jar:"/>
     <property name="java.vm.vendor" value="Ubuntu"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.vendor.url" value="https://ubuntu.com/"/>
@@ -15,36 +16,36 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="ES"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-11-openjdk-amd64/lib"/>
-    <property name="sun.java.command" value="/home/dam/rabgonzalez/programacion/Unidad-2/tareas/trabajoclase/target/surefire/surefirebooter2514014916439769767.jar /home/dam/rabgonzalez/programacion/Unidad-2/tareas/trabajoclase/target/surefire 2023-11-08T15-00-22_721-jvmRun1 surefire12475991596299052088tmp surefire_014087597231741940792tmp"/>
+    <property name="sun.java.command" value="/home/rabgonzalez/rabgonzalez/programacion/Unidad-2/tareas/trabajoclase/target/surefire/surefirebooter12239981130768333510.jar /home/rabgonzalez/rabgonzalez/programacion/Unidad-2/tareas/trabajoclase/target/surefire 2023-11-09T15-18-30_708-jvmRun1 surefire5888472208307380912tmp surefire_010086554190542126598tmp"/>
     <property name="jdk.debug" value="release"/>
-    <property name="surefire.test.class.path" value="/home/dam/rabgonzalez/programacion/Unidad-2/tareas/trabajoclase/target/test-classes:/home/dam/rabgonzalez/programacion/Unidad-2/tareas/trabajoclase/target/classes:/home/dam/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.6.0/junit-jupiter-api-5.6.0.jar:/home/dam/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/home/dam/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/dam/.m2/repository/org/junit/platform/junit-platform-commons/1.6.0/junit-platform-commons-1.6.0.jar:/home/dam/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.6.0/junit-jupiter-params-5.6.0.jar:/home/dam/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.6.0/junit-jupiter-engine-5.6.0.jar:/home/dam/.m2/repository/org/junit/platform/junit-platform-engine/1.6.0/junit-platform-engine-1.6.0.jar:"/>
+    <property name="surefire.test.class.path" value="/home/rabgonzalez/rabgonzalez/programacion/Unidad-2/tareas/trabajoclase/target/test-classes:/home/rabgonzalez/rabgonzalez/programacion/Unidad-2/tareas/trabajoclase/target/classes:/home/rabgonzalez/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.6.0/junit-jupiter-api-5.6.0.jar:/home/rabgonzalez/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/home/rabgonzalez/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/rabgonzalez/.m2/repository/org/junit/platform/junit-platform-commons/1.6.0/junit-platform-commons-1.6.0.jar:/home/rabgonzalez/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.6.0/junit-jupiter-params-5.6.0.jar:/home/rabgonzalez/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.6.0/junit-jupiter-engine-5.6.0.jar:/home/rabgonzalez/.m2/repository/org/junit/platform/junit-platform-engine/1.6.0/junit-platform-engine-1.6.0.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
-    <property name="user.home" value="/home/dam"/>
+    <property name="user.home" value="/home/rabgonzalez"/>
     <property name="user.language" value="es"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="java.version.date" value="2023-08-24"/>
     <property name="java.home" value="/usr/lib/jvm/java-11-openjdk-amd64"/>
     <property name="file.separator" value="/"/>
-    <property name="basedir" value="/home/dam/rabgonzalez/programacion/Unidad-2/tareas/trabajoclase"/>
-    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="basedir" value="/home/rabgonzalez/rabgonzalez/programacion/Unidad-2/tareas/trabajoclase"/>
+    <property name="java.vm.compressedOopsMode" value="32-bit"/>
     <property name="line.separator" value="&#10;"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="/home/dam/rabgonzalez/programacion/Unidad-2/tareas/trabajoclase/target/surefire/surefirebooter2514014916439769767.jar"/>
+    <property name="surefire.real.class.path" value="/home/rabgonzalez/rabgonzalez/programacion/Unidad-2/tareas/trabajoclase/target/surefire/surefirebooter12239981130768333510.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="11.0.20.1+1-post-Ubuntu-0ubuntu122.04"/>
-    <property name="user.name" value="dam"/>
+    <property name="user.name" value="rabgonzalez"/>
     <property name="path.separator" value=":"/>
-    <property name="os.version" value="5.15.0-75-generic"/>
+    <property name="os.version" value="5.15.0-76-generic"/>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="file.encoding" value="UTF-8"/>
     <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
-    <property name="localRepository" value="/home/dam/.m2/repository"/>
+    <property name="localRepository" value="/home/rabgonzalez/.m2/repository"/>
     <property name="java.vendor.url.bug" value="https://bugs.launchpad.net/ubuntu/+source/openjdk-lts"/>
     <property name="java.io.tmpdir" value="/tmp"/>
     <property name="java.version" value="11.0.20.1"/>
-    <property name="user.dir" value="/home/dam/rabgonzalez/programacion/Unidad-2/tareas/trabajoclase"/>
+    <property name="user.dir" value="/home/rabgonzalez/rabgonzalez/programacion/Unidad-2/tareas/trabajoclase"/>
     <property name="os.arch" value="amd64"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
@@ -57,11 +58,11 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="55.0"/>
   </properties>
-  <testcase name="getNombreOK" classname="ies.puerto.PersonaTest" time="0.002"/>
-  <testcase name="getEdad" classname="ies.puerto.PersonaTest" time="0.001"/>
-  <testcase name="PersonaTest1OK" classname="ies.puerto.PersonaTest" time="0.037"/>
-  <testcase name="PersonaTest2OK" classname="ies.puerto.PersonaTest" time="0.001"/>
-  <testcase name="setNombre" classname="ies.puerto.PersonaTest" time="0.002"/>
-  <testcase name="getTelefono" classname="ies.puerto.PersonaTest" time="0.001"/>
-  <testcase name="getEmail" classname="ies.puerto.PersonaTest" time="0.002"/>
+  <testcase name="getNombreOK" classname="ies.puerto.PersonaTest" time="0"/>
+  <testcase name="getEdad" classname="ies.puerto.PersonaTest" time="0.009"/>
+  <testcase name="PersonaTest1OK" classname="ies.puerto.PersonaTest" time="0.008"/>
+  <testcase name="PersonaTest2OK" classname="ies.puerto.PersonaTest" time="0"/>
+  <testcase name="setNombre" classname="ies.puerto.PersonaTest" time="0"/>
+  <testcase name="getTelefono" classname="ies.puerto.PersonaTest" time="0"/>
+  <testcase name="getEmail" classname="ies.puerto.PersonaTest" time="0"/>
 </testsuite>

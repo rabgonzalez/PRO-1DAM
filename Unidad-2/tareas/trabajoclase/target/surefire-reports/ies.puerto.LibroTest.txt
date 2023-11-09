@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: ies.puerto.LibroTest
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 s - in ies.puerto.LibroTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.04 s - in ies.puerto.LibroTest
