@@ -3,10 +3,10 @@ package ies.puerto;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class TiendaTest{
+public class ProductoTest{
 
-    Tienda producto1 = new Tienda("Plátano", 1, true);
-    Tienda producto2 = new Tienda("iPhone", 1500, false);
+    Producto producto1 = new Producto("Plátano", 1, true);
+    Producto producto2 = new Producto("iPhone", 1500, false);
 
     @Test
     public void mostrarProductosOK(){

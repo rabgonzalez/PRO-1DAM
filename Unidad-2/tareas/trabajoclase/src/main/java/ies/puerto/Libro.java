@@ -28,6 +28,10 @@ public class Libro{
         return this.AnioPublicacion;
     }
 
+    public void setAnioPublicacion(int AnioPublicacion){
+        this.AnioPublicacion = AnioPublicacion;
+    }
+
     public String imprimir(){
         return "Titulo: " + Titulo + "Autor: " + Autor + "Año Publicacion: " + AnioPublicacion;
     }
