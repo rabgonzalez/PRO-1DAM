@@ -3,13 +3,13 @@ package ies.puerto;
 import java.util.Scanner;
 
 public class Ejercicio2 {
-   public static void main(String[] args){
+   public static void main(String[] args) throws Exception{
       String strNumero = solicitarNumero();
       int numero = transformarNumeroStrInt(strNumero);
-      System.out.println("Numero transformado: "+resultado);
+      System.out.println("Numero transformado: "+numero);
    }
 
-   public static int solicitarNumero() {
+   public static String solicitarNumero() {
       Scanner lectura = new Scanner(System.in);
       System.out.println("Introduzca un valor");
       return lectura.nextLine();
