@@ -1,10 +1,10 @@
 package ies.puerto;
 
-public class Continue1 {
-   public String unoAlVeinte(){
+public class Continue3 {
+   public String pares(){
       String resultado = " ";
     for(int i = 1; i <= 20; i++){
-      if(i % 3 == 0){
+      if(i % 2 != 0){
          continue;
       }
       resultado += i + " ";
