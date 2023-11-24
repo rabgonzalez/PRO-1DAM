@@ -3,7 +3,7 @@ package ies.puerto;
 import java.util.Scanner;
 
 public class Ejercicio1 {
-   public static void main(String[] args){
+   public static void main(String[] args) throws Exception{
       int numero1 = solicitarNumero();
       int numero2 = solicitarNumero();
       int resultado = division(numero1, numero2);
@@ -27,8 +27,9 @@ public class Ejercicio1 {
     * @param dividendo de la division
     * @param divisor de la division
     * @return resultado
+    * @throws Exception
     */
-   public static int division(int dividendo, int divisor){
+   public static int division(int dividendo, int divisor) throws Exception{
       int resultado = 0;
 
       try{

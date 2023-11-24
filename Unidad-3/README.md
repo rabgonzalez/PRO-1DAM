@@ -2,3 +2,4 @@
 ## Tareas
 - [Break](tareas/Break)
 - [Continue](tareas/Continue)
+- [Excepciones](tareas/Excepciones/)
