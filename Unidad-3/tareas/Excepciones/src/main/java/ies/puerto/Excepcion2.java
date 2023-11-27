@@ -2,7 +2,7 @@ package ies.puerto;
 
 import java.util.Scanner;
 
-public class Ejercicio2 {
+public class Excepcion2 {
    public static void main(String[] args) throws Exception{
       String strNumero = solicitarNumero();
       int numero = transformarNumeroStrInt(strNumero);
