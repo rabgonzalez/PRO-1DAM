@@ -18,20 +18,20 @@ public class Excepcion3 {
       return posicion;
    }
 
-   public static int valorPosicion(int[] array, int posicion){
-      return array[posicion];
-   }
-
-   public static int division(int[] array, int posicion1) throws Exception{
+   public static int valorPosicion(int[] array, int posicion) throws Exception{
       int resultado = 0;
 
       try{
-         resultado = array[posicion1];
-      } catch (ArrayIndexOutOfBoundsException e){
+         resultado = array[posicion];
+      } catch(ArrayIndexOutOfBoundsException e){
          String mensajeError = "El valor introducido es mayor que la longitud del array";
-         System.out.println("Mensaje del println "+mensajeError);
-         throw new Exception(mensajeError);
+         System.out.println("Mensaje del Println "+mensajeError);
       }
+      return resultado; 
+   }
+
+   public static int division(int[] array, int posicion1){
+      int resultado = array[posicion1];
       return resultado;
    }
 }  
