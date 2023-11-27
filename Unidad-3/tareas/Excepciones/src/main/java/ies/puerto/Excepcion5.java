@@ -26,7 +26,7 @@ public class Excepcion5 {
    }
 
    public static int sumatorio(int numero1, int numero2){
-      int resultado = resultado = numero1 + numero2;;
+      int resultado = numero1 + numero2;;
       return resultado;
    }
 }  
