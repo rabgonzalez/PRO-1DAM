@@ -6,7 +6,7 @@ public class Ejercicio10 {
 public static void main(String[] args) {
     Calendar calendar = Calendar.getInstance();
 
-    int diaSemana = calendar.get(calendar.DAY_OF_WEEK);
+    int diaSemana = calendar.get(calendar.DAY_OF_WEEK) - 1;
     switch (diaSemana) {
         case 1:
             System.out.println("Quedan 5 días para el finde, estas a Lunes");
@@ -21,7 +21,7 @@ public static void main(String[] args) {
             System.out.println("Quedan 2 días para el finde, estas a Jueves");
             break;
         case 5:
-            System.out.println("Quedan 1 días para el finde, estas a Viernes");
+            System.out.println("Queda 1 días para el finde, estas a Viernes");
             break;
         case 6:
             System.out.println("Es fin de semana, estas a Sábado");
