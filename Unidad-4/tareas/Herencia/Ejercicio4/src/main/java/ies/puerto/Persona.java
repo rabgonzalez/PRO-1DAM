@@ -1,5 +1,8 @@
 package ies.puerto;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class Persona {
     private String nombre;
     private int edad;
