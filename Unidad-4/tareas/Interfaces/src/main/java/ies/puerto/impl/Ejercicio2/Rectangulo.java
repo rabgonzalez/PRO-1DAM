@@ -12,9 +12,4 @@ public class Rectangulo extends RegularesAbstract implements IFormaGeometrica {
     public Rectangulo(float base, float altura){
         super(base, altura);
     }
-
-    @Override
-    public float calcularArea(){
-        return getBase() * getAltura();
-    }
 }

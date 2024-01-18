@@ -26,4 +26,8 @@ public abstract class RegularesAbstract {
         this.base = base;
         this.altura = altura;
     }
+
+    public float calcularArea(){
+        return base*altura;
+    }
 }
