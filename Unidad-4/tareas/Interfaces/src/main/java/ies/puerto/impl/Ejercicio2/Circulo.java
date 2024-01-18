@@ -3,16 +3,24 @@ package ies.puerto.impl.Ejercicio2;
 import ies.puerto.interfaz.IFormaGeometrica;
 
 public class Circulo implements IFormaGeometrica {
-    private double radio;
+    private float radio;
+
+    public float getRadio() {
+        return this.radio;
+    }
+
+    public void setRadio(float radio) {
+        this.radio = radio;
+    }
 
     public Circulo(){}
 
-    public Circulo(double radio){
+    public Circulo(float radio){
         this.radio = radio;
     }
 
     @Override
-    public double calcularArea(){
-        return Math.PI * radio;
+    public float calcularArea(){
+        return 3.14f * (radio*radio);
     }
 }
