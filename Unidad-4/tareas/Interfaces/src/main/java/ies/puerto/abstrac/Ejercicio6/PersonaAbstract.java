@@ -47,8 +47,5 @@ public abstract class PersonaAbstract {
         return age;
     }
 
-    @Override
-    public String toString(){
-        return "Soy una persona";
-    }
+    public abstract String toString();
 }

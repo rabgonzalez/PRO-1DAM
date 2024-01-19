@@ -22,7 +22,7 @@ public class Profesor extends EmpleadoAbstract {
 
     @Override
     public String trabajar(){
-        return "tabajando como "+getTrabajo();
+        return "trabajando como "+getTrabajo();
     }
 
     @Override
