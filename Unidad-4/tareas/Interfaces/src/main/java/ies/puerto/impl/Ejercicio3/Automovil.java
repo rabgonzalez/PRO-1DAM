@@ -1,6 +1,6 @@
 package ies.puerto.impl.Ejercicio3;
 
-import ies.puerto.interfaz.IConductor;
+import ies.puerto.interfaz.Ejercicio3.IConductor;
 
 public class Automovil implements IConductor {
     @Override

@@ -1,7 +1,7 @@
 package ies.puerto.impl.Ejercicio2;
 
-import ies.puerto.abstrac.RegularesAbstract;
-import ies.puerto.interfaz.IFormaGeometrica;
+import ies.puerto.abstrac.Ejercicio2.RegularesAbstract;
+import ies.puerto.interfaz.Ejercicio2.IFormaGeometrica;
 
 public class Rectangulo extends RegularesAbstract implements IFormaGeometrica {
 

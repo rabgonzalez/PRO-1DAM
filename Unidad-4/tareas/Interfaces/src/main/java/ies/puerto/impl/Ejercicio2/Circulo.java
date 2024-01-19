@@ -1,6 +1,6 @@
 package ies.puerto.impl.Ejercicio2;
 
-import ies.puerto.interfaz.IFormaGeometrica;
+import ies.puerto.interfaz.Ejercicio2.IFormaGeometrica;
 
 public class Circulo implements IFormaGeometrica {
     private float radio;

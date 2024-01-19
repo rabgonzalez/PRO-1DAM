@@ -1,6 +1,6 @@
 package ies.puerto.impl.Ejercicio4;
 
-import ies.puerto.interfaz.IConexionRed;
+import ies.puerto.interfaz.Ejercicio4.IConexionRed;
 
 public class ConexionEthernet implements IConexionRed{
     @Override

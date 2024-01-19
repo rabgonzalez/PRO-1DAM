@@ -1,6 +1,6 @@
 package ies.puerto.impl.Ejercicio1;
 
-import ies.puerto.interfaz.IReproductor;
+import ies.puerto.interfaz.Ejercicio1.IReproductor;
 
 public class ReproductorMP3 implements IReproductor {
     @Override

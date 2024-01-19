@@ -1,6 +1,6 @@
 package ies.puerto.impl.Ejercicio5;
 
-import ies.puerto.interfaz.InstrumentoMusical;
+import ies.puerto.interfaz.Ejercicio5.InstrumentoMusical;
 
 public class Guitarra implements InstrumentoMusical {
     @Override

@@ -1,6 +1,6 @@
 package ies.puerto.impl.Prueba;
 
-import ies.puerto.abstrac.LecturaDatosAbstract;
+import ies.puerto.abstrac.Prueba.LecturaDatosAbstract;
 
 public class LecturaDatosBaseDatos extends LecturaDatosAbstract {
 

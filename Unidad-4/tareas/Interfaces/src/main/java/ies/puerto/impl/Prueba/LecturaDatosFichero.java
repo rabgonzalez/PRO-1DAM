@@ -1,6 +1,6 @@
 package ies.puerto.impl.Prueba;
 
-import ies.puerto.interfaz.ILecturaDatos;
+import ies.puerto.interfaz.Prueba.ILecturaDatos;
 
 public class LecturaDatosFichero implements ILecturaDatos {
 
