@@ -43,7 +43,7 @@ public abstract class PersonaAbstract {
         }
 
         long diferencia = fechaActual.getTime()-date.getTime();
-        long age = diferencia/(1000*3600L*24*30*12);
+        long age = diferencia/(1000*3600L*24*365);
         return age;
     }
 
