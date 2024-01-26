@@ -1,28 +1,17 @@
 package ies.puerto.Ejercicio5.app;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
-/**
- * TERMINAR
- */
 public class AppNumerosPares {
     static List<Integer> array;
 
     public static void main(String[] args) {
         array = new ArrayList<>();
-        array.add(1);
-        array.add(2);
-        array.add(3);
-        array.add(4);
-        array.add(5);
-        array.add(6);
-        array.add(7);
-        array.add(8);
-        array.add(9);
-        array.add(10);
+        array.addAll(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10));
         System.out.println(array);
-        System.out.println("\n"+pintarPares());
+        System.out.println(pintarPares());
     }
 
     public static boolean pares(int numero) {
@@ -33,11 +22,13 @@ public class AppNumerosPares {
     }
 
     public static List<Integer> pintarPares() {
+        List<Integer> resultado = new ArrayList<>();
+        
         for(int numero:array){
-            if(!pares(numero)){
-                array.remove(numero);
+            if(pares(numero)){
+                resultado.add(numero);
             }
         }
-        return array;
+        return resultado;
     }
 }

@@ -21,38 +21,33 @@ public class AppListaComun {
         array2.add(4);
         array2.add(9);
         System.out.println(array2);
-
-        System.out.println("Array más pequeño: "+arrayMasPequeño(array1, array2));
-        System.out.println("Array más grande: "+arrayMasGrande(array1, array2));
+        
         System.out.println(numeroComun());
         
     }
 
-    public static List<Integer> arrayMasGrande(List<Integer> array1, List<Integer> array2){
-        if(array1.size() > array2.size()){
-            return array1;
-        }
-        return array2;
-    }
-
-    public static List<Integer> arrayMasPequeño(List<Integer> array1, List<Integer> array2){
-        if(array1.size() > array2.size()){
-            return array2;
-        }
-        return array1;
-    }
-
-    public static Object numeroComun(){
-        Object[] arrayMasPequeño = arrayMasPequeño(array1, array2).toArray();
-        Object[] arrayMasGrande = arrayMasGrande(array1, array2).toArray();
-
-        for(int i=0; i < arrayMasGrande.length; i++){
-            for(int j=0; j < arrayMasPequeño.length; j++){
-                if(arrayMasGrande[i] == arrayMasPequeño[j]){
-                    return arrayMasGrande[i];
-                }
+    public static boolean numeroComun(){
+        for(Integer numero:array1){
+            if(array2.contains(numero)){
+                return true;
             }
         }
         return false;
     }
+
+    /** 
+    public static boolean numeroComunRecursivo(List<Integer> array1, List<Integer> array2){
+
+        if(array2.size() > array1.size()){
+            numeroComunRecursivo(array2, array1);
+        }
+
+        for(Integer numero:array1){
+            if(array2.contains(numero)){
+                return true;
+            }
+        }
+        return false;
+    }
+    */
 }
