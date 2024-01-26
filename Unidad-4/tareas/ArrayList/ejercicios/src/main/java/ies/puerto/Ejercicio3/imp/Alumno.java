@@ -58,4 +58,9 @@ public class Alumno {
         }
         return resultado/calificaciones.size();
     }
+
+    @Override
+    public String toString(){
+        return "Alumno: "+nombre+" "+apellido;
+    }
 }
