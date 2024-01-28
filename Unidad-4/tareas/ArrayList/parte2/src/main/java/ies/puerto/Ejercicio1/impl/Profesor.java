@@ -11,7 +11,13 @@ public class Profesor extends Empleado {
         super(dni);
     }
 
-    public Profesor(String nombre, String dni, String fechaNacimiento, float salario) {
+    public Profesor(String nombre, String dni, String fechaNacimiento, float salario, String especialidad) {
         super(nombre, dni, fechaNacimiento, salario);
+        this.especialidad = especialidad;
+    }
+
+    @Override
+    public String toString() {
+        return "nombre: "+getNombre()+" / dni: "+getDni()+" / fechaNacimiento: "+getFechaNacimiento()+" / especialidad: "+especialidad;
     }
 }

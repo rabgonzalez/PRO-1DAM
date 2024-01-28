@@ -55,14 +55,15 @@ public abstract class Persona {
 
     @Override
     public String toString() {
-        return "nombre: "+getNombre()+"/ dni: "+getDni()+"/ fechaNacimiento: "+getFechaNacimiento();
+        return "nombre: "+getNombre()+" / dni: "+getDni()+" / fechaNacimiento: "+getFechaNacimiento();
     }
 
-    public long anios() throws ParseException {
+    public Long anios() throws ParseException {
+        Date fechaActual = new Date();
         SimpleDateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy");
         Date fechaFormateada = formatoFecha.parse(fechaNacimiento);
 
-        long edad = fechaFormateada.getTime()/(1000*3600L*24*365);
+        long edad = (fechaActual.getTime()-fechaFormateada.getTime())/31536000000L;
         return edad;
     }
 }
