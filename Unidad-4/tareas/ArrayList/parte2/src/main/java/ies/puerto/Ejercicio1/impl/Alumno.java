@@ -35,6 +35,10 @@ public class Alumno extends Persona {
 
     public float notaMedia() {
         float resultado=0f;
+        if(notas.isEmpty()){
+            return resultado;
+        }
+        
         for(Nota nota:notas){
             resultado+=nota.getValor();
         }

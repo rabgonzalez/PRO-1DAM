@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import ies.puerto.Ejercicio1.Excep.MiExcepcion;
 import ies.puerto.Ejercicio1.impl.Alumno;
 import ies.puerto.Ejercicio1.impl.Aula;
 import ies.puerto.Ejercicio1.impl.Colegio;
@@ -66,6 +65,7 @@ public class AppPersona {
         aulasColegio = new ArrayList<>();
         aulasColegio.add(aula);
         aulasColegio.add(aula2);
+
         colegio = new Colegio("Ies Telesforo Bravo", "Puerto de la Cruz", "Tenerife", aulasColegio);
         
         System.out.println("NOTA MÁXIMA ALUMNOS DEL COLEGIO");
@@ -73,7 +73,7 @@ public class AppPersona {
 
         System.out.println();
         System.out.println("NOTA MEDIA DE UNA CLASE ESPECÍFICA");
-        System.out.println(aula.notaMediaAula(aula2));
+        System.out.println(aula.notaMediaAula());
 
         System.out.println();
         System.out.println("NOTA MEDIA DE TODO EL COLEGIO");
@@ -96,21 +96,5 @@ public class AppPersona {
         System.out.println("EDAD MEDIA PROFESORES Y ALUMNOS");
         System.out.println("Edad media alumnos: "+colegio.edadMediaAlumno());
         System.out.println("Edad media profesores: "+colegio.edadMediaProfesores());
-
-        System.out.println();
-        System.out.println("COMPROBAR DUPLICADOS");
-        if(excepcionDuplicados()){
-            System.out.println("No hay usuarios repetidos");
-        }
-    }
-
-    //No supe hacerlo
-    public static boolean excepcionDuplicados() throws MiExcepcion {
-        for(Aula aula:aulasColegio){
-            if(aula.getProfesor().equals(aula.getProfesor())){
-                throw new MiExcepcion("Usuario repetido");
-            }
-        }
-        return true;
     }
 }

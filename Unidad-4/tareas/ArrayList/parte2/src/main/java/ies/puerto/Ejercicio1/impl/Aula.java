@@ -67,8 +67,12 @@ public class Aula {
         return notaMaximaAula;
     }
 
-    public float notaMediaAula(Aula aula) {
-        float resultado = 0;
+    public float notaMediaAula() {
+        float resultado = 0f;
+        if(alumnos.isEmpty()){
+            return resultado;
+        }
+
         for(Alumno alumno:alumnos){
             resultado+=alumno.notaMedia();
         }

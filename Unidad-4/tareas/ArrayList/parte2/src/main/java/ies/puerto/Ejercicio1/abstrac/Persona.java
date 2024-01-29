@@ -58,12 +58,12 @@ public abstract class Persona {
         return "nombre: "+getNombre()+" / dni: "+getDni()+" / fechaNacimiento: "+getFechaNacimiento();
     }
 
-    public Long anios() throws ParseException {
+    public int anios() throws ParseException {
         Date fechaActual = new Date();
         SimpleDateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy");
         Date fechaFormateada = formatoFecha.parse(fechaNacimiento);
 
         long edad = (fechaActual.getTime()-fechaFormateada.getTime())/31536000000L;
-        return edad;
+        return (int)edad;
     }
 }

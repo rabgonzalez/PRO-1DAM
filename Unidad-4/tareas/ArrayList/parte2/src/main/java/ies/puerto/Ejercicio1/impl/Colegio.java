@@ -80,9 +80,13 @@ public class Colegio {
 
     public float notaMediaColegio() {
         float resultado = 0f;
+        if(aulas.isEmpty()){
+            return resultado;
+        }
+
         for(Aula aula:aulas){
-            if(aula.notaMediaAula(aula) > resultado){
-                resultado += aula.notaMediaAula(aula);
+            if(aula.notaMediaAula() > resultado){
+                resultado += aula.notaMediaAula();
             }
         }
         return resultado/aulas.size();
@@ -90,6 +94,10 @@ public class Colegio {
 
     public float salarioMedioProfesores() {
         float salarioTotal=0f;
+        if(aulas.isEmpty()){
+            return salarioTotal;
+        }
+
         for(Aula aula:aulas){
             salarioTotal += aula.getProfesor().getSalario();
         }
