@@ -1,11 +1,58 @@
 package ies.puerto.impl;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Objects;
 
 public class Concesionario {
-    private HashSet<Coche> coches;
-    private List<Motocicleta> motocicletas;
+    private HashSet<Coche> coches = new HashSet<>();;
+    private List<Motocicleta> motocicletas = new ArrayList<>(); 
+
+    public Concesionario() {
+    }
+
+    public Concesionario(HashSet<Coche> coches, List<Motocicleta> motocicletas) {
+        this.coches = coches;
+        this.motocicletas = motocicletas;
+    }
+
+    public HashSet<Coche> getCoches() {
+        return this.coches;
+    }
+
+    public void setCoches(HashSet<Coche> coches) {
+        this.coches = coches;
+    }
+
+    public List<Motocicleta> getMotocicletas() {
+        return this.motocicletas;
+    }
+
+    public void setMotocicletas(List<Motocicleta> motocicletas) {
+        this.motocicletas = motocicletas;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == this)
+            return true;
+        if (!(o instanceof Concesionario)) {
+            return false;
+        }
+        Concesionario concesionario = (Concesionario) o;
+        return Objects.equals(coches, concesionario.coches) && Objects.equals(motocicletas, concesionario.motocicletas);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(coches, motocicletas);
+    }
+
+    @Override
+    public String toString() {
+        return "coches= "+getCoches()+"\nmotocicletas= "+getMotocicletas();
+    }
 
     public boolean addMotocicleta(Motocicleta motocicleta){
         if(motocicletas.contains(motocicleta)){
