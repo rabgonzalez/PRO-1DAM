@@ -9,31 +9,49 @@ import java.util.Objects;
 public class Concesionario {
     private HashSet<Coche> coches = new HashSet<>();;
     private List<Motocicleta> motocicletas = new ArrayList<>(); 
-    static HashMap<String, Camion> camiones = new HashMap<>();
-    static HashMap<String, Bicicleta> bicicletas = new HashMap<>();
+    private HashMap<String, Camion> camiones = new HashMap<>();
+    private HashMap<String, Bicicleta> bicicletas = new HashMap<>();
 
     public Concesionario() {
     }
 
-    public Concesionario(HashSet<Coche> coches, List<Motocicleta> motocicletas) {
+    public Concesionario(HashSet<Coche> coches, List<Motocicleta> motocicletas, HashMap<String, Camion> camiones, HashMap<String, Bicicleta> bicicletas) {
         this.coches = coches;
         this.motocicletas = motocicletas;
+        this.bicicletas = bicicletas;
+        this.camiones = camiones;
     }
 
-    public HashSet<Coche> getCoches() {
+    public HashSet<Coche> getCoches(){
         return this.coches;
     }
 
-    public void setCoches(HashSet<Coche> coches) {
+    public void setCoches(HashSet<Coche> coches){
         this.coches = coches;
     }
 
-    public List<Motocicleta> getMotocicletas() {
+    public List<Motocicleta> getMotocicletas(){
         return this.motocicletas;
     }
 
-    public void setMotocicletas(List<Motocicleta> motocicletas) {
+    public void setMotocicletas(List<Motocicleta> motocicletas){
         this.motocicletas = motocicletas;
+    }
+
+    public HashMap<String, Bicicleta> getBiciletas(){
+        return this.bicicletas;
+    }
+
+    public void setBicicleta(HashMap<String, Bicicleta> bicicletas){
+        this.bicicletas = bicicletas;
+    }
+
+    public HashMap<String, Camion> getCamiones(){
+        return this.camiones;
+    }
+
+    public void setCamiones(HashMap<String, Camion> camiones){
+        this.camiones = camiones;
     }
 
     @Override
@@ -44,19 +62,19 @@ public class Concesionario {
             return false;
         }
         Concesionario concesionario = (Concesionario) o;
-        return Objects.equals(coches, concesionario.coches) && Objects.equals(motocicletas, concesionario.motocicletas);
+        return Objects.equals(coches, concesionario.coches) && Objects.equals(motocicletas, concesionario.motocicletas) && Objects.equals(bicicletas, concesionario.bicicletas) && Objects.equals(camiones, concesionario.camiones);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(coches, motocicletas);
+        return Objects.hash(coches, motocicletas, bicicletas, camiones);
     }
 
     @Override
     public String toString() {
-        return "coches= "+getCoches()+"\nmotocicletas= "+getMotocicletas();
+        return "coches= "+getCoches()+"\nmotocicletas= "+getMotocicletas()+"\nbicicletas= "+getBiciletas()+"\ncamiones= "+getCamiones();
     }
-
+    
     public boolean addMotocicleta(Motocicleta motocicleta){
         if(motocicletas.contains(motocicleta)){
             return false;
@@ -139,11 +157,7 @@ public class Concesionario {
         return resultado/coches.size();
     }
 
-    public float velocidadMediaVehiculos(){
-        return (velocidadMediaCoches()+velocidadMediaMotocicletas())/(2);
-    }
-
-    public static boolean existeCamion(Camion camion){
+    public boolean existeCamion(Camion camion){
         if(camiones.isEmpty()){
             return false;
         }
@@ -153,28 +167,40 @@ public class Concesionario {
         return true;
     }
 
-    public static boolean addCamion(Camion camion){
+    public boolean addCamion(Camion camion){
         if(!existeCamion(camion)){
             camiones.put(camion.getMatricula(), camion);
         }
         return true;
     }
 
-    public static boolean removeCamion(Camion camion){
+    public boolean removeCamion(Camion camion){
         if(existeCamion(camion)){
             camiones.remove(camion.getMatricula());
         }
         return true;
     }
 
-    public static Camion obtenerCamion(String matricula){
+    public Camion obtenerCamion(String matricula){
         if(camiones.isEmpty()){
             return null;
         }
         return camiones.get(matricula);
     }
 
-    public static boolean existeBicicleta(Bicicleta bicicleta){
+    public float velocidadMediaCamion(){
+        float resultado=0f;
+        if(camiones.isEmpty()){
+            return resultado;
+        }
+
+        for(Camion camion:camiones.values()){
+            resultado+=camion.getVelocidad();
+        }
+        return resultado/camiones.size();
+    }
+
+    public boolean existeBicicleta(Bicicleta bicicleta){
         if(bicicletas.isEmpty()){
             return false;
         }
@@ -184,24 +210,40 @@ public class Concesionario {
         return true;
     }
 
-    public static boolean addBicicleta(Bicicleta bicicleta){
+    public boolean addBicicleta(Bicicleta bicicleta){
         if(!existeBicicleta(bicicleta)){
             bicicletas.put(bicicleta.getMatricula(), bicicleta);
         }
         return true;
     }
 
-    public static boolean removeBicicleta(Bicicleta bicicleta){
+    public boolean removeBicicleta(Bicicleta bicicleta){
         if(existeBicicleta(bicicleta)){
             bicicletas.remove(bicicleta.getMatricula());
         }
         return true;
     }
 
-    public static Bicicleta obtenerBicicleta(String matricula){
+    public Bicicleta obtenerBicicleta(String matricula){
         if(bicicletas.isEmpty()){
             return null;
         }
         return bicicletas.get(matricula);
+    }
+
+    public float velocidadMediaBicicletas(){
+        float resultado=0f;
+        if(bicicletas.isEmpty()){
+            return resultado;
+        }
+
+        for(Bicicleta bicicleta:bicicletas.values()){
+            resultado+=bicicleta.getVelocidad();
+        }
+        return resultado/bicicletas.size();
+    }
+
+    public float velocidadMediaVehiculos(){
+        return (velocidadMediaCoches()+velocidadMediaMotocicletas()+velocidadMediaBicicletas()+velocidadMediaCamion())/(4);
     }
 }
