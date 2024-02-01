@@ -35,15 +35,31 @@ public class AppConcesionario {
         coches.add(coche2);
         coches.add(coche3);
         coches.add(coche4);
-        coches.add(coche5);
 
         motocicleta1 = new Motocicleta("Harley-Davidson","Sportster","MNO345",50);
         motocicleta2 = new Motocicleta("Yamaha","YZF R6","PQR678",90);
         motocicleta3 = new Motocicleta("Ducati","Monster","STU901",70);
         motocicleta4 = new Motocicleta("Suzuki","GSX-750","VWX234",80);
         motocicleta5 = new Motocicleta("Kawasaki","Ninja","ZAB567",85);
-        motocicletas = new ArrayList<>(Arrays.asList(motocicleta1, motocicleta2, motocicleta3, motocicleta4, motocicleta5));
+        motocicletas = new ArrayList<>(Arrays.asList(motocicleta1, motocicleta2, motocicleta3, motocicleta4));
 
         concesionario = new Concesionario(coches, motocicletas);
+
+        System.out.println("Velocidad máxima motocicletas: "+motocicleta4.velocidadMaxima());
+        System.out.println("Velocidad máxima coches: "+coche2.velocidadMaxima());
+        System.out.println();
+        System.out.println("Velocidad media coches: "+concesionario.velocidadMediaCoches());
+        System.out.println("Velocidad media motocicletas: "+concesionario.velocidadMediaMotocicletas());
+        System.out.println("Velocidad media vehiculos: "+concesionario.velocidadMediaVehiculos()); 
+        System.out.println();
+        System.out.println(concesionario.addCoche(coche5));
+        System.out.println(concesionario.removeCoche(coche1));
+        System.out.println(concesionario.obtenerCoche("JKL012"));
+        System.out.println();
+        System.out.println(concesionario.addMotocicleta(motocicleta5));
+        System.out.println(concesionario.removeMotocicleta(motocicleta1));
+        System.out.println(concesionario.obtenerMotocicleta("VWX234"));
+        System.out.println();
+        System.out.println(concesionario);
     }
 }

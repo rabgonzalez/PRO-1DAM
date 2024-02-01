@@ -24,7 +24,7 @@ public class Coche extends Vehiculo implements IVehiculo {
             return false;
         }
         Coche coche = (Coche) o;
-        return Objects.equals(this, coche);
+        return Objects.equals(getMatricula(), coche.getMatricula());
     }
 
     @Override

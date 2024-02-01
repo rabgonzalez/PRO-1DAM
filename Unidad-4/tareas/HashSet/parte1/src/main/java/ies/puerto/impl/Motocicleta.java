@@ -24,7 +24,7 @@ public class Motocicleta extends Vehiculo implements IVehiculo {
             return false;
         }
         Motocicleta motocicleta = (Motocicleta) o;
-        return Objects.equals(this, motocicleta);
+        return Objects.equals(getMatricula(), motocicleta.getMatricula());
     }
 
     @Override

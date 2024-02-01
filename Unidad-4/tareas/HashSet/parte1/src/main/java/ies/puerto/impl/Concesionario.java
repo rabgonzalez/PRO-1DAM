@@ -137,6 +137,6 @@ public class Concesionario {
     }
 
     public float velocidadMediaVehiculos(){
-        return (velocidadMediaCoches()+velocidadMediaMotocicletas())/(motocicletas.size()+coches.size());
+        return (velocidadMediaCoches()+velocidadMediaMotocicletas())/(2);
     }
 }
