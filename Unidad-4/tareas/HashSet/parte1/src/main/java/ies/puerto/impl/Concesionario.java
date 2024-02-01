@@ -1,6 +1,7 @@
 package ies.puerto.impl;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
@@ -8,6 +9,8 @@ import java.util.Objects;
 public class Concesionario {
     private HashSet<Coche> coches = new HashSet<>();;
     private List<Motocicleta> motocicletas = new ArrayList<>(); 
+    static HashMap<String, Camion> camiones = new HashMap<>();
+    static HashMap<String, Bicicleta> bicicletas = new HashMap<>();
 
     public Concesionario() {
     }
@@ -138,5 +141,67 @@ public class Concesionario {
 
     public float velocidadMediaVehiculos(){
         return (velocidadMediaCoches()+velocidadMediaMotocicletas())/(2);
+    }
+
+    public static boolean existeCamion(Camion camion){
+        if(camiones.isEmpty()){
+            return false;
+        }
+        if(!camiones.containsKey(camion.getMatricula())){
+            return false;
+        }
+        return true;
+    }
+
+    public static boolean addCamion(Camion camion){
+        if(!existeCamion(camion)){
+            camiones.put(camion.getMatricula(), camion);
+        }
+        return true;
+    }
+
+    public static boolean removeCamion(Camion camion){
+        if(existeCamion(camion)){
+            camiones.remove(camion.getMatricula());
+        }
+        return true;
+    }
+
+    public static Camion obtenerCamion(String matricula){
+        if(camiones.isEmpty()){
+            return null;
+        }
+        return camiones.get(matricula);
+    }
+
+    public static boolean existeBicicleta(Bicicleta bicicleta){
+        if(bicicletas.isEmpty()){
+            return false;
+        }
+        if(bicicletas.containsKey(bicicleta.getMatricula())){
+            return false;
+        }
+        return true;
+    }
+
+    public static boolean addBicicleta(Bicicleta bicicleta){
+        if(!existeBicicleta(bicicleta)){
+            bicicletas.put(bicicleta.getMatricula(), bicicleta);
+        }
+        return true;
+    }
+
+    public static boolean removeBicicleta(Bicicleta bicicleta){
+        if(existeBicicleta(bicicleta)){
+            bicicletas.remove(bicicleta.getMatricula());
+        }
+        return true;
+    }
+
+    public static Bicicleta obtenerBicicleta(String matricula){
+        if(bicicletas.isEmpty()){
+            return null;
+        }
+        return bicicletas.get(matricula);
     }
 }
