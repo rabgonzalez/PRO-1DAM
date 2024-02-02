@@ -8,8 +8,8 @@ import java.util.Objects;
 public class Coche extends Vehiculo implements IVehiculo {
     public Coche(){}
 
-    public Coche(int velocidad){
-        super(velocidad);
+    public Coche(String matricula){
+        super(matricula);
     }
 
     public Coche(String marca, String modelo, String matricula, int velocidad){

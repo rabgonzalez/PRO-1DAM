@@ -9,8 +9,8 @@ public abstract class Vehiculo {
 
     public Vehiculo() {}
 
-    public Vehiculo(int velocidad){
-        this.velocidad = velocidad;
+    public Vehiculo(String matricula){
+        this.matricula = matricula;
     }
 
     public Vehiculo(String marca, String modelo, String matricula, int velocidad) {

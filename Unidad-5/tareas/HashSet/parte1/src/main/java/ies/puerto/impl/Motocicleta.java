@@ -8,8 +8,8 @@ import ies.puerto.interfaz.IVehiculo;
 public class Motocicleta extends Vehiculo implements IVehiculo {
     public Motocicleta(){}
 
-    public Motocicleta(int velocidad){
-        super(velocidad);
+    public Motocicleta(String matricula){
+        super(matricula);
     }
 
     public Motocicleta(String marca, String modelo, String matricula, int velocidad){

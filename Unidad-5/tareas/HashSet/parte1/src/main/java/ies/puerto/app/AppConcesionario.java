@@ -46,6 +46,7 @@ public class AppConcesionario {
         coche3 = new Coche("Ford","Mustang","DEF456",100);
         coche4 = new Coche("Chevrolet","Impala","GHI789",80);
         coche5 = new Coche("Volkswagen","Golf","JKL012",65);
+
         coches = new HashSet<>();
         coches.add(coche1);
         coches.add(coche2);
@@ -57,6 +58,7 @@ public class AppConcesionario {
         motocicleta3 = new Motocicleta("Ducati","Monster","STU901",70);
         motocicleta4 = new Motocicleta("Suzuki","GSX-750","VWX234",80);
         motocicleta5 = new Motocicleta("Kawasaki","Ninja","ZAB567",85);
+
         motocicletas = new ArrayList<>(Arrays.asList(motocicleta1, motocicleta2, motocicleta3, motocicleta4));
 
         bicicleta1 = new Bicicleta("Trek","MountainBike","PQR456",30);
@@ -64,6 +66,7 @@ public class AppConcesionario {
         bicicleta3 = new Bicicleta("Specialized","RoadBike","JKL012",28);
         bicicleta4 = new Bicicleta("Cannondale","HybridBike","DEF345",26);
         bicicleta5 = new Bicicleta("Schwinn","Cruiser","MNO678",22);
+
         bicicletas = new HashMap<>();
         bicicletas.get(bicicleta1.getMatricula());
         bicicletas.get(bicicleta2.getMatricula());
@@ -76,6 +79,7 @@ public class AppConcesionario {
         camion3 = new Camion("Toyota","Hilux","PQR123",140);
         camion4 = new Camion("Nissan","Navara","ABC456",145);
         camion5 = new Camion("Dodge","Ram","XYZ789",160);
+
         camiones = new HashMap<>();
         camiones.get(camion1.getMatricula());
         camiones.get(camion2.getMatricula());
@@ -84,8 +88,546 @@ public class AppConcesionario {
         camiones.get(camion5.getMatricula());
 
         concesionario = new Concesionario(coches, motocicletas, camiones, bicicletas);
-
-        Scanner scanner = new Scanner(System.in);
         
+        do {
+            System.out.println(menu());
+        } while (menu() == false);
+    }
+
+    static Scanner scanner = new Scanner(System.in);
+    static Coche coche;
+    static Motocicleta motocicleta;
+    static Bicicleta bicicleta;
+    static Camion camion;
+
+    public static boolean menu(){
+        System.out.println();
+        System.out.println("****************************************");
+        System.out.println("* Bienvenido al Concesionario de Rubén *");
+        System.out.println("****************************************");
+        System.out.println();
+        System.out.println("Por favor, seleccione el tipo de vehículo a modificar");
+        System.out.println("********************");
+        System.out.println("* - 1) Coche       *");
+        System.out.println("* - 2) Motocicleta *");
+        System.out.println("* - 3) Bicicleta   *");
+        System.out.println("* - 4) Camión      *");
+        System.out.println("* - 5) Salir       *");
+        System.out.println("********************");
+        System.out.print("Opción [1, 2, 3, 4, 5]= ");
+        int vehiculo = scanner.nextInt();
+
+        switch (vehiculo) {
+            case 1:
+                do {
+                System.out.println(coche());
+                } while(coche() == false);
+                return false;
+
+            case 2:
+                do {
+                    System.out.println(motocicleta());
+                } while(motocicleta() == false);
+                return false;
+
+            case 3:
+                
+                return false;
+
+            case 4:
+                
+                return false;
+
+            case 5:
+                return true;
+        
+            default:
+                System.out.println("Por favor, elige una opción existente");
+                return false;
+        }
+    }
+
+    public static boolean coche(){
+        System.out.println();
+        System.out.println("¿Qué acción quieres realizar?");
+        System.out.println("*************************");
+        System.out.println("* - 1) Añadir Coche     *");
+        System.out.println("* - 2) Eliminar Coche   *");
+        System.out.println("* - 3) Obtener Coche    *");
+        System.out.println("* - 4) Modificar Coche  *");
+        System.out.println("* - 5) Cambiar Vehículo *");
+        System.out.println("*************************");
+        System.out.print("Opción [1, 2, 3, 4, 5]= ");
+        int accionCoche = scanner.nextInt();
+
+        switch (accionCoche) {
+            case 1:
+                System.out.print("1. Introduce la marca del coche: ");
+                String marca = scanner.next();
+                System.out.print("2. Introduce el modelo del coche: ");
+                String modelo = scanner.next();
+                System.out.print("3. Introduce la matrícula del coche: ");
+                String matricula = scanner.next();
+                System.out.print("4. Introduce la velocidad del coche: ");
+                int velocidad = scanner.nextInt();
+
+                if(velocidad > coche.velocidadMaxima()){
+                    System.out.println("La velocidad máxima permitida es de 180 km/h");
+                    velocidad = coche.velocidadMaxima();
+                }
+                coche = new Coche(marca, modelo, matricula, velocidad);
+                coches.add(coche);
+                return false;
+
+            case 2:
+                System.out.print("1. Introduce la marca del coche: ");
+                marca = scanner.next();
+                System.out.print("2. Introduce el modelo del coche: ");
+                modelo = scanner.next();
+                System.out.print("3. Introduce la matrícula del coche: ");
+                matricula = scanner.next();
+                System.out.print("4. Introduce la velocidad del coche: ");
+                velocidad = scanner.nextInt();
+
+                coche = new Coche(marca, modelo, matricula, velocidad);
+                if(coches.contains(coche)){
+                    coches.remove(coche);
+                } else {
+                    System.out.println("Lo siento, ese coche no existe en nuestro concesionario");
+                }
+                return false;
+            
+            case 3:
+                System.out.print("1. Introduce la marca del coche: ");
+                marca = scanner.next();
+                System.out.print("2. Introduce el modelo del coche: ");
+                modelo = scanner.next();
+                System.out.print("3. Introduce la matrícula del coche: ");
+                matricula = scanner.next();
+                System.out.print("4. Introduce la velocidad del coche: ");
+                velocidad = scanner.nextInt();
+
+                coche = new Coche(marca, modelo, matricula, velocidad);
+                if(coches.contains(coche)){
+                    System.out.println(coche);
+                } else {
+                    System.out.println("Lo siento, ese coche no existe en nuestro concesionario");
+                }
+                return false;
+        
+            case 4:
+                System.out.print("1. Introduce la marca del coche: ");
+                marca = scanner.next();
+                System.out.print("2. Introduce el modelo del coche: ");
+                modelo = scanner.next();
+                System.out.print("3. Introduce la matrícula del coche: ");
+                matricula = scanner.next();
+                System.out.print("4. Introduce la velocidad del coche: ");
+                velocidad = scanner.nextInt();
+
+                coche = new Coche(marca, modelo, matricula, velocidad);
+                if(!coches.contains(coche)){
+                    System.out.println("Lo siento, ese coche no existe en nuestro concesionario");
+                    return false;
+                }
+
+                System.out.println("¿Qué quieres modificar?");
+                System.out.println("******************");
+                System.out.println("* - 1) Marca     *");
+                System.out.println("* - 2) Modelo    *");
+                System.out.println("* - 3) Velocidad *");
+                System.out.println("******************");
+                System.out.print("Opción [1, 2, 3]= ");
+                int mod = scanner.nextInt();
+
+                switch (mod) {
+                    case 1:
+                        System.out.print("Introduce la nueva marca: ");
+                        marca = scanner.next();
+                        coche.setMarca(marca);
+                        return false;
+
+                    case 2:
+                        System.out.print("Introduce el nuevo modelo: ");
+                        modelo = scanner.next();
+                        coche.setModelo(modelo);
+                        return false;
+
+                    case 3:
+                        System.out.print("Introduce la nueva velocidad: ");
+                        velocidad = scanner.nextInt();
+                        if(velocidad > coche.velocidadMaxima()){
+                            System.out.println("La velocidad máxima permitida es de 180 km/h");
+                            velocidad = coche.velocidadMaxima();
+                        }
+                        coche.setVelocidad(velocidad);
+                        return false;
+                
+                    default:
+                        System.out.println("Por favor, elige una opción existente");
+                        return false;
+                }
+        
+            case 5:
+                return true;
+
+            default:
+                System.out.println("Por favor, elige una opción existente");
+                return false;
+        }
+    }
+
+    public static boolean motocicleta(){
+        System.out.println();
+        System.out.println("¿Qué acción quieres realizar?");
+        System.out.println("*******************************");
+        System.out.println("* - 1) Añadir Motocicleta     *");
+        System.out.println("* - 2) Eliminar Motocicleta   *");
+        System.out.println("* - 3) Obtener Motocicleta    *");
+        System.out.println("* - 4) Modificar Motocicleta  *");
+        System.out.println("* - 5) Cambiar Vehículo       *");
+        System.out.println("*******************************");
+        System.out.print("Opción [1, 2, 3, 4, 5]= ");
+        int accionMotocicleta = scanner.nextInt();
+
+        switch (accionMotocicleta) {
+            case 1:
+                System.out.print("1. Introduce la marca de la motocicleta: ");
+                String marca = scanner.next();
+                System.out.print("2. Introduce el modelo de la motocicleta: ");
+                String modelo = scanner.next();
+                System.out.print("3. Introduce la matrícula de la motocicleta: ");
+                String matricula = scanner.next();
+                System.out.print("4. Introduce la velocidad de la motocicleta: ");
+                int velocidad = scanner.nextInt();
+
+                if(velocidad > motocicleta.velocidadMaxima()){
+                    System.out.println("La velocidad máxima permitida es de 120 km/h");
+                    velocidad = motocicleta.velocidadMaxima();
+                }
+                motocicleta = new Motocicleta(marca, modelo, matricula, velocidad);
+                motocicletas.add(motocicleta);
+                return false;
+
+            case 2:
+                System.out.print("1. Introduce la marca de la motocicleta: ");
+                marca = scanner.next();
+                System.out.print("2. Introduce el modelo de la motocicleta: ");
+                modelo = scanner.next();
+                System.out.print("3. Introduce la matrícula de la motocicleta: ");
+                matricula = scanner.next();
+                System.out.print("4. Introduce la velocidad de la motocicleta: ");
+                velocidad = scanner.nextInt();
+
+                motocicleta = new Motocicleta(marca, modelo, matricula, velocidad);
+                if(motocicletas.contains(motocicleta)){
+                    motocicletas.remove(motocicleta);
+                } else {
+                    System.out.println("Lo siento, esa motocicleta no existe en nuestro concesionario");
+                }
+                return false;
+            
+            case 3:
+                System.out.print("1. Introduce la marca de la motocicleta: ");
+                marca = scanner.next();
+                System.out.print("2. Introduce el modelo de la motocicleta: ");
+                modelo = scanner.next();
+                System.out.print("3. Introduce la matrícula de la motocicleta: ");
+                matricula = scanner.next();
+                System.out.print("4. Introduce la velocidad de la motocicleta: ");
+                velocidad = scanner.nextInt();
+
+                motocicleta = new Motocicleta(marca, modelo, matricula, velocidad);
+                if(motocicletas.contains(motocicleta)){
+                    System.out.println(motocicleta);
+                } else {
+                    System.out.println("Lo siento, esa motocicleta no existe en nuestro concesionario");
+                }
+                return false;
+        
+            case 4:
+                System.out.print("1. Introduce la marca de la motocicleta: ");
+                marca = scanner.next();
+                System.out.print("2. Introduce el modelo de la motocicleta: ");
+                modelo = scanner.next();
+                System.out.print("3. Introduce la matrícula de la motocicleta: ");
+                matricula = scanner.next();
+                System.out.print("4. Introduce la velocidad de la motocicleta: ");
+                velocidad = scanner.nextInt();
+
+                motocicleta = new Motocicleta(marca, modelo, matricula, velocidad);
+                if(!motocicletas.contains(motocicleta)){
+                    System.out.println("Lo siento, esa motocicleta no existe en nuestro concesionario");
+                    return false;
+                }
+
+                System.out.println("¿Qué quieres modificar?");
+                System.out.println("******************");
+                System.out.println("* - 1) Marca     *");
+                System.out.println("* - 2) Modelo    *");
+                System.out.println("* - 3) Velocidad *");
+                System.out.println("******************");
+                System.out.print("Opción [1, 2, 3]= ");
+                int mod = scanner.nextInt();
+
+                switch (mod) {
+                    case 1:
+                        System.out.print("Introduce la nueva marca: ");
+                        marca = scanner.next();
+                        motocicleta.setMarca(marca);
+                        return false;
+
+                    case 2:
+                        System.out.print("Introduce el nuevo modelo: ");
+                        modelo = scanner.next();
+                        motocicleta.setModelo(modelo);
+                        return false;
+
+                    case 3:
+                        System.out.print("Introduce la nueva velocidad: ");
+                        velocidad = scanner.nextInt();
+                        if(velocidad > motocicleta.velocidadMaxima()){
+                            System.out.println("La velocidad máxima permitida es de 120 km/h");
+                            velocidad = motocicleta.velocidadMaxima();
+                        }
+                        motocicleta.setVelocidad(velocidad);
+                        return false;
+                
+                    default:
+                        System.out.println("Por favor, elige una opción existente");
+                        return false;
+                }
+        
+            case 5:
+                return true;
+
+            default:
+                System.out.println("Por favor, elige una opción existente");
+                return false;
+        }
+    }
+
+    public static boolean bicicleta(){
+        System.out.println();
+        System.out.println("¿Qué acción quieres realizar?");
+        System.out.println("*******************************");
+        System.out.println("* - 1) Añadir Bicicleta     *");
+        System.out.println("* - 2) Eliminar Bicicleta   *");
+        System.out.println("* - 3) Obtener Bicicleta    *");
+        System.out.println("* - 4) Modificar Bicicleta  *");
+        System.out.println("* - 5) Cambiar Vehículo       *");
+        System.out.println("*******************************");
+        System.out.print("Opción [1, 2, 3, 4, 5]= ");
+        int accionBicicleta = scanner.nextInt();
+
+        switch (accionBicicleta) {
+            case 1:
+                System.out.print("1. Introduce la marca de la bicicleta: ");
+                String marca = scanner.next();
+                System.out.print("2. Introduce el modelo de la bicicleta: ");
+                String modelo = scanner.next();
+                System.out.print("3. Introduce la matrícula de la bicicleta: ");
+                String matricula = scanner.next();
+                System.out.print("4. Introduce la velocidad de la bicicleta: ");
+                int velocidad = scanner.nextInt();
+
+                if(velocidad > bicicleta.velocidadMaxima()){
+                    System.out.println("La velocidad máxima permitida es de 40 km/h");
+                    velocidad = bicicleta.velocidadMaxima();
+                }
+                bicicleta = new Bicicleta(marca, modelo, matricula, velocidad);
+                bicicletas.put(matricula, bicicleta);
+                return false;
+
+            case 2:
+                System.out.print("Introduce la matrícula de la bicicleta: ");
+                matricula = scanner.next();
+
+                bicicleta = new Bicicleta(matricula);
+                if(bicicletas.containsKey(matricula)){
+                    bicicletas.remove(matricula, bicicleta);
+                } else {
+                    System.out.println("Lo siento, esa bicicleta no existe en nuestro concesionario");
+                }
+                return false;
+            
+            case 3:
+                System.out.print("Introduce la matrícula de la bicicleta: ");
+                matricula = scanner.next();
+
+                bicicleta = new Bicicleta(matricula);
+                if(bicicletas.containsKey(matricula)){
+                    System.out.println(bicicleta);
+                } else {
+                    System.out.println("Lo siento, esa bicicleta no existe en nuestro concesionario");
+                }
+                return false;
+        
+            case 4:
+                System.out.print("Introduce la matrícula de la bicicleta: ");
+                matricula = scanner.next();
+
+                bicicleta = new Bicicleta(matricula);
+                if(!bicicletas.containsKey(matricula)){
+                    System.out.println("Lo siento, esa bicicleta no existe en nuestro concesionario");
+                    return false;
+                }
+
+                System.out.println("¿Qué quieres modificar?");
+                System.out.println("******************");
+                System.out.println("* - 1) Marca     *");
+                System.out.println("* - 2) Modelo    *");
+                System.out.println("* - 3) Velocidad *");
+                System.out.println("******************");
+                System.out.print("Opción [1, 2, 3]= ");
+                int mod = scanner.nextInt();
+
+                switch (mod) {
+                    case 1:
+                        System.out.print("Introduce la nueva marca: ");
+                        marca = scanner.next();
+                        bicicleta.setMarca(marca);
+                        return false;
+
+                    case 2:
+                        System.out.print("Introduce el nuevo modelo: ");
+                        modelo = scanner.next();
+                        bicicleta.setModelo(modelo);
+                        return false;
+
+                    case 3:
+                        System.out.print("Introduce la nueva velocidad: ");
+                        velocidad = scanner.nextInt();
+                        if(velocidad > bicicleta.velocidadMaxima()){
+                            System.out.println("La velocidad máxima permitida es de 40 km/h");
+                            velocidad = bicicleta.velocidadMaxima();
+                        }
+                        bicicleta.setVelocidad(velocidad);
+                        return false;
+                
+                    default:
+                        System.out.println("Por favor, elige una opción existente");
+                        return false;
+                }
+        
+            case 5:
+                return true;
+
+            default:
+                System.out.println("Por favor, elige una opción existente");
+                return false;
+        }
+    }
+
+    public static boolean camion(){
+        System.out.println();
+        System.out.println("¿Qué acción quieres realizar?");
+        System.out.println("*******************************");
+        System.out.println("* - 1) Añadir Camion     *");
+        System.out.println("* - 2) Eliminar Camion   *");
+        System.out.println("* - 3) Obtener Camion    *");
+        System.out.println("* - 4) Modificar Camion  *");
+        System.out.println("* - 5) Cambiar Vehículo       *");
+        System.out.println("*******************************");
+        System.out.print("Opción [1, 2, 3, 4, 5]= ");
+        int accionBicicleta = scanner.nextInt();
+
+        switch (accionBicicleta) {
+            case 1:
+                System.out.print("1. Introduce la marca del camion: ");
+                String marca = scanner.next();
+                System.out.print("2. Introduce el modelo del camion: ");
+                String modelo = scanner.next();
+                System.out.print("3. Introduce la matrícula del camion: ");
+                String matricula = scanner.next();
+                System.out.print("4. Introduce la velocidad del camion: ");
+                int velocidad = scanner.nextInt();
+
+                if(velocidad > camion.velocidadMaxima()){
+                    System.out.println("La velocidad máxima permitida es de 160 km/h");
+                    velocidad = camion.velocidadMaxima();
+                }
+                camion = new Camion(marca, modelo, matricula, velocidad);
+                camiones.put(matricula, camion);
+                return false;
+
+            case 2:
+                System.out.print("Introduce la matrícula del camion: ");
+                matricula = scanner.next();
+
+                camion = new Camion(matricula);
+                if(camiones.containsKey(matricula)){
+                    camiones.remove(matricula, camion);
+                } else {
+                    System.out.println("Lo siento, ese camion no existe en nuestro concesionario");
+                }
+                return false;
+            
+            case 3:
+                System.out.print("Introduce la matrícula del camion: ");
+                matricula = scanner.next();
+
+                camion = new Camion(matricula);
+                if(camiones.containsKey(matricula)){
+                    System.out.println(camion);
+                } else {
+                    System.out.println("Lo siento, ese camion no existe en nuestro concesionario");
+                }
+                return false;
+        
+            case 4:
+                System.out.print("Introduce la matrícula del camion: ");
+                matricula = scanner.next();
+
+                camion = new Camion(matricula);
+                if(!camiones.containsKey(matricula)){
+                    System.out.println("Lo siento, ese camion no existe en nuestro concesionario");
+                    return false;
+                }
+
+                System.out.println("¿Qué quieres modificar?");
+                System.out.println("******************");
+                System.out.println("* - 1) Marca     *");
+                System.out.println("* - 2) Modelo    *");
+                System.out.println("* - 3) Velocidad *");
+                System.out.println("******************");
+                System.out.print("Opción [1, 2, 3]= ");
+                int mod = scanner.nextInt();
+
+                switch (mod) {
+                    case 1:
+                        System.out.print("Introduce la nueva marca: ");
+                        marca = scanner.next();
+                        camion.setMarca(marca);
+                        return false;
+
+                    case 2:
+                        System.out.print("Introduce el nuevo modelo: ");
+                        modelo = scanner.next();
+                        camion.setModelo(modelo);
+                        return false;
+
+                    case 3:
+                        System.out.print("Introduce la nueva velocidad: ");
+                        velocidad = scanner.nextInt();
+                        if(velocidad > camion.velocidadMaxima()){
+                            System.out.println("La velocidad máxima permitida es de 160 km/h");
+                            velocidad = camion.velocidadMaxima();
+                        }
+                        camion.setVelocidad(velocidad);
+                        return false;
+                
+                    default:
+                        System.out.println("Por favor, elige una opción existente");
+                        return false;
+                }
+        
+            case 5:
+                return true;
+
+            default:
+                System.out.println("Por favor, elige una opción existente");
+                return false;
+        }
     }
 }
