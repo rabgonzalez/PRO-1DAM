@@ -131,11 +131,15 @@ public class AppConcesionario {
                 return false;
 
             case 3:
-                
+                do {
+                    System.out.println(bicicleta());
+                } while(bicicleta() == false);
                 return false;
 
             case 4:
-                
+                do{
+                    System.out.println(camion());
+                } while (camion() == false);
                 return false;
 
             case 5:
