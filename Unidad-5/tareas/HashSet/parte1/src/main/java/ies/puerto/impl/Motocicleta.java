@@ -34,7 +34,7 @@ public class Motocicleta extends Vehiculo implements IVehiculo {
 
     @Override
     public String toString(){
-        return "Soy una motocicleta\nmarca= "+getMarca()+", modelo= "+getModelo()+", matricula= "+getMatricula()+", velocidad= "+getVelocidad();
+        return "marca= "+getMarca()+", modelo= "+getModelo()+", matricula= "+getMatricula()+", velocidad= "+getVelocidad();
     }
 
     @Override

@@ -155,7 +155,8 @@ public class AppConcesionario {
         System.out.println("* - 2) Eliminar Coche   *");
         System.out.println("* - 3) Obtener Coche    *");
         System.out.println("* - 4) Modificar Coche  *");
-        System.out.println("* - 5) Cambiar Vehículo *");
+        System.out.println("* - 5) Ver lista Coche  *");
+        System.out.println("* - 6) Cambiar Vehículo *");
         System.out.println("*************************");
         System.out.print("Opción [1, 2, 3, 4, 5]= ");
         int accionCoche = scanner.nextInt();
@@ -177,6 +178,7 @@ public class AppConcesionario {
                 }
                 coche = new Coche(marca, modelo, matricula, velocidad);
                 coches.add(coche);
+                System.out.println("Añadido: "+coche);
                 return false;
 
             case 2:
@@ -191,6 +193,7 @@ public class AppConcesionario {
 
                 coche = new Coche(marca, modelo, matricula, velocidad);
                 if(coches.contains(coche)){
+                    System.out.println("Eliminado: "+coche);
                     coches.remove(coche);
                 } else {
                     System.out.println("Lo siento, ese coche no existe en nuestro concesionario");
@@ -231,6 +234,7 @@ public class AppConcesionario {
                     return false;
                 }
 
+                System.out.println();
                 System.out.println("¿Qué quieres modificar?");
                 System.out.println("******************");
                 System.out.println("* - 1) Marca     *");
@@ -267,8 +271,12 @@ public class AppConcesionario {
                         System.out.println("Por favor, elige una opción existente");
                         return false;
                 }
-        
+
             case 5:
+                System.out.println(coches);
+                return false;
+        
+            case 6:
                 return true;
 
             default:
@@ -285,7 +293,8 @@ public class AppConcesionario {
         System.out.println("* - 2) Eliminar Motocicleta   *");
         System.out.println("* - 3) Obtener Motocicleta    *");
         System.out.println("* - 4) Modificar Motocicleta  *");
-        System.out.println("* - 5) Cambiar Vehículo       *");
+        System.out.println("* - 5) Ver lista Motocicleta  *");
+        System.out.println("* - 6) Cambiar Vehículo       *");
         System.out.println("*******************************");
         System.out.print("Opción [1, 2, 3, 4, 5]= ");
         int accionMotocicleta = scanner.nextInt();
@@ -307,6 +316,7 @@ public class AppConcesionario {
                 }
                 motocicleta = new Motocicleta(marca, modelo, matricula, velocidad);
                 motocicletas.add(motocicleta);
+                System.out.println("Añadida: "+motocicleta);
                 return false;
 
             case 2:
@@ -321,6 +331,7 @@ public class AppConcesionario {
 
                 motocicleta = new Motocicleta(marca, modelo, matricula, velocidad);
                 if(motocicletas.contains(motocicleta)){
+                    System.out.println("Eliminada: "+motocicleta);
                     motocicletas.remove(motocicleta);
                 } else {
                     System.out.println("Lo siento, esa motocicleta no existe en nuestro concesionario");
@@ -361,6 +372,7 @@ public class AppConcesionario {
                     return false;
                 }
 
+                System.out.println();
                 System.out.println("¿Qué quieres modificar?");
                 System.out.println("******************");
                 System.out.println("* - 1) Marca     *");
@@ -397,8 +409,12 @@ public class AppConcesionario {
                         System.out.println("Por favor, elige una opción existente");
                         return false;
                 }
-        
+
             case 5:
+                System.out.println(motocicletas);
+                return false;
+
+            case 6:
                 return true;
 
             default:
@@ -411,11 +427,12 @@ public class AppConcesionario {
         System.out.println();
         System.out.println("¿Qué acción quieres realizar?");
         System.out.println("*******************************");
-        System.out.println("* - 1) Añadir Bicicleta     *");
-        System.out.println("* - 2) Eliminar Bicicleta   *");
-        System.out.println("* - 3) Obtener Bicicleta    *");
-        System.out.println("* - 4) Modificar Bicicleta  *");
-        System.out.println("* - 5) Cambiar Vehículo       *");
+        System.out.println("* - 1) Añadir Bicicleta       *");
+        System.out.println("* - 2) Eliminar Bicicleta     *");
+        System.out.println("* - 3) Obtener Bicicleta      *");
+        System.out.println("* - 4) Modificar Bicicleta    *");
+        System.out.println("* - 5) Ver lista Bicicletas   *");
+        System.out.println("* - 6) Cambiar Vehículo       *");
         System.out.println("*******************************");
         System.out.print("Opción [1, 2, 3, 4, 5]= ");
         int accionBicicleta = scanner.nextInt();
@@ -437,6 +454,7 @@ public class AppConcesionario {
                 }
                 bicicleta = new Bicicleta(marca, modelo, matricula, velocidad);
                 bicicletas.put(matricula, bicicleta);
+                System.out.println("Añadida: "+bicicleta);
                 return false;
 
             case 2:
@@ -445,6 +463,7 @@ public class AppConcesionario {
 
                 bicicleta = new Bicicleta(matricula);
                 if(bicicletas.containsKey(matricula)){
+                    System.out.println("Añadida: "+bicicleta);
                     bicicletas.remove(matricula, bicicleta);
                 } else {
                     System.out.println("Lo siento, esa bicicleta no existe en nuestro concesionario");
@@ -473,6 +492,7 @@ public class AppConcesionario {
                     return false;
                 }
 
+                System.out.println();
                 System.out.println("¿Qué quieres modificar?");
                 System.out.println("******************");
                 System.out.println("* - 1) Marca     *");
@@ -511,6 +531,10 @@ public class AppConcesionario {
                 }
         
             case 5:
+                System.out.println(bicicletas);
+                return false;
+
+            case 6:
                 return true;
 
             default:
@@ -523,10 +547,11 @@ public class AppConcesionario {
         System.out.println();
         System.out.println("¿Qué acción quieres realizar?");
         System.out.println("*******************************");
-        System.out.println("* - 1) Añadir Camion     *");
-        System.out.println("* - 2) Eliminar Camion   *");
-        System.out.println("* - 3) Obtener Camion    *");
-        System.out.println("* - 4) Modificar Camion  *");
+        System.out.println("* - 1) Añadir Camion          *");
+        System.out.println("* - 2) Eliminar Camion        *");
+        System.out.println("* - 3) Obtener Camion         *");
+        System.out.println("* - 4) Modificar Camion       *");
+        System.out.println("* - 5) Ver lista Camion       *");
         System.out.println("* - 5) Cambiar Vehículo       *");
         System.out.println("*******************************");
         System.out.print("Opción [1, 2, 3, 4, 5]= ");
@@ -549,6 +574,7 @@ public class AppConcesionario {
                 }
                 camion = new Camion(marca, modelo, matricula, velocidad);
                 camiones.put(matricula, camion);
+                System.out.println("Añadido: "+camion);
                 return false;
 
             case 2:
@@ -557,6 +583,7 @@ public class AppConcesionario {
 
                 camion = new Camion(matricula);
                 if(camiones.containsKey(matricula)){
+                    System.out.println("Eliminado: "+camion);
                     camiones.remove(matricula, camion);
                 } else {
                     System.out.println("Lo siento, ese camion no existe en nuestro concesionario");
@@ -585,6 +612,7 @@ public class AppConcesionario {
                     return false;
                 }
 
+                System.out.println();
                 System.out.println("¿Qué quieres modificar?");
                 System.out.println("******************");
                 System.out.println("* - 1) Marca     *");
@@ -623,6 +651,10 @@ public class AppConcesionario {
                 }
         
             case 5:
+                System.out.println(camiones);
+                return false;
+
+            case 6:
                 return true;
 
             default:
