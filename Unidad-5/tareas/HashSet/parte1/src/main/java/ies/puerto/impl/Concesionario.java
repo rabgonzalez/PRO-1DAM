@@ -204,7 +204,7 @@ public class Concesionario {
         if(bicicletas.isEmpty()){
             return false;
         }
-        if(bicicletas.containsKey(bicicleta.getMatricula())){
+        if(!bicicletas.containsKey(bicicleta.getMatricula())){
             return false;
         }
         return true;

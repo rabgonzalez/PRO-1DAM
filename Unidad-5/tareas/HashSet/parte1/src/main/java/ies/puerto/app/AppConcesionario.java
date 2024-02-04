@@ -397,10 +397,6 @@ public class AppConcesionario {
         }
     }
 
-    /**
-     * Bicicletafunciona mal en case 1 y 4
-     * Camión no funciona
-     */
     public static boolean bicicleta(){
         System.out.println();
         System.out.println("¿Qué acción quieres realizar?");
@@ -433,42 +429,53 @@ public class AppConcesionario {
                 }
 
                 concesionario.addBicicleta(bicicleta);
-                System.out.println("Añadida: "+concesionario.obtenerBicicleta(matricula));
+                System.out.println("Añadido: "+concesionario.obtenerBicicleta(matricula));
                 return false;
 
             case 2:
                 System.out.print("Introduce la matrícula de la bicicleta: ");
                 matricula = scanner.next();
 
-                bicicleta = new Bicicleta(matricula);
                 if(bicicletas.containsKey(matricula)){
-                    System.out.println("Eliminada: "+concesionario.obtenerBicicleta(matricula));
-                    concesionario.removeBicicleta(bicicleta);
-                } else {
-                    System.out.println("Lo siento, esa bicicleta no existe en nuestro concesionario");
+                    for(Bicicleta bicicletaX : bicicletas.values()){
+                        if(bicicletaX.getMatricula().equals(matricula)){
+                            System.out.println("Eliminada: "+concesionario.obtenerBicicleta(matricula));
+                            concesionario.removeBicicleta(bicicleta);
+                            return false;
+                        }
+                    }
                 }
+                System.out.println("Lo siento, esa bicicleta no existe en nuestro concesionario");
                 return false;
             
             case 3:
                 System.out.print("Introduce la matrícula de la bicicleta: ");
                 matricula = scanner.next();
 
-                bicicleta = new Bicicleta(matricula);
                 if(bicicletas.containsKey(matricula)){
-                    System.out.println(concesionario.obtenerBicicleta(matricula));
-                } else {
-                    System.out.println("Lo siento, esa bicicleta no existe en nuestro concesionario");
+                    for(Bicicleta bicicletaX : bicicletas.values()){
+                        if(bicicletaX.getMatricula().equals(matricula)){
+                            System.out.println(concesionario.obtenerBicicleta(matricula));
+                            return false;
+                        }
+                    }
                 }
+                System.out.println("Lo siento, esa bicicleta no existe en nuestro concesionario");
                 return false;
         
             case 4:
                 System.out.print("Introduce la matrícula de la bicicleta: ");
                 matricula = scanner.next();
 
-                bicicleta = new Bicicleta(matricula);
                 if(!bicicletas.containsKey(matricula)){
                     System.out.println("Lo siento, esa bicicleta no existe en nuestro concesionario");
                     return false;
+                }
+
+                for(Bicicleta bicicletaX : bicicletas.values()){
+                    if(bicicletaX.getMatricula().equals(matricula)){
+                        bicicleta = bicicletaX;
+                    }
                 }
 
                 System.out.println();
@@ -486,6 +493,9 @@ public class AppConcesionario {
                         System.out.print("Introduce la nueva marca: ");
                         marca = scanner.next();
                         bicicleta.setMarca(marca);
+
+                        System.out.println(bicicleta);
+
                         return false;
 
                     case 2:
@@ -529,9 +539,9 @@ public class AppConcesionario {
         System.out.println("* - 5) Cambiar Vehículo       *");
         System.out.println("*******************************");
         System.out.print("Opción [1, 2, 3, 4, 5]= ");
-        int accionBicicleta = scanner.nextInt();
+        int accionCamion = scanner.nextInt();
 
-        switch (accionBicicleta) {
+        switch (accionCamion) {
             case 1:
                 System.out.print("1. Introduce la marca del camion: ");
                 String marca = scanner.next();
@@ -557,22 +567,28 @@ public class AppConcesionario {
                 System.out.print("Introduce la matrícula del camion: ");
                 matricula = scanner.next();
 
-                camion = new Camion(matricula);
                 if(camiones.containsKey(matricula)){
-                    System.out.println("Eliminado: "+camion);
-                    camiones.remove(matricula, camion);
-                } else {
-                    System.out.println("Lo siento, ese camion no existe en nuestro concesionario");
-                }
+                    for(Camion camionX : camiones.values()){
+                        if(camionX.getMatricula().equals(matricula)){
+                            System.out.println("Eliminado: "+camionX);
+                            concesionario.removeCamion(camionX);
+                            return false;
+                        }
+                    }
+                } 
+                System.out.println("Lo siento, ese camion no existe en nuestro concesionario");
                 return false;
             
             case 3:
                 System.out.print("Introduce la matrícula del camion: ");
                 matricula = scanner.next();
 
-                camion = new Camion(matricula);
                 if(camiones.containsKey(matricula)){
-                    System.out.println(camion);
+                    for(Camion camionX : camiones.values()){
+                        if(camionX.getMatricula().equals(matricula)){
+                            System.out.println(camionX);
+                        }
+                    }
                 } else {
                     System.out.println("Lo siento, ese camion no existe en nuestro concesionario");
                 }
@@ -582,10 +598,15 @@ public class AppConcesionario {
                 System.out.print("Introduce la matrícula del camion: ");
                 matricula = scanner.next();
 
-                camion = new Camion(matricula);
                 if(!camiones.containsKey(matricula)){
-                    System.out.println("Lo siento, ese camion no existe en nuestro concesionario");
+                    System.out.println("Lo siento, ese camión no existe en nuestro concesionario");
                     return false;
+                }
+
+                for(Camion camionX : camiones.values()){
+                    if(camionX.getMatricula().equals(matricula)){
+                        camion = camionX;
+                    }
                 }
 
                 System.out.println();
@@ -619,6 +640,8 @@ public class AppConcesionario {
                             velocidad = camion.velocidadMaxima();
                         }
                         camion.setVelocidad(velocidad);
+
+                        System.out.println(camion);
                         return false;
                 
                     default:
