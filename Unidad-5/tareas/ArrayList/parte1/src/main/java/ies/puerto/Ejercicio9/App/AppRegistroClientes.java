@@ -35,7 +35,7 @@ public class AppRegistroClientes {
 
     public Cliente buscarCliente(Cliente cliente){
         for(Cliente clienteLista:clientes){
-            if(clientes.equals(clienteLista)){
+            if(clienteLista.equals(cliente)){
                 return clienteLista;
             }
         }
