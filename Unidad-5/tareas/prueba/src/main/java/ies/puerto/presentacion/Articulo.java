@@ -8,6 +8,42 @@ public abstract class Articulo {
     private String fcaducidad;
     private float precio;
 
+    public String getNombre() {
+        return this.nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getId() {
+        return this.id;
+    }
+
+    public String getFentrada() {
+        return this.fentrada;
+    }
+
+    public void setFentrada(String fentrada) {
+        this.fentrada = fentrada;
+    }
+
+    public String getFcaducidad() {
+        return this.fcaducidad;
+    }
+
+    public void setFcaducidad(String fcaducidad) {
+        this.fcaducidad = fcaducidad;
+    }
+
+    public float getPrecio() {
+        return this.precio;
+    }
+
+    public void setPrecio(float precio) {
+        this.precio = precio;
+    }
+
     public Articulo() {
     }
 
