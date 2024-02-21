@@ -19,6 +19,7 @@ public class AppBiblioteca {
         if (existeFichero(path)) {
             try (BufferedReader br = new BufferedReader(new FileReader(articulos))) {
                 String linea;
+                
                 int i = 0;
                 while ((linea = br.readLine()) != null) {
                     if(i > 0){
