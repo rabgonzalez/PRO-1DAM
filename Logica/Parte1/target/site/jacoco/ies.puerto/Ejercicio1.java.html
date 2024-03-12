@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Ejercicio1.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">parte1</a> &gt; <a href="index.source.html" class="el_package">ies.puerto</a> &gt; <span class="el_source">Ejercicio1.java</span></div><h1>Ejercicio1.java</h1><pre class="source lang-java linenums">package ies.puerto;
+
+/**
+ * @author rabgonzalez
+ * Numeros primos
+ * Escribe un programa que se encargue de comprobar 
+ * si un número es o no primo. 
+ * Hecho esto, imprime los números primos entre 1 y 100.
+ */
+
+<span class="fc" id="L11">public class Ejercicio1 {</span>
+    
+    public boolean numeroPrimoBoolean(int numero){
+<span class="fc bfc" id="L14" title="All 2 branches covered.">        for(int i = 2; i &lt; numero; i++){</span>
+<span class="fc bfc" id="L15" title="All 2 branches covered.">            if(numero % i == 0){</span>
+<span class="fc" id="L16">                return false;</span>
+            }
+        }
+<span class="fc" id="L19">        return true;</span>
+    }
+
+    public String numerosPrimos(){
+<span class="fc" id="L23">        int contador = 0;</span>
+<span class="fc" id="L24">        String resultado = &quot;&quot;;</span>
+<span class="fc bfc" id="L25" title="All 2 branches covered.">        for(int i = 1; i &lt;= 100; i++){</span>
+<span class="fc bfc" id="L26" title="All 2 branches covered.">            for(int j = 2; j &lt; i; j++){</span>
+<span class="fc bfc" id="L27" title="All 2 branches covered.">                if(i % j == 0){</span>
+<span class="fc" id="L28">                    contador++;</span>
+                }
+            }
+
+<span class="fc bfc" id="L32" title="All 2 branches covered.">            if(contador == 0){</span>
+<span class="fc" id="L33">                resultado += i+&quot; &quot;;</span>
+            }
+<span class="fc" id="L35">            contador = 0;</span>
+        }
+<span class="fc" id="L37">        return resultado;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>
