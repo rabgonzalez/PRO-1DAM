@@ -3,12 +3,12 @@ package ies.puerto;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Ejercicio4 {
+public class Ejercicio7 {
     
-    public int contarPalabras(String texto){
-        String regex = "([A-z]+)";
+    public int mayuscula(String texto){
+        String regex = "\\s*([a-z]+)\\s*";
         Pattern pattern = Pattern.compile(regex);
-        Matcher matcher = pattern.matcher(texto);
+        Matcher matcher = pattern.matcher(regex);
 
         int contador = 0;
         while(matcher.find()){
