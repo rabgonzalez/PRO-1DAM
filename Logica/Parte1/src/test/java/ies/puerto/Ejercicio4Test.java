@@ -7,9 +7,9 @@ public class Ejercicio4Test {
     Ejercicio4 ejercicio4 = new Ejercicio4();
 
     @Test
-    public void contarPalabrasTest(){
-        String texto = "Hola me llamo Ruben";
-        int resultado = 4;
-        Assertions.assertEquals(resultado, ejercicio4.contarPalabras(texto));
+    public void contarPalabrasRepetidasTest(){
+        String texto = "Hola me llamo Ruben , aunque la gente me llama ruben";
+        int resultado = 2;
+        Assertions.assertEquals(resultado, ejercicio4.contarPalabrasRepetidas(texto));
     }
 }

@@ -1,18 +1,17 @@
 package ies.puerto;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 public class Ejercicio4 {
     
-    public int contarPalabras(String texto){
-        String regex = "([A-z]+)";
-        Pattern pattern = Pattern.compile(regex);
-        Matcher matcher = pattern.matcher(texto);
-
+    public int contarPalabrasRepetidas(String texto){
         int contador = 0;
-        while(matcher.find()){
-            contador++;
+        String[] palabras = texto.toLowerCase().split(" ");
+        
+        for(int i = 0; i < palabras.length; i++){
+            for(int j = i+1; j < palabras.length; j++){
+                if(palabras[i].equals(palabras[j])){
+                    contador++;
+                }
+            }
         }
         return contador;
     }

@@ -8,7 +8,7 @@ public class Ejercicio5Test {
 
     @ Test
     public void palindromoTest(){
-        String text = "ana lleva al oso la avell ana";
+        String text = "Ana lleva al oso la avellana";
         Assertions.assertTrue(ejercicio5.palindromo(text));
     }
 }
