@@ -20,7 +20,6 @@ public class FicheroCsv extends Fichero {
     @Override
     public List<Persona> obtenerPersonas() {
         List<Persona> personajes = new ArrayList<>();
-        Set<Poder> poderes = new HashSet<>();
         if(!existeFichero(PATH_CSV)){
             return personajes;
         }
@@ -32,6 +31,7 @@ public class FicheroCsv extends Fichero {
             while((linea = br.readLine()) != null){
                 if(filas > 0){
                     String[] array = linea.split(DELIMITADOR);
+                    Set<Poder> poderes = new HashSet<>();
                     for(int i = POSICION_PODERES; i < array.length; i++){
                         Poder poder = new Poder(array[i]);
                         poderes.add(poder);
@@ -52,11 +52,9 @@ public class FicheroCsv extends Fichero {
         if(!existeFichero(PATH_CSV)){
             return false;
         }
-        List<Persona> personajes = new ArrayList<>();
-        personajes.addAll(personas);
         File file = new File(PATH_CSV);
         try(BufferedWriter bw = new BufferedWriter(new FileWriter(file))){
-            for(Persona personaEscribir : personajes){
+            for(Persona personaEscribir : personas){
                 bw.write(personaEscribir.personaToCsv()+"\n");
             }
         } catch(IOException e){

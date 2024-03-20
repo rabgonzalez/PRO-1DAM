@@ -9,7 +9,7 @@ public class Ejercicio7Test {
     @Test
     public void mayusculaTest(){
         String texto = "hola me llamo ruben";
-        int resultado = 4;
+        String resultado = "Hola Me Llamo Ruben ";
         Assertions.assertEquals(resultado, ejercicio7.mayuscula(texto));
     }
 }

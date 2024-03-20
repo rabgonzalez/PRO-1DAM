@@ -1,19 +1,15 @@
 package ies.puerto;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class Ejercicio7 {
     
-    public int mayuscula(String texto){
-        String regex = "\\s*([a-z]+)\\s*";
-        Pattern pattern = Pattern.compile(regex);
-        Matcher matcher = pattern.matcher(regex);
+    public String mayuscula(String texto){
+        String[] palabras = texto.toLowerCase().split(" ");
+        String resultado = "";
 
-        int contador = 0;
-        while(matcher.find()){
-            contador++;
+        for(String palabra : palabras){
+            resultado += palabra.toUpperCase().charAt(0)+palabra.substring(1)+" ";
         }
-        return contador;
+        return resultado;
     }
 }

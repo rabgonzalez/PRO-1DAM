@@ -13,7 +13,7 @@ import ies.puerto.modelo.impl.Persona;
 import ies.puerto.modelo.impl.Poder;
 
 public class FicheroXmlTest {
-    FicheroCsv ficheroCsv;
+    FicheroXml ficheroXml;
     List<Persona> personas;
     Persona persona;
     Set<Poder> poderes;
@@ -22,7 +22,7 @@ public class FicheroXmlTest {
 
     @BeforeEach
     public void beforeEach(){
-        ficheroCsv = new FicheroCsv();
+        ficheroXml = new FicheroXml();
         personas = new ArrayList<>();
         poderes = new HashSet<>();
         poder1 = new Poder("poder1");
@@ -36,16 +36,16 @@ public class FicheroXmlTest {
 
     @Test
     public void obtenerPersonasTest(){
-        Assertions.assertNotNull(ficheroCsv.obtenerPersonas());
+        Assertions.assertNotNull(ficheroXml.obtenerPersonas());
     }
 
     @Test
     public void actualizarTest(){
-        Assertions.assertTrue(ficheroCsv.actualizar(personas));
+        Assertions.assertTrue(ficheroXml.actualizar(personas));
     }
 
     @Test
     public void escribirTest(){
-        Assertions.assertTrue(ficheroCsv.escribir(personas));
+        Assertions.assertTrue(ficheroXml.escribir(personas));
     }
 }
