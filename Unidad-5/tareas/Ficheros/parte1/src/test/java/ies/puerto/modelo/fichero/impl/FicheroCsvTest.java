@@ -1,37 +1,28 @@
 package ies.puerto.modelo.fichero.impl;
 
 import java.util.ArrayList;
-import java.util.HashSet;
+import java.util.Arrays;
 import java.util.List;
-import java.util.Set;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import ies.puerto.modelo.impl.Persona;
-import ies.puerto.modelo.impl.Poder;
 
 public class FicheroCsvTest {
     FicheroCsv ficheroCsv;
     List<Persona> personas;
     Persona persona;
-    Set<Poder> poderes;
-    Poder poder1;
-    Poder poder2;
+    List<String> poderes;
 
     @BeforeEach
     public void beforeEach(){
         ficheroCsv = new FicheroCsv();
         personas = new ArrayList<>();
-        poderes = new HashSet<>();
-        poder1 = new Poder("poder1");
-        poder2 = new Poder("poder2");
+        poderes = new ArrayList<>(Arrays.asList("poder1", "poder2"));
 
-        poderes.add(poder1);
-        poderes.add(poder2);
         persona = new Persona("nombre", "alias", "genero", poderes);
-        personas.add(persona);
     }
 
     @Test
@@ -40,12 +31,18 @@ public class FicheroCsvTest {
     }
 
     @Test
-    public void actualizarTest(){
-        Assertions.assertTrue(ficheroCsv.actualizar(personas));
+    public void escribirTest(){
+        personas = ficheroCsv.obtenerPersonas();
+        personas.add(persona);
+        ficheroCsv.escribir(personas);
+        Assertions.assertEquals(personas.size(), ficheroCsv.obtenerPersonas().size());
     }
 
     @Test
-    public void escribirTest(){
-        Assertions.assertTrue(ficheroCsv.escribir(personas));
+    public void actualizarTest(){
+        personas = ficheroCsv.obtenerPersonas();
+        personas.set(1, persona);
+        ficheroCsv.actualizar(personas);
+        Assertions.assertTrue(ficheroCsv.obtenerPersonas().contains(persona));
     }
 }

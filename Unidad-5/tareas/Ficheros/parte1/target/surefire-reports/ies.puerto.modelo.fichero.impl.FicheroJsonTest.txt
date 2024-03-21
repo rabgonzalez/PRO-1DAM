@@ -1,12 +1,16 @@
 -------------------------------------------------------------------------------
 Test set: ies.puerto.modelo.fichero.impl.FicheroJsonTest
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.136 s <<< FAILURE! - in ies.puerto.modelo.fichero.impl.FicheroJsonTest
-ies.puerto.modelo.fichero.impl.FicheroJsonTest.actualizarTest  Time elapsed: 0.028 s  <<< FAILURE!
-org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
-	at ies.puerto.modelo.fichero.impl.FicheroJsonTest.actualizarTest(FicheroJsonTest.java:44)
+Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.1 s <<< FAILURE! - in ies.puerto.modelo.fichero.impl.FicheroJsonTest
+ies.puerto.modelo.fichero.impl.FicheroJsonTest.obtenerPersonasTest  Time elapsed: 0.079 s  <<< ERROR!
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected a string but was BEGIN_OBJECT at line 7 column 8 path $[0].poderes[0]
+	at ies.puerto.modelo.fichero.impl.FicheroJsonTest.obtenerPersonasTest(FicheroJsonTest.java:32)
+Caused by: java.lang.IllegalStateException: Expected a string but was BEGIN_OBJECT at line 7 column 8 path $[0].poderes[0]
+	at ies.puerto.modelo.fichero.impl.FicheroJsonTest.obtenerPersonasTest(FicheroJsonTest.java:32)
 
-ies.puerto.modelo.fichero.impl.FicheroJsonTest.escribirTest  Time elapsed: 0.003 s  <<< FAILURE!
-org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
-	at ies.puerto.modelo.fichero.impl.FicheroJsonTest.escribirTest(FicheroJsonTest.java:49)
+ies.puerto.modelo.fichero.impl.FicheroJsonTest.escribirTest  Time elapsed: 0.006 s  <<< ERROR!
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected a string but was BEGIN_OBJECT at line 7 column 8 path $[0].poderes[0]
+	at ies.puerto.modelo.fichero.impl.FicheroJsonTest.escribirTest(FicheroJsonTest.java:37)
+Caused by: java.lang.IllegalStateException: Expected a string but was BEGIN_OBJECT at line 7 column 8 path $[0].poderes[0]
+	at ies.puerto.modelo.fichero.impl.FicheroJsonTest.escribirTest(FicheroJsonTest.java:37)
 

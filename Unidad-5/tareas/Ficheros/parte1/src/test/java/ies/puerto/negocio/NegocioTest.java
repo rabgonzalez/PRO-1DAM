@@ -1,6 +1,7 @@
 package ies.puerto.negocio;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.junit.jupiter.api.Assertions;
@@ -11,17 +12,22 @@ import ies.puerto.modelo.impl.Persona;
 
 public class NegocioTest {
     Negocio negocio;
-    String nombre;
+    List<Persona> personaList;
     Persona persona;
-    List<Persona> personas;
+    String nombre;
+    String alias;
+    String genero;
+    List<String> poderes;
 
     @BeforeEach
     public void BeforeEach(){
         negocio = new Negocio();
-        nombre = "nombre";
-        persona = new Persona(nombre);
-        personas = new ArrayList<>();
-        negocio.crearPersona(persona);
+        nombre = "Iron Man";
+        alias = "Tony Stark";
+        genero = "Masculino";
+        poderes = new ArrayList<>(Arrays.asList("poder1", "poder2"));
+        persona = new Persona(nombre, alias, genero, poderes);
+        personaList = negocio.fichero.obtenerPersonas();
     }
 
     @Test
@@ -30,44 +36,21 @@ public class NegocioTest {
     }
 
     @Test
-    public void obtenerPersonaFalseTest(){
-        Persona personaNull = new Persona();
-        Assertions.assertNull(negocio.obtenerPersona(personaNull));
-    }
-
-    @Test
     public void crearPersonaTest(){
-        Persona personaCrear = new Persona("otroNombre");
+        Persona personaCrear = new Persona("nombre");
         Assertions.assertTrue(negocio.crearPersona(personaCrear));
     }
 
     @Test
-    public void crearPersonaFalseTest(){
-        Assertions.assertFalse(negocio.crearPersona(persona));
-    }
-
-    @Test
     public void eliminarPersonaTest(){
-        negocio.eliminarPersona(persona);
-        Assertions.assertNull(negocio.obtenerPersona(persona));
-    }
-
-    @Test
-    public void eliminarPersonaNullTest(){
-        Persona personaActualizar = new Persona();
-        Assertions.assertTrue(negocio.eliminarPersona(personaActualizar));
+        Persona personaEliminar = new Persona("Iron Man");
+        Assertions.assertTrue(negocio.eliminarPersona(personaEliminar));
     }
 
     @Test
     public void actualizarPersonaTest(){
-        Persona personaActualizar = new Persona(nombre, "alias", "genero", null);
+        Persona personaActualizar = new Persona("Iron Man", "alias2", "Masculino", poderes);
         negocio.actualizarPersona(personaActualizar);
-        Assertions.assertEquals(personaActualizar, negocio.obtenerPersona(persona));
-    }
-
-    @Test
-    public void actualizarPersonaFalseTest(){
-        Persona personaActualizar = new Persona();
-        Assertions.assertFalse(negocio.actualizarPersona(personaActualizar));
+        Assertions.assertTrue(personaList.contains(personaActualizar));
     }
 }

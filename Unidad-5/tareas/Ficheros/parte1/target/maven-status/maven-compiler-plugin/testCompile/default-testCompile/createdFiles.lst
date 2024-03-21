@@ -2,3 +2,4 @@ ies/puerto/modelo/fichero/impl/FicheroXmlTest.class
 ies/puerto/modelo/fichero/impl/FicheroJsonTest.class
 ies/puerto/modelo/fichero/impl/FicheroCsvTest.class
 ies/puerto/negocio/NegocioTest.class
+ies/puerto/modelo/fichero/abstractas/FicheroTest.class

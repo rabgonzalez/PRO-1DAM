@@ -1,14 +1,13 @@
 package ies.puerto.modelo.impl;
 
-import java.util.Set;
-
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
 import org.simpleframework.xml.Root;
 
 import ies.puerto.utilidades.Utilidades;
 
-import java.util.HashSet;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 @Root(name="personaje")
@@ -23,16 +22,17 @@ public class Persona extends Utilidades {
     private String genero;
 
     @ElementList(name="poderes")
-    private Set<Poder> poderes;
+    private List<String> poderes;
 
-    public Persona(){}
+    public Persona(){
+        poderes = new ArrayList<>();
+    }
 
     public Persona(String nombre) {
-        poderes = new HashSet<>();
         this.nombre = nombre;
     }
 
-    public Persona(String nombre, String alias, String genero, Set<Poder> poderes) {
+    public Persona(String nombre, String alias, String genero, List<String> poderes) {
         this.nombre = nombre;
         this.alias = alias;
         this.genero = genero;
@@ -59,11 +59,11 @@ public class Persona extends Utilidades {
         this.genero = genero;
     }
 
-    public Set<Poder> getPoderes() {
+    public List<String> getPoderes() {
         return this.poderes;
     }
 
-    public void setPoderes(Set<Poder> poderes) {
+    public void setPoderes(List<String> poderes) {
         this.poderes = poderes;
     }
 

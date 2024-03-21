@@ -1,8 +1,6 @@
 package ies.puerto.modelo.fichero.impl;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,9 +20,9 @@ public class FicheroXml extends Fichero{
             return personajes;
         }
         File file = new File(PATH_XML);
-        Persister persister = new Persister(new AnnotationStrategy());
 
-        try(BufferedReader br = new BufferedReader(new FileReader(file))){
+        try{
+            Persister persister = new Persister();
             PersonaList personaList = persister.read(PersonaList.class, file);
             personajes = personaList.getPersonas();
         } catch(Exception e){
@@ -35,20 +33,18 @@ public class FicheroXml extends Fichero{
 
     @Override
     public boolean escribir(List<Persona> personas){
+        PersonaList personaList = new PersonaList(personas);
         if(!existeFichero(PATH_XML)){
             return false;
         }
-        Persister serializer = new Persister();
+        File file = new File(PATH_XML);
+
         try{
-            serializer.write(personas, new File(PATH_XML));
+            Persister persister = new Persister();
+            persister.write(personaList, file);
         } catch(Exception e){
             e.printStackTrace();
         }
         return true;
-    }
-
-    @Override
-    public boolean actualizar(List<Persona> personas){
-        return limpiarFichero(PATH_XML) && escribir(personas);
     }
 }

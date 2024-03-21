@@ -1,17 +1,19 @@
 package ies.puerto.negocio;
 
-import java.util.ArrayList;
 import java.util.List;
 
+import ies.puerto.modelo.fichero.impl.FicheroCsv;
+import ies.puerto.modelo.fichero.interfaces.IFichero;
 import ies.puerto.modelo.impl.Persona;
 import ies.puerto.negocio.interfaces.ICrudOperaciones;
 
 public class Negocio implements ICrudOperaciones{
-    Persona persona;
+    IFichero fichero;
     List<Persona> personas;
 
     public Negocio(){
-        personas = new ArrayList<>();
+        fichero = new FicheroCsv();
+        personas = fichero.obtenerPersonas();
     }
 
     @Override
@@ -36,7 +38,7 @@ public class Negocio implements ICrudOperaciones{
         if(personas.contains(persona)){
             return personas.remove(persona);
         }
-        return true;
+        return false;
     }
 
     @Override
@@ -45,7 +47,7 @@ public class Negocio implements ICrudOperaciones{
             return false;
         }
         int posicion = personas.indexOf(persona);
-        personas.add(posicion, persona);
+        personas.set(posicion, persona);
         return true;
     }
 }

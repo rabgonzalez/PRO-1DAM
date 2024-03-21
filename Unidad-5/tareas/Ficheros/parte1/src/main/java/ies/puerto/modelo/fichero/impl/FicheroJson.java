@@ -23,6 +23,7 @@ public class FicheroJson extends Fichero{
         if(!existeFichero(PATH_JSON)){
             return personajes;
         }
+
         try {
             String lectura = new String(Files.readAllBytes(Paths.get(PATH_JSON)));
             Type listType = new TypeToken<ArrayList<Persona>>(){}.getType();
@@ -41,10 +42,5 @@ public class FicheroJson extends Fichero{
             e.printStackTrace();
         }
         return true;
-    }
-
-    @Override
-    public boolean actualizar(List<Persona> personas){
-        return limpiarFichero(PATH_JSON) && escribir(personas);
     }
 }

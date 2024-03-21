@@ -3,7 +3,6 @@ ies/puerto/modelo/fichero/impl/FicheroXml.class
 ies/puerto/modelo/fichero/abstractas/Fichero.class
 ies/puerto/modelo/fichero/impl/FicheroJson$1.class
 ies/puerto/negocio/interfaces/ICrudOperaciones.class
-ies/puerto/modelo/impl/Poder.class
 ies/puerto/negocio/Negocio.class
 ies/puerto/modelo/impl/Persona.class
 ies/puerto/modelo/impl/PersonaList.class

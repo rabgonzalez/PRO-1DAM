@@ -3,17 +3,16 @@ package ies.puerto.modelo.fichero.impl;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.OutputStream;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 import ies.puerto.modelo.fichero.abstractas.Fichero;
 import ies.puerto.modelo.impl.Persona;
-import ies.puerto.modelo.impl.Poder;
 
 public class FicheroCsv extends Fichero {
     
@@ -21,25 +20,21 @@ public class FicheroCsv extends Fichero {
     public List<Persona> obtenerPersonas() {
         List<Persona> personajes = new ArrayList<>();
         if(!existeFichero(PATH_CSV)){
-            return personajes;
+            return null;
         }
         File file = new File(PATH_CSV);
 
         try(BufferedReader br = new BufferedReader(new FileReader(file))){
             String linea;
-            int filas = 0;
             while((linea = br.readLine()) != null){
-                if(filas > 0){
-                    String[] array = linea.split(DELIMITADOR);
-                    Set<Poder> poderes = new HashSet<>();
-                    for(int i = POSICION_PODERES; i < array.length; i++){
-                        Poder poder = new Poder(array[i]);
-                        poderes.add(poder);
-                    }
-                    Persona aniadirPersona = new Persona(array[POSICION_NOMBRE], array[POSICION_ALIAS], array[POSICION_GENERO], poderes);
-                    personajes.add(aniadirPersona);
+                String[] array = linea.split(DELIMITADOR);
+                List<String> poderes = new ArrayList<>();
+                
+                for(int i = POSICION_PODERES; i < array.length; i++){
+                    poderes.add(array[i]);
                 }
-                filas++;
+                Persona aniadirPersona = new Persona(array[POSICION_NOMBRE], array[POSICION_ALIAS], array[POSICION_GENERO], poderes);
+                personajes.add(aniadirPersona);
             }
         } catch(IOException e){
             e.printStackTrace();
@@ -54,8 +49,8 @@ public class FicheroCsv extends Fichero {
         }
         File file = new File(PATH_CSV);
         try(BufferedWriter bw = new BufferedWriter(new FileWriter(file))){
-            for(Persona personaEscribir : personas){
-                bw.write(personaEscribir.personaToCsv()+"\n");
+            for(Persona personaAñadir : personas){
+                bw.write(personaAñadir.personaToCsv()+"\n");
             }
         } catch(IOException e){
             e.printStackTrace();
@@ -63,7 +58,20 @@ public class FicheroCsv extends Fichero {
         return true;
     }
 
-    @Override
+    public boolean limpiarFichero(String path){
+        if(!existeFichero(path)){
+            return false;
+        }
+        File file = new File(path);
+        try(OutputStream fileOutputStream = new FileOutputStream(file)){
+            byte[] vacio =  {};
+            fileOutputStream.write(vacio);
+        } catch(IOException o){
+            o.printStackTrace();
+        }
+        return true;
+    }
+
     public boolean actualizar(List<Persona> personas) {
         if(!existeFichero(PATH_CSV)){
             return false;
