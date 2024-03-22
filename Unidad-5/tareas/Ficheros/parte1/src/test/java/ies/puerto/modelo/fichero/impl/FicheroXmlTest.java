@@ -1,6 +1,7 @@
 package ies.puerto.modelo.fichero.impl;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.junit.jupiter.api.Assertions;
@@ -19,7 +20,7 @@ public class FicheroXmlTest {
     public void beforeEach(){
         ficheroXml = new FicheroXml();
         personas = new ArrayList<>();
-        poderes = new ArrayList<>();
+        poderes = new ArrayList<>(Arrays.asList("poder1", "poder2"));
 
         persona = new Persona("nombre", "alias", "genero", poderes);
     }

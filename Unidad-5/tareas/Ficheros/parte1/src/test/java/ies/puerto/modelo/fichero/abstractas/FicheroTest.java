@@ -5,9 +5,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import ies.puerto.modelo.fichero.impl.FicheroCsv;
-import ies.puerto.utilidades.Utilidades;
 
-public class FicheroTest extends Utilidades {
+public class FicheroTest {
     Fichero fichero;
 
     @BeforeEach
@@ -17,7 +16,7 @@ public class FicheroTest extends Utilidades {
 
     @Test
     public void existeFicheroTest(){
-        Assertions.assertTrue(fichero.existeFichero(PATH_CSV));
+        Assertions.assertTrue(fichero.existeFichero(fichero.PATH_CSV));
     }
 
     @Test

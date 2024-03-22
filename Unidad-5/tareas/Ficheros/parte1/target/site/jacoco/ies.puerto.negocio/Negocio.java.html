@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Negocio.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">parte1</a> &gt; <a href="index.source.html" class="el_package">ies.puerto.negocio</a> &gt; <span class="el_source">Negocio.java</span></div><h1>Negocio.java</h1><pre class="source lang-java linenums">package ies.puerto.negocio;
+
+import java.util.List;
+
+import ies.puerto.modelo.fichero.impl.FicheroCsv;
+import ies.puerto.modelo.fichero.interfaces.IFichero;
+import ies.puerto.modelo.impl.Persona;
+import ies.puerto.negocio.interfaces.ICrudOperaciones;
+
+public class Negocio implements ICrudOperaciones{
+    IFichero fichero;
+    List&lt;Persona&gt; personas;
+
+<span class="fc" id="L14">    public Negocio(){</span>
+<span class="fc" id="L15">        fichero = new FicheroCsv();</span>
+<span class="fc" id="L16">        personas = fichero.obtenerPersonas();</span>
+<span class="fc" id="L17">    }</span>
+
+    @Override
+    public Persona obtenerPersona(Persona persona){
+<span class="pc bpc" id="L21" title="1 of 2 branches missed.">        if(!personas.contains(persona)){</span>
+<span class="nc" id="L22">            return null;</span>
+        }
+<span class="fc" id="L24">        int posicion = personas.indexOf(persona);</span>
+<span class="fc" id="L25">        return personas.get(posicion);</span>
+    }
+
+    @Override
+    public boolean crearPersona(Persona persona) {
+<span class="pc bpc" id="L30" title="1 of 2 branches missed.">        if(personas.contains(persona)){</span>
+<span class="nc" id="L31">            return false;</span>
+        }
+<span class="fc" id="L33">        return personas.add(persona);</span>
+    }
+
+    @Override
+    public boolean eliminarPersona(Persona persona) {
+<span class="pc bpc" id="L38" title="1 of 2 branches missed.">        if(personas.contains(persona)){</span>
+<span class="fc" id="L39">            return personas.remove(persona);</span>
+        }
+<span class="nc" id="L41">        return false;</span>
+    }
+
+    @Override
+    public boolean actualizarPersona(Persona persona) {
+<span class="pc bpc" id="L46" title="1 of 2 branches missed.">        if(!personas.contains(persona)){</span>
+<span class="nc" id="L47">            return false;</span>
+        }
+<span class="fc" id="L49">        int posicion = personas.indexOf(persona);</span>
+<span class="fc" id="L50">        personas.set(posicion, persona);</span>
+<span class="fc" id="L51">        return true;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>

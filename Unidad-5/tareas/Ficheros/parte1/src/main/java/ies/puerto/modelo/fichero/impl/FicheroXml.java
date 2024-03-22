@@ -4,7 +4,6 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.simpleframework.xml.convert.AnnotationStrategy;
 import org.simpleframework.xml.core.Persister;
 
 import ies.puerto.modelo.fichero.abstractas.Fichero;
@@ -40,8 +39,8 @@ public class FicheroXml extends Fichero{
         File file = new File(PATH_XML);
 
         try{
-            Persister persister = new Persister();
-            persister.write(personaList, file);
+            Persister serializer = new Persister();
+            serializer.write(personaList, file);
         } catch(Exception e){
             e.printStackTrace();
         }

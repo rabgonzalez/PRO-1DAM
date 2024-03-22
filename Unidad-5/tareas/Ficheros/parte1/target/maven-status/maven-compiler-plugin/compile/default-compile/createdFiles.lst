@@ -6,6 +6,5 @@ ies/puerto/negocio/interfaces/ICrudOperaciones.class
 ies/puerto/negocio/Negocio.class
 ies/puerto/modelo/impl/Persona.class
 ies/puerto/modelo/impl/PersonaList.class
-ies/puerto/utilidades/Utilidades.class
 ies/puerto/modelo/fichero/impl/FicheroCsv.class
 ies/puerto/modelo/fichero/impl/FicheroJson.class

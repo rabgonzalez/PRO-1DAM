@@ -37,7 +37,7 @@ public class NegocioTest {
 
     @Test
     public void crearPersonaTest(){
-        Persona personaCrear = new Persona("nombre");
+        Persona personaCrear = new Persona("nombre2");
         Assertions.assertTrue(negocio.crearPersona(personaCrear));
     }
 

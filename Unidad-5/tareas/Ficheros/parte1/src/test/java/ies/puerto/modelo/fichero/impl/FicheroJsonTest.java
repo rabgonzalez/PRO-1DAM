@@ -27,7 +27,7 @@ public class FicheroJsonTest {
 
     @Test
     public void obtenerPersonasTest(){
-        Assertions.assertNotNull(ficheroJson.obtenerPersonas());
+        Assertions.assertFalse(ficheroJson.obtenerPersonas().isEmpty());
     }
 
     @Test

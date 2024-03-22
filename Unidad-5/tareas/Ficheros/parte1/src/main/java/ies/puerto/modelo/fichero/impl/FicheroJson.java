@@ -27,7 +27,10 @@ public class FicheroJson extends Fichero{
         try {
             String lectura = new String(Files.readAllBytes(Paths.get(PATH_JSON)));
             Type listType = new TypeToken<ArrayList<Persona>>(){}.getType();
-            personajes = new Gson().fromJson(lectura, listType);
+
+            Gson gson = new Gson();
+            personajes = gson.fromJson(lectura, listType);
+
         } catch(IOException e){
             e.printStackTrace();
         }
@@ -37,7 +40,10 @@ public class FicheroJson extends Fichero{
     @Override
     public boolean escribir(List<Persona> personas){
         try(FileWriter fw = new FileWriter(PATH_JSON)){
-            new GsonBuilder().setPrettyPrinting().create().toJson(personas, fw);
+
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+            gson.toJson(personas, fw);
+
         } catch(IOException e){
             e.printStackTrace();
         }

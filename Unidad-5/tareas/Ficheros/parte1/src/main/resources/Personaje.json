@@ -7,15 +7,7 @@
       "Vuelo",
       "Armadura tecnológica avanzada",
       "Rayos láser"
-    ],
-    "DELIMITADOR": ",",
-    "PATH_CSV": "src/main/resources/Personaje.csv",
-    "PATH_XML": "src/main/resources/Personaje.xml",
-    "PATH_JSON": "src/main/resources/Personaje.json",
-    "POSICION_NOMBRE": 0,
-    "POSICION_ALIAS": 1,
-    "POSICION_GENERO": 2,
-    "POSICION_PODERES": 3
+    ]
   },
   {
     "nombre": "Spider-Man",
@@ -25,31 +17,6 @@
       "Agilidad sobrehumana",
       "Trepamuros",
       "Sentido arácnido"
-    ],
-    "DELIMITADOR": ",",
-    "PATH_CSV": "src/main/resources/Personaje.csv",
-    "PATH_XML": "src/main/resources/Personaje.xml",
-    "PATH_JSON": "src/main/resources/Personaje.json",
-    "POSICION_NOMBRE": 0,
-    "POSICION_ALIAS": 1,
-    "POSICION_GENERO": 2,
-    "POSICION_PODERES": 3
-  },
-  {
-    "nombre": "nombre",
-    "alias": "alias",
-    "genero": "genero",
-    "poderes": [
-      "poder1",
-      "poder2"
-    ],
-    "DELIMITADOR": ",",
-    "PATH_CSV": "src/main/resources/Personaje.csv",
-    "PATH_XML": "src/main/resources/Personaje.xml",
-    "PATH_JSON": "src/main/resources/Personaje.json",
-    "POSICION_NOMBRE": 0,
-    "POSICION_ALIAS": 1,
-    "POSICION_GENERO": 2,
-    "POSICION_PODERES": 3
+    ]
   }
 ]

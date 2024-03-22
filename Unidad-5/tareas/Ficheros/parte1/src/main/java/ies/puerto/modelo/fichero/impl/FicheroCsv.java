@@ -15,6 +15,10 @@ import ies.puerto.modelo.fichero.abstractas.Fichero;
 import ies.puerto.modelo.impl.Persona;
 
 public class FicheroCsv extends Fichero {
+    public final int POSICION_NOMBRE = 0;
+    public final int POSICION_ALIAS = 1;
+    public final int POSICION_GENERO = 2;
+    public final int POSICION_PODERES = 3;
     
     @Override
     public List<Persona> obtenerPersonas() {
@@ -27,7 +31,7 @@ public class FicheroCsv extends Fichero {
         try(BufferedReader br = new BufferedReader(new FileReader(file))){
             String linea;
             while((linea = br.readLine()) != null){
-                String[] array = linea.split(DELIMITADOR);
+                String[] array = linea.split(",");
                 List<String> poderes = new ArrayList<>();
                 
                 for(int i = POSICION_PODERES; i < array.length; i++){

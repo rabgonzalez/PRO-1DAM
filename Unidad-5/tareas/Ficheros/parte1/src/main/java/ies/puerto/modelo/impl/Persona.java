@@ -4,14 +4,15 @@ import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
 import org.simpleframework.xml.Root;
 
-import ies.puerto.utilidades.Utilidades;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
 @Root(name="personaje")
-public class Persona extends Utilidades {
+public class Persona {
+    public final String DELIMITADOR = ",";
+
     @Element(name="nombre")
     private String nombre;
 
@@ -21,7 +22,7 @@ public class Persona extends Utilidades {
     @Element(name="genero")
     private String genero;
 
-    @ElementList(name="poderes")
+    @ElementList(name="poderes", entry="poder")
     private List<String> poderes;
 
     public Persona(){
