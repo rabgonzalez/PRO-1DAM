@@ -2,7 +2,9 @@
 ## Tareas
 - [Break](tareas/Break)
 - [Continue](tareas/Continue)
-- [Excepciones](tareas/Excepciones/)
+- [Correo Electrónico](tareas/correoElectronico/)
 - [Date/Format/Calendar](tareas/Date-Format-Calendar/)
-- [String](tareas/String/)
+- [Excepciones](tareas/Excepciones/)
+- [Integer](tareas/Integer/)
 - [Regular Expressions](tareas/Regex/)
+- [String](tareas/String/)

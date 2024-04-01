@@ -95,6 +95,17 @@ public class Persona {
     }
 
     public String personaToCsv(){
-        return nombre+DELIMITADOR+alias+DELIMITADOR+genero+DELIMITADOR+poderes;
+        return nombre+DELIMITADOR+alias+DELIMITADOR+genero+DELIMITADOR+poderesToCsv();
+    }
+
+    public String poderesToCsv(){
+        StringBuilder stringBuilder = new StringBuilder();
+        int i = 0;
+        while(i < poderes.size() - 1){
+            stringBuilder.append(poderes.get(i)).append("\n");
+            i++;
+        }
+        stringBuilder.append(poderes.get(poderes.size()));
+        return stringBuilder.toString();
     }
 }

@@ -1,9 +1,0 @@
-GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
-parte1,ies.puerto.modelo.fichero.abstractas,Fichero,2,32,3,5,1,7,3,3,0,2
-parte1,ies.puerto.modelo.impl,PersonaList,4,12,0,0,2,5,1,3,1,3
-parte1,ies.puerto.modelo.impl,Persona,47,63,2,2,18,18,11,5,9,5
-parte1,ies.puerto.negocio,Negocio,8,67,4,4,4,15,4,5,0,5
-parte1,ies.puerto.modelo.fichero.impl,FicheroJson.new TypeToken() {...},0,6,0,0,0,1,0,1,0,1
-parte1,ies.puerto.modelo.fichero.impl,FicheroXml,10,57,2,2,6,16,2,3,0,3
-parte1,ies.puerto.modelo.fichero.impl,FicheroJson,8,57,1,1,5,14,1,3,0,3
-parte1,ies.puerto.modelo.fichero.impl,FicheroCsv,18,159,6,12,10,36,6,8,0,5

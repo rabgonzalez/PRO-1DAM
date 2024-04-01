@@ -38,11 +38,4 @@ public class FicheroCsvTest {
         Assertions.assertEquals(personas.size(), ficheroCsv.obtenerPersonas().size());
     }
 
-    @Test
-    public void actualizarTest(){
-        personas = ficheroCsv.obtenerPersonas();
-        personas.set(1, persona);
-        ficheroCsv.actualizar(personas);
-        Assertions.assertTrue(ficheroCsv.obtenerPersonas().contains(persona));
-    }
 }

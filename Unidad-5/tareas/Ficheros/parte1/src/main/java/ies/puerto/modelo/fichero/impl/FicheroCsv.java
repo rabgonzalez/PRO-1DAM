@@ -11,6 +11,8 @@ import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.google.gson.Gson;
+
 import ies.puerto.modelo.fichero.abstractas.Fichero;
 import ies.puerto.modelo.impl.Persona;
 
@@ -33,10 +35,6 @@ public class FicheroCsv extends Fichero {
             while((linea = br.readLine()) != null){
                 String[] array = linea.split(",");
                 List<String> poderes = new ArrayList<>();
-                
-                for(int i = POSICION_PODERES; i < array.length; i++){
-                    poderes.add(array[i]);
-                }
                 Persona aniadirPersona = new Persona(array[POSICION_NOMBRE], array[POSICION_ALIAS], array[POSICION_GENERO], poderes);
                 personajes.add(aniadirPersona);
             }
@@ -62,24 +60,4 @@ public class FicheroCsv extends Fichero {
         return true;
     }
 
-    public boolean limpiarFichero(String path){
-        if(!existeFichero(path)){
-            return false;
-        }
-        File file = new File(path);
-        try(OutputStream fileOutputStream = new FileOutputStream(file)){
-            byte[] vacio =  {};
-            fileOutputStream.write(vacio);
-        } catch(IOException o){
-            o.printStackTrace();
-        }
-        return true;
-    }
-
-    public boolean actualizar(List<Persona> personas) {
-        if(!existeFichero(PATH_CSV)){
-            return false;
-        }
-        return limpiarFichero(PATH_CSV) && escribir(personas);
-    }
 }
