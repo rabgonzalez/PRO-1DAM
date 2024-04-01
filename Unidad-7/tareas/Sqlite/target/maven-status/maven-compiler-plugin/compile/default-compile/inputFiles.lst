@@ -1,1 +1,5 @@
-/home/rabgonzalez/rabgonzalez/programacion/Unidad-7/tareas/Sqlite/src/main/java/ies/puerto/Main.java
+/home/rabgonzalez/rabgonzalez/programacion/Unidad-7/tareas/Sqlite/src/main/java/ies/puerto/exception/UsuarioException.java
+/home/rabgonzalez/rabgonzalez/programacion/Unidad-7/tareas/Sqlite/src/main/java/ies/puerto/modelo/impl/Usuario.java
+/home/rabgonzalez/rabgonzalez/programacion/Unidad-7/tareas/Sqlite/src/main/java/ies/puerto/modelo/abstractas/Persona.java
+/home/rabgonzalez/rabgonzalez/programacion/Unidad-7/tareas/Sqlite/src/main/java/ies/puerto/modelo/db/OperacionesDb.java
+/home/rabgonzalez/rabgonzalez/programacion/Unidad-7/tareas/Sqlite/src/main/java/ies/puerto/modelo/db/Conexion.java

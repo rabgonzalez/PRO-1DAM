@@ -1,1 +1,5 @@
-ies/puerto/Main.class
+ies/puerto/modelo/db/Conexion.class
+ies/puerto/modelo/db/OperacionesDb.class
+ies/puerto/modelo/abstractas/Persona.class
+ies/puerto/modelo/impl/Usuario.class
+ies/puerto/exception/UsuarioException.class
