@@ -1,6 +1,0 @@
-GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
-sqlite,ies.puerto.modelo.impl,Usuario,21,0,0,0,8,0,3,0,3,0
-sqlite,ies.puerto.exception,UsuarioException,9,0,0,0,4,0,2,0,2,0
-sqlite,ies.puerto.modelo.db,Conexion,23,16,0,0,8,6,1,2,1,2
-sqlite,ies.puerto.modelo.db,OperacionesDb,3,0,0,0,1,0,1,0,1,0
-sqlite,ies.puerto.modelo.abstractas,Persona,99,0,4,0,31,0,14,0,12,0
