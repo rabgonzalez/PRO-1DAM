@@ -11,8 +11,7 @@ import ies.puerto.modelo.impl.Usuario;
 
 public class OperacionesDb extends Conexion{
     
-    public OperacionesDb(String url) {
-        super(url);
+    public OperacionesDb() throws UsuarioException{
     }
 
     private Set<Usuario> obtener(String qry) throws UsuarioException{

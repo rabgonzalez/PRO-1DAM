@@ -2,23 +2,24 @@ package ies.puerto.modelo.db;
 
 import java.sql.ResultSet;
 
+import ies.puerto.config.AppConfig;
 import ies.puerto.exception.UsuarioException;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-public class Conexion {
+public class Conexion extends AppConfig{
     private String url;
     private String user;
     private String password;
     private Connection con;
 
-    public Conexion(String url){
-        this.url = "jdbc:sqlite:"+url;
+    public Conexion() throws UsuarioException{
+        this.url = "jdbc:sqlite:"+getUrl();
     }
 
-    public Conexion(String url, String user, String password) {
-        this.url = url;
+    public Conexion(String user, String password) throws UsuarioException{
+        this.url = "jdbc:sqlite:"+getUrl();
         this.user = user;
         this.password = password;
     }

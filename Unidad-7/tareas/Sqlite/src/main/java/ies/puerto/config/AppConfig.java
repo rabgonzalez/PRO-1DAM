@@ -18,4 +18,8 @@ public class AppConfig {
             throw new UsuarioException(e.getMessage());
         }
     }
+
+    public String getUrl(){
+        return this.urlDB;
+    }
 }
