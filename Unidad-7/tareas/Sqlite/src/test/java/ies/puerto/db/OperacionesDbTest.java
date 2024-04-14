@@ -12,12 +12,11 @@ import ies.puerto.modelo.impl.Usuario;
 
 public class OperacionesDbTest {
     OperacionesDb operacionesDb;
-    String urlDb = "src/main/resources/usuarios.db";
     Usuario usuario;
 
     @BeforeEach
-    public void beforeEach(){
-        operacionesDb = new OperacionesDb(urlDb);
+    public void beforeEach() throws UsuarioException{
+        operacionesDb = new OperacionesDb();
         usuario = new Usuario("11", "Jonay", 19, "Comunismo");
     }
 

@@ -1,24 +1,37 @@
 package ies.puerto.modelo.impl;
 
 import java.util.HashSet;
-import java.util.Set;
 import java.util.Objects;
+import java.util.Set;
 
 public class Personaje {
+    private int id;
     private String nombre;
     private String alias;
     private String genero;
     private Set<String> poderes;
 
-    public Personaje(){
+
+    public Personaje() {
         poderes = new HashSet<>();
     }
 
-    public Personaje(String nombre, String alias, String genero, Set<String> poderes) {
+    public Personaje(int id) {
+        poderes = new HashSet<>();
+        this.id = id;
+    }
+
+    public Personaje(int id, String nombre, String alias, String genero, Set<String> poderes) {
+        poderes = new HashSet<>();
+        this.id = id;
         this.nombre = nombre;
         this.alias = alias;
         this.genero = genero;
         this.poderes = poderes;
+    }
+
+    public int getId() {
+        return this.id;
     }
 
     public String getNombre() {
@@ -61,21 +74,22 @@ public class Personaje {
             return false;
         }
         Personaje personaje = (Personaje) o;
-        return Objects.equals(nombre, personaje.nombre) && Objects.equals(alias, personaje.alias) && Objects.equals(genero, personaje.genero) && Objects.equals(poderes, personaje.poderes);
+        return id == personaje.id;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(nombre, alias, genero, poderes);
+        return Objects.hash(id, nombre, alias, genero, poderes);
     }
 
     @Override
     public String toString() {
         return "{" +
-            " nombre='" + getNombre() + "'" +
+            " id='" + getId() + "'" +
+            ", nombre='" + getNombre() + "'" +
             ", alias='" + getAlias() + "'" +
             ", genero='" + getGenero() + "'" +
             ", poderes='" + getPoderes() + "'" +
             "}";
-    }
+    }   
 }

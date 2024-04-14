@@ -7,19 +7,20 @@ import java.util.Properties;
 import ies.puerto.excepcion.PersonajeExcepcion;
 
 public abstract class AppConexion {
-    String urlBD;
+    String urlBd;
 
     public AppConexion() throws PersonajeExcepcion {
         Properties properties = new Properties();
-        try(FileInputStream fis = new FileInputStream("src/main/resources/personajes.db")){
+
+        try(FileInputStream fis = new FileInputStream("src/main/resources/app.properties")){
             properties.load(fis);
-            urlBD = (String) properties.get("urlBD");
+            urlBd = (String) properties.get("urlBd");
         } catch(IOException e){
             throw new PersonajeExcepcion(e.getMessage());
         }
     }
 
     public String getUrl(){
-        return this.urlBD;
+        return this.urlBd;
     }
 }

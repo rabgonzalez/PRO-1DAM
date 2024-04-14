@@ -1,0 +1,5 @@
+ies/puerto/conexion/AppConexion.class
+ies/puerto/modelo/db/abstractas/Conexion.class
+ies/puerto/modelo/db/impl/OperacionesCRUD.class
+ies/puerto/excepcion/PersonajeExcepcion.class
+ies/puerto/modelo/impl/Personaje.class
