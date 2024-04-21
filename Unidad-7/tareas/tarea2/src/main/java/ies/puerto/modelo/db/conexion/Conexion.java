@@ -1,4 +1,4 @@
-package ies.puerto.modelo.db.jdbc.conexion;
+package ies.puerto.modelo.db.conexion;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

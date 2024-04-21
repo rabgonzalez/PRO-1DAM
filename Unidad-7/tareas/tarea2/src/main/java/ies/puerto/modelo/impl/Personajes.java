@@ -3,11 +3,13 @@ package ies.puerto.modelo.impl;
 import java.util.Set;
 
 import javax.persistence.*;
+
+import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
 @Table(name = "Personajes")
-public class Personajes {
+public class Personajes implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)

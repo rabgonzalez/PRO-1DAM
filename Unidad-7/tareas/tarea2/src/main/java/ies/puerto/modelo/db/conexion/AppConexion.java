@@ -1,4 +1,4 @@
-package ies.puerto.modelo.db.jdbc.conexion;
+package ies.puerto.modelo.db.conexion;
 
 import java.io.FileInputStream;
 import java.io.IOException;

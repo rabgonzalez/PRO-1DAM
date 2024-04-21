@@ -1,22 +1,24 @@
 package ies.puerto.modelo.impl;
 
 import javax.persistence.*;
+
+import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
 @Table(name = "Alias")
-public class Alias {
+public class Alias implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
     private Integer id;
-    @Column(name = "personaje_id", nullable = false)
-    private Integer personaje_id;
+    //@Column(name = "personaje_id", nullable = false)
     @Column(name = "alias", nullable = false)
     private String alias;
 
     @OneToOne
-    private Personajes personajes;
+    private Integer personaje_id;
+    //private Personajes personajes;
     
     public Alias() {
     }
@@ -25,11 +27,11 @@ public class Alias {
         this.id = id;
     }
 
-    public Alias(Integer id, Integer personaje_id, String alias, Personajes personajes) {
+    public Alias(Integer id, Integer personaje_id, String alias/**, Personajes personajes */) {
         this.id = id;
         this.personaje_id = personaje_id;
         this.alias = alias;
-        this.personajes = personajes;
+        //this.personajes = personajes;
     }
 
     public Integer getId() {
@@ -52,6 +54,7 @@ public class Alias {
         this.alias = alias;
     }
 
+    /**
     public Personajes getPersonajes() {
         return this.personajes;
     }
@@ -59,6 +62,7 @@ public class Alias {
     public void setPersonajes(Personajes personajes) {
         this.personajes = personajes;
     }
+    */
 
     @Override
     public boolean equals(Object o) {
@@ -73,7 +77,7 @@ public class Alias {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, personaje_id, alias, personajes);
+        return Objects.hash(id, personaje_id, alias/**, personajes*/);
     }
 
     @Override
@@ -82,7 +86,7 @@ public class Alias {
             " id='" + getId() + "'" +
             ", personaje_id='" + getPersonaje_id() + "'" +
             ", alias='" + getAlias() + "'" +
-            ", personajes='" + getPersonajes() + "'" +
+            //", personajes='" + getPersonajes() + "'" +
             "}";
     }
 }
