@@ -1,7 +1,5 @@
 package ies.puerto.modelo.db.hibernate;
 
-import java.util.Arrays;
-import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.*;
@@ -35,11 +33,6 @@ public class OperacionesHibernateTest {
     @BeforeEach
     public void beforeEach(){
         em = emf.createEntityManager();
-        /**
-        alias = new Alias(1, 1, "Tony Stark");
-        poder = new Poderes(1, "Vuelo", null);
-        poderes = new HashSet<>(Arrays.asList(poder));
-        */
         personaje = new Personajes(); 
         personaje.setNombre("Iron Man");
 

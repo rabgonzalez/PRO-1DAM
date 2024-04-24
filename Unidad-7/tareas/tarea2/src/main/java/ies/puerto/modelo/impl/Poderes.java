@@ -11,14 +11,23 @@ import java.util.Objects;
 @Entity
 @Table(name = "Poderes")
 public class Poderes implements Serializable {
+
+    private static final long serialVersionUID = -7250234396452258822L;
+    
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Integer id;
     @Column(name = "poder", nullable = false)
     private String poder;
 
     @ManyToMany
+    @JoinTable(name = "Personajes_Poderes",
+        joinColumns=
+            @JoinColumn(name="poder_id", referencedColumnName="id"),
+        inverseJoinColumns=
+            @JoinColumn(name="personaje_id", referencedColumnName="id")
+    )
     private Set<Personajes> personajes;
 
     public Poderes() {
@@ -28,14 +37,17 @@ public class Poderes implements Serializable {
         this.id = id;
     }
 
-    public Poderes(Integer id, String poder, Set<Personajes> personajes) {
+    public Poderes(Integer id, String poder) {
         this.id = id;
         this.poder = poder;
-        this.personajes = personajes;
     }
 
     public Integer getId() {
         return this.id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getPoder() {
@@ -62,12 +74,12 @@ public class Poderes implements Serializable {
             return false;
         }
         Poderes poderes = (Poderes) o;
-        return Objects.equals(id, poderes.id);
+        return Objects.equals(poder, poderes.poder);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, poder, personajes);
+        return Objects.hash(id, poder);
     }
 
     @Override
@@ -75,7 +87,6 @@ public class Poderes implements Serializable {
         return "{" +
             " id='" + getId() + "'" +
             ", poder='" + getPoder() + "'" +
-            ", personajes='" + getPersonajes() + "'" +
             "}";
     }    
 }

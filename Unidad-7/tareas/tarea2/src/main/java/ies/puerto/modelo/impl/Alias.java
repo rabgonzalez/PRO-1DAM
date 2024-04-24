@@ -8,17 +8,20 @@ import java.util.Objects;
 @Entity
 @Table(name = "Alias")
 public class Alias implements Serializable {
+
+    private static final long serialVersionUID = -7250234396452258822L;
+    
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Integer id;
-    //@Column(name = "personaje_id", nullable = false)
+    @Column(name = "personaje_id", insertable = false, updatable = false) 
+    private Integer personaje_id;
     @Column(name = "alias", nullable = false)
     private String alias;
 
     @OneToOne
-    private Integer personaje_id;
-    //private Personajes personajes;
+    private Personajes personaje;
     
     public Alias() {
     }
@@ -27,17 +30,17 @@ public class Alias implements Serializable {
         this.id = id;
     }
 
-    public Alias(Integer id, Integer personaje_id, String alias/**, Personajes personajes */) {
+    public Alias(Integer id, Integer personaje_id, String alias) {
         this.id = id;
         this.personaje_id = personaje_id;
         this.alias = alias;
-        //this.personajes = personajes;
     }
 
     public Integer getId() {
         return this.id;
     }
 
+    
     public Integer getPersonaje_id() {
         return this.personaje_id;
     }
@@ -54,15 +57,13 @@ public class Alias implements Serializable {
         this.alias = alias;
     }
 
-    /**
     public Personajes getPersonajes() {
-        return this.personajes;
+        return this.personaje;
     }
 
-    public void setPersonajes(Personajes personajes) {
-        this.personajes = personajes;
+    public void setPersonajes(Personajes personaje) {
+        this.personaje = personaje;
     }
-    */
 
     @Override
     public boolean equals(Object o) {
@@ -77,7 +78,7 @@ public class Alias implements Serializable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, personaje_id, alias/**, personajes*/);
+        return Objects.hash(id, personaje_id, alias);
     }
 
     @Override
@@ -86,7 +87,6 @@ public class Alias implements Serializable {
             " id='" + getId() + "'" +
             ", personaje_id='" + getPersonaje_id() + "'" +
             ", alias='" + getAlias() + "'" +
-            //", personajes='" + getPersonajes() + "'" +
             "}";
     }
 }

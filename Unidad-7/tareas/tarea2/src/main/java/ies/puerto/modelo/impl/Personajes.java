@@ -10,8 +10,11 @@ import java.util.Objects;
 @Entity
 @Table(name = "Personajes")
 public class Personajes implements Serializable {
+
+    private static final long serialVersionUID = -7250234396452258822L;
+    
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Integer id;
     @Column(name = "nombre", nullable = false)
@@ -19,10 +22,10 @@ public class Personajes implements Serializable {
     @Column(name = "genero")
     private String genero;
 
-    @ManyToMany(mappedBy = "personajes")
+    @ManyToMany(mappedBy = "personajes", cascade = CascadeType.ALL)
     private Set<Poderes> poderes;
 
-    @OneToOne(mappedBy = "personajes")
+    @OneToOne(mappedBy = "personaje")
     private Alias alias;
 
     public Personajes() {
@@ -30,6 +33,12 @@ public class Personajes implements Serializable {
 
     public Personajes(Integer id){
         this.id = id;
+    }
+
+    public Personajes(Integer id, String nombre, String genero) {
+        this.id = id;
+        this.nombre = nombre;
+        this.genero = genero;
     }
 
     public Personajes(Integer id, String nombre, String genero, Set<Poderes> poderes, Alias alias) {
@@ -42,6 +51,10 @@ public class Personajes implements Serializable {
 
     public Integer getId() {
         return this.id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getNombre() {
@@ -84,7 +97,7 @@ public class Personajes implements Serializable {
             return false;
         }
         Personajes personajes = (Personajes) o;
-        return Objects.equals(id, personajes.id);
+        return Objects.equals(nombre, personajes.nombre);
     }
 
     @Override

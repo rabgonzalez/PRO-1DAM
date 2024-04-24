@@ -1,0 +1,10 @@
+-------------------------------------------------------------------------------
+Test set: ies.puerto.modelo.db.hibernate.OperacionesHibernateTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 1.952 s <<< FAILURE! - in ies.puerto.modelo.db.hibernate.OperacionesHibernateTest
+ies.puerto.modelo.db.hibernate.OperacionesHibernateTest  Time elapsed: 1.952 s  <<< ERROR!
+javax.persistence.PersistenceException: [PersistenceUnit: pu-sqlite-jpa] Unable to build Hibernate SessionFactory
+	at ies.puerto.modelo.db.hibernate.OperacionesHibernateTest.beforeAll(OperacionesHibernateTest.java:30)
+Caused by: org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: missing column [poderes_id] in table [Personajes_Poderes]
+	at ies.puerto.modelo.db.hibernate.OperacionesHibernateTest.beforeAll(OperacionesHibernateTest.java:30)
+
