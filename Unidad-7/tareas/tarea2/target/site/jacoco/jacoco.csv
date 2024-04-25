@@ -1,0 +1,11 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+tarea2,ies.puerto.modelo.db.impl,OperacionesJDBC,128,469,10,26,36,125,10,27,1,18
+tarea2,ies.puerto.modelo.db.impl,OperacionesHibernate,26,119,3,5,6,30,3,8,0,7
+tarea2,ies.puerto.modelo.impl,Personajes,28,86,2,2,13,32,4,15,2,15
+tarea2,ies.puerto.modelo.impl,Alias,46,39,4,0,18,15,9,7,7,7
+tarea2,ies.puerto.modelo.impl,Poderes,22,51,2,2,10,18,6,8,4,8
+tarea2,ies.puerto.modelo.util,SQLiteDialect,68,127,2,0,23,29,23,2,22,2
+tarea2,ies.puerto.modelo.db.conexion,AppConexion,7,25,0,0,2,8,0,2,0,2
+tarea2,ies.puerto.modelo.db.conexion,Conexion,8,17,0,0,2,6,0,2,0,2
+tarea2,ies.puerto.modelo.db.abstractas,EntityManagerAbstract,0,21,0,4,0,6,0,4,0,2
+tarea2,ies.puerto.modelo.excepcion,PersonajeExcepcion,9,0,0,0,4,0,2,0,2,0

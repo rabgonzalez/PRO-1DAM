@@ -4,7 +4,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 
 
@@ -69,7 +68,7 @@ public class OperacionesHibernate extends EntityManagerAbstract {
     public boolean eliminarPersonaje(Personajes personaje) throws PersonajeExcepcion{
         try{
             getEm().getTransaction().begin();
-            getEm().remove(personaje);
+            getEm().remove(getEm().contains(personaje) ? personaje : getEm().merge(personaje));
             getEm().getTransaction().commit();
             return true;
         } catch(Exception e){

@@ -70,7 +70,7 @@ public class OperacionesJDBC extends Conexion {
                 Integer id = rs.getInt("id");
                 Integer personajeId = rs.getInt("personaje_id");
                 String nombre = rs.getString("alias");
-                Alias alias = new Alias(id, personajeId, nombre);
+                Alias alias = new Alias(id, new Personajes(personajeId), nombre);
                 lista.add(alias);
             }
         } catch(SQLException exception){
@@ -123,6 +123,27 @@ public class OperacionesJDBC extends Conexion {
             cerrar(rs, statement);
         }
         return id;
+    }
+
+    public Set<String> qryNombrePoderes(String qry) throws PersonajeExcepcion{
+        Set<String> lista = new HashSet<>();
+        ResultSet rs = null;
+        Statement statement = null;
+
+        try{
+            statement = conexion().createStatement();
+            rs = statement.executeQuery(qry);
+
+            while(rs.next()){
+                String nombre = rs.getString("poder");
+                lista.add(nombre);
+            }
+        } catch(SQLException exception){
+            throw new PersonajeExcepcion(exception.getMessage(), exception);
+        } finally {
+            cerrar(rs, statement);
+        }
+        return lista;
     }
 
     public String sqlPoderes(){
@@ -210,11 +231,11 @@ public class OperacionesJDBC extends Conexion {
         Integer idAlias = obtenerIdAlias(personaje.getAlias());
         personaje.getAlias().setId(idAlias);
 
-        Set<Poderes> poderes = qryPoderes(sqlPoderes());
+        Set<String> poderes = qryNombrePoderes("SELECT poder FROM Poderes");
         Set<Poderes> PersonajePoderes = personaje.getPoderes();
 
         for(Poderes poder : PersonajePoderes){
-            if(!poderes.contains(poder)){
+            if(!poderes.contains(poder.getPoder())){
                 String qryPoder = "INSERT INTO Poderes (poder) VALUES ('"+poder.getPoder()+"')";
                 actualizar(qryPoder);
 

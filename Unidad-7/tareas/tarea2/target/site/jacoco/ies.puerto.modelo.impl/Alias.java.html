@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Alias.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">tarea2</a> &gt; <a href="index.source.html" class="el_package">ies.puerto.modelo.impl</a> &gt; <span class="el_source">Alias.java</span></div><h1>Alias.java</h1><pre class="source lang-java linenums">package ies.puerto.modelo.impl;
+
+import javax.persistence.*;
+
+import java.io.Serializable;
+import java.util.Objects;
+
+@Entity
+@Table(name = &quot;Alias&quot;)
+public class Alias implements Serializable {
+
+    private static final long serialVersionUID = -7250234396452258822L;
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = &quot;id&quot;)
+    private Integer id;
+
+    @Column(name = &quot;alias&quot;)
+    private String alias;
+
+    @OneToOne
+    @JoinColumn(name = &quot;personaje_id&quot;)
+    private Personajes personaje;
+    
+<span class="fc" id="L26">    public Alias() {</span>
+<span class="fc" id="L27">    }</span>
+
+<span class="nc" id="L29">    public Alias(Integer id){</span>
+<span class="nc" id="L30">        this.id = id;</span>
+<span class="nc" id="L31">    }</span>
+
+<span class="fc" id="L33">    public Alias(Integer id, Personajes personaje, String alias) {</span>
+<span class="fc" id="L34">        this.id = id;</span>
+<span class="fc" id="L35">        this.personaje = personaje;</span>
+<span class="fc" id="L36">        this.alias = alias;</span>
+<span class="fc" id="L37">    }</span>
+    public void setId(Integer id) {
+<span class="fc" id="L39">        this.id = id;</span>
+<span class="fc" id="L40">    }</span>
+
+    public Personajes getPersonaje() {
+<span class="nc" id="L43">        return this.personaje;</span>
+    }
+
+    public void setPersonaje(Personajes personaje) {
+<span class="fc" id="L47">        this.personaje = personaje;</span>
+<span class="fc" id="L48">    }</span>
+
+    public Integer getId() {
+<span class="nc" id="L51">        return this.id;</span>
+    }
+
+    public String getAlias() {
+<span class="fc" id="L55">        return this.alias;</span>
+    }
+
+    public void setAlias(String alias) {
+<span class="fc" id="L59">        this.alias = alias;</span>
+<span class="fc" id="L60">    }</span>
+
+    public Personajes getPersonajes() {
+<span class="nc" id="L63">        return this.personaje;</span>
+    }
+
+    public void setPersonajes(Personajes personaje) {
+<span class="nc" id="L67">        this.personaje = personaje;</span>
+<span class="nc" id="L68">    }</span>
+
+    @Override
+    public boolean equals(Object o) {
+<span class="nc bnc" id="L72" title="All 2 branches missed.">        if (o == this)</span>
+<span class="nc" id="L73">            return true;</span>
+<span class="nc bnc" id="L74" title="All 2 branches missed.">        if (!(o instanceof Alias)) {</span>
+<span class="nc" id="L75">            return false;</span>
+        }
+<span class="nc" id="L77">        Alias alias = (Alias) o;</span>
+<span class="nc" id="L78">        return Objects.equals(id, alias.id);</span>
+    }
+
+    @Override
+    public int hashCode() {
+<span class="fc" id="L83">        return Objects.hash(id);</span>
+    }
+
+    @Override
+    public String toString() {
+<span class="nc" id="L88">        return &quot;{&quot; +</span>
+<span class="nc" id="L89">            &quot; id='&quot; + getId() + &quot;'&quot; +</span>
+<span class="nc" id="L90">            &quot;, personaje='&quot; + getPersonaje() + &quot;'&quot; +</span>
+<span class="nc" id="L91">            &quot;, alias='&quot; + getAlias() + &quot;'&quot; +</span>
+            &quot;}&quot;;
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>

@@ -38,6 +38,7 @@ public class OperacionesHibernateTest {
     public void beforeEach() throws PersonajeExcepcion{
         poder = new Poderes();
         alias = new Alias();
+        personaje = new Personajes(); 
 
         poder.setPoder("poderJPA");
         poderes = new HashSet<>(Arrays.asList(poder));
@@ -46,7 +47,6 @@ public class OperacionesHibernateTest {
         alias.setAlias("aliasJPA");
         alias.setPersonaje(personaje);
 
-        personaje = new Personajes(); 
         personaje.setNombre("nombreJPA");
         personaje.setGenero("generoJPA");
         personaje.setPoderes(poderes);
@@ -59,7 +59,7 @@ public class OperacionesHibernateTest {
     @Test
     public void obtenerPersonajesTest() throws PersonajeExcepcion{
         int cantidad = oh.obtenerPersonajes().size();
-        Assertions.assertEquals(2, cantidad);
+        Assertions.assertEquals(3, cantidad);
     }
 
     @Test

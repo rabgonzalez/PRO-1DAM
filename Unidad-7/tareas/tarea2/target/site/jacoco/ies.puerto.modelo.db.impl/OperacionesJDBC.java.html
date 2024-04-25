@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>OperacionesJDBC.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">tarea2</a> &gt; <a href="index.source.html" class="el_package">ies.puerto.modelo.db.impl</a> &gt; <span class="el_source">OperacionesJDBC.java</span></div><h1>OperacionesJDBC.java</h1><pre class="source lang-java linenums">package ies.puerto.modelo.db.impl;
+
+
+import java.sql.Statement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.HashSet;
+import java.util.Set;
+
+import ies.puerto.modelo.db.conexion.Conexion;
+import ies.puerto.modelo.excepcion.PersonajeExcepcion;
+import ies.puerto.modelo.impl.Alias;
+import ies.puerto.modelo.impl.Personajes;
+import ies.puerto.modelo.impl.Poderes;
+
+public class OperacionesJDBC extends Conexion {
+
+<span class="fc" id="L18">    public OperacionesJDBC() throws PersonajeExcepcion {</span>
+<span class="fc" id="L19">    }</span>
+
+    private void cerrar(ResultSet rs, Statement statement) throws PersonajeExcepcion {
+        try{
+<span class="pc bpc" id="L23" title="1 of 4 branches missed.">            if(rs != null &amp;&amp; !rs.isClosed()){</span>
+<span class="nc" id="L24">                rs.close();</span>
+            }
+<span class="pc bpc" id="L26" title="2 of 4 branches missed.">            if(statement != null &amp;&amp; !statement.isClosed()){</span>
+<span class="fc" id="L27">                statement.close();</span>
+            }
+<span class="pc bpc" id="L29" title="1 of 2 branches missed.">            if(!conexion().isClosed()){</span>
+<span class="fc" id="L30">                conexion().close();</span>
+            }
+<span class="nc" id="L32">        } catch(SQLException e){</span>
+<span class="nc" id="L33">            throw new PersonajeExcepcion(e.getMessage(), e);</span>
+<span class="fc" id="L34">        }</span>
+<span class="fc" id="L35">    }</span>
+
+    public Set&lt;Poderes&gt; qryPoderes(String qry) throws PersonajeExcepcion{
+<span class="fc" id="L38">        Set&lt;Poderes&gt; lista = new HashSet&lt;&gt;();</span>
+<span class="fc" id="L39">        ResultSet rs = null;</span>
+<span class="fc" id="L40">        Statement statement = null;</span>
+
+        try{
+<span class="fc" id="L43">            statement = conexion().createStatement();</span>
+<span class="fc" id="L44">            rs = statement.executeQuery(qry);</span>
+
+<span class="fc bfc" id="L46" title="All 2 branches covered.">            while(rs.next()){</span>
+<span class="fc" id="L47">                Integer id = rs.getInt(&quot;id&quot;);</span>
+<span class="fc" id="L48">                String nombre = rs.getString(&quot;poder&quot;);</span>
+<span class="fc" id="L49">                Poderes poder = new Poderes(id, nombre);</span>
+<span class="fc" id="L50">                lista.add(poder);</span>
+<span class="fc" id="L51">            }</span>
+<span class="nc" id="L52">        } catch(SQLException exception){</span>
+<span class="nc" id="L53">            throw new PersonajeExcepcion(exception.getMessage(), exception);</span>
+        } finally {
+<span class="fc" id="L55">            cerrar(rs, statement);</span>
+        }
+<span class="fc" id="L57">        return lista;</span>
+    }
+
+    public Set&lt;Alias&gt; qryAlias(String qry) throws PersonajeExcepcion{
+<span class="fc" id="L61">        Set&lt;Alias&gt; lista = new HashSet&lt;&gt;();</span>
+<span class="fc" id="L62">        ResultSet rs = null;</span>
+<span class="fc" id="L63">        Statement statement = null;</span>
+
+        try{
+<span class="fc" id="L66">            statement = conexion().createStatement();</span>
+<span class="fc" id="L67">            rs = statement.executeQuery(qry);</span>
+
+<span class="fc bfc" id="L69" title="All 2 branches covered.">            while(rs.next()){</span>
+<span class="fc" id="L70">                Integer id = rs.getInt(&quot;id&quot;);</span>
+<span class="fc" id="L71">                Integer personajeId = rs.getInt(&quot;personaje_id&quot;);</span>
+<span class="fc" id="L72">                String nombre = rs.getString(&quot;alias&quot;);</span>
+<span class="fc" id="L73">                Alias alias = new Alias(id, new Personajes(personajeId), nombre);</span>
+<span class="fc" id="L74">                lista.add(alias);</span>
+<span class="fc" id="L75">            }</span>
+<span class="nc" id="L76">        } catch(SQLException exception){</span>
+<span class="nc" id="L77">            throw new PersonajeExcepcion(exception.getMessage(), exception);</span>
+        } finally {
+<span class="fc" id="L79">            cerrar(rs, statement);</span>
+        }
+<span class="fc" id="L81">        return lista;</span>
+    }
+
+    public Set&lt;Personajes&gt; qryPersonaje(String qry) throws PersonajeExcepcion{
+<span class="nc" id="L85">        Set&lt;Personajes&gt; lista = new HashSet&lt;&gt;();</span>
+<span class="nc" id="L86">        ResultSet rs = null;</span>
+<span class="nc" id="L87">        Statement statement = null;</span>
+
+        try{
+<span class="nc" id="L90">            statement = conexion().createStatement();</span>
+<span class="nc" id="L91">            rs = statement.executeQuery(qry);</span>
+
+<span class="nc bnc" id="L93" title="All 2 branches missed.">            while(rs.next()){</span>
+<span class="nc" id="L94">                Integer id = rs.getInt(&quot;id&quot;);</span>
+<span class="nc" id="L95">                String nombre = rs.getString(&quot;nombre&quot;);</span>
+<span class="nc" id="L96">                String genero = rs.getString(&quot;genero&quot;);</span>
+<span class="nc" id="L97">                Personajes personaje = new Personajes(id, nombre, genero);</span>
+<span class="nc" id="L98">                lista.add(personaje);</span>
+<span class="nc" id="L99">            }</span>
+<span class="nc" id="L100">        } catch(SQLException exception){</span>
+<span class="nc" id="L101">            throw new PersonajeExcepcion(exception.getMessage(), exception);</span>
+        } finally {
+<span class="nc" id="L103">            cerrar(rs, statement);</span>
+        }
+<span class="nc" id="L105">        return lista;</span>
+    }
+
+    public Integer qryId(String qry) throws PersonajeExcepcion{
+<span class="fc" id="L109">        Integer id = 0;</span>
+<span class="fc" id="L110">        ResultSet rs = null;</span>
+<span class="fc" id="L111">        Statement statement = null;</span>
+
+        try{
+<span class="fc" id="L114">            statement = conexion().createStatement();</span>
+<span class="fc" id="L115">            rs = statement.executeQuery(qry);</span>
+
+<span class="fc bfc" id="L117" title="All 2 branches covered.">            while(rs.next()){</span>
+<span class="fc" id="L118">                id = rs.getInt(&quot;id&quot;);</span>
+            }
+<span class="nc" id="L120">        } catch(SQLException exception){</span>
+<span class="nc" id="L121">            throw new PersonajeExcepcion(exception.getMessage(), exception);</span>
+        } finally {
+<span class="fc" id="L123">            cerrar(rs, statement);</span>
+        }
+<span class="fc" id="L125">        return id;</span>
+    }
+
+    public Set&lt;String&gt; qryNombrePoderes(String qry) throws PersonajeExcepcion{
+<span class="fc" id="L129">        Set&lt;String&gt; lista = new HashSet&lt;&gt;();</span>
+<span class="fc" id="L130">        ResultSet rs = null;</span>
+<span class="fc" id="L131">        Statement statement = null;</span>
+
+        try{
+<span class="fc" id="L134">            statement = conexion().createStatement();</span>
+<span class="fc" id="L135">            rs = statement.executeQuery(qry);</span>
+
+<span class="fc bfc" id="L137" title="All 2 branches covered.">            while(rs.next()){</span>
+<span class="fc" id="L138">                String nombre = rs.getString(&quot;poder&quot;);</span>
+<span class="fc" id="L139">                lista.add(nombre);</span>
+<span class="fc" id="L140">            }</span>
+<span class="nc" id="L141">        } catch(SQLException exception){</span>
+<span class="nc" id="L142">            throw new PersonajeExcepcion(exception.getMessage(), exception);</span>
+        } finally {
+<span class="fc" id="L144">            cerrar(rs, statement);</span>
+        }
+<span class="fc" id="L146">        return lista;</span>
+    }
+
+    public String sqlPoderes(){
+<span class="fc" id="L150">        return &quot;SELECT p.id, p.poder FROM Poderes AS p INNER JOIN Personajes_Poderes AS pp ON p.id=pp.poder_id INNER JOIN Personajes AS pe ON pe.id=pp.personaje_id&quot;;</span>
+    }
+
+    public String sqlAlias(){
+<span class="fc" id="L154">        return &quot;SELECT a.id, a.personaje_id, a.alias FROM Alias AS a INNER JOIN Personajes AS p ON a.personaje_id=p.id&quot;;</span>
+    }
+
+    public Set&lt;Personajes&gt; qryPersonajes(String qry) throws PersonajeExcepcion{
+<span class="fc" id="L158">        Set&lt;Personajes&gt; lista = new HashSet&lt;&gt;();</span>
+<span class="fc" id="L159">        ResultSet rs = null;</span>
+<span class="fc" id="L160">        Statement statement = null;</span>
+
+        try{
+<span class="fc" id="L163">            statement = conexion().createStatement();</span>
+<span class="fc" id="L164">            rs = statement.executeQuery(qry);</span>
+
+<span class="fc bfc" id="L166" title="All 2 branches covered.">            while(rs.next()){</span>
+<span class="fc" id="L167">                Integer id = rs.getInt(&quot;id&quot;);</span>
+<span class="fc" id="L168">                String nombre = rs.getString(&quot;nombre&quot;);</span>
+<span class="fc" id="L169">                String genero = rs.getString(&quot;genero&quot;);</span>
+<span class="fc" id="L170">                Personajes personaje = new Personajes(id, nombre, genero, qryPoderes(sqlPoderes()+&quot; WHERE pe.id=&quot;+id+&quot;&quot;), qryAlias(sqlAlias()+&quot; WHERE p.id=&quot;+id+&quot;&quot;).iterator().next());</span>
+<span class="fc" id="L171">                lista.add(personaje);</span>
+<span class="fc" id="L172">            }</span>
+<span class="nc" id="L173">        } catch(SQLException exception){</span>
+<span class="nc" id="L174">            throw new PersonajeExcepcion(exception.getMessage(), exception);</span>
+        } finally {
+<span class="fc" id="L176">            cerrar(rs, statement);</span>
+        }
+<span class="fc" id="L178">        return lista;</span>
+    }
+
+    public void actualizar(String qry) throws PersonajeExcepcion{
+<span class="fc" id="L182">        Statement statement = null;</span>
+
+        try{
+<span class="fc" id="L185">            statement = conexion().createStatement();</span>
+<span class="fc" id="L186">            statement.executeUpdate(qry);</span>
+<span class="nc" id="L187">        } catch(SQLException e){</span>
+<span class="nc" id="L188">            throw new PersonajeExcepcion(e.getMessage(), e);</span>
+        } finally {
+<span class="fc" id="L190">            cerrar(null, statement);</span>
+        }
+<span class="fc" id="L192">    }</span>
+
+    public Set&lt;Personajes&gt; obtenerPersonajes() throws PersonajeExcepcion{
+<span class="fc" id="L195">        String qry = &quot;SELECT p.id, p.nombre, p.genero FROM Personajes AS p&quot;;</span>
+<span class="fc" id="L196">        return qryPersonajes(qry);</span>
+    }
+
+    public Personajes obtenerPersonaje(Personajes personaje) throws PersonajeExcepcion{
+<span class="fc" id="L200">        String qry = &quot;SELECT p.id, p.nombre, p.genero FROM Personajes AS p WHERE p.id='&quot;+personaje.getId()+&quot;'&quot;;</span>
+<span class="fc" id="L201">        Set&lt;Personajes&gt; resultado = qryPersonajes(qry);</span>
+<span class="fc" id="L202">        return resultado.iterator().next();</span>
+    }
+
+    public Integer obtenerIdPersonaje(Personajes personaje) throws PersonajeExcepcion{
+<span class="fc" id="L206">        return qryId(&quot;SELECT id FROM Personajes WHERE nombre='&quot;+personaje.getNombre()+&quot;'&quot;);</span>
+    }
+
+    public Integer obtenerIdPoder(Poderes poder) throws PersonajeExcepcion{
+<span class="fc" id="L210">        return qryId(&quot;SELECT id FROM Poderes WHERE poder='&quot;+poder.getPoder()+&quot;'&quot;);</span>
+    }
+
+    public Integer obtenerIdAlias(Alias alias) throws PersonajeExcepcion{
+<span class="fc" id="L214">        return qryId(&quot;SELECT id FROM Alias WHERE alias='&quot;+alias.getAlias()+&quot;'&quot;);</span>
+    }
+
+    public void insertarPersonaje(Personajes personaje) throws PersonajeExcepcion{
+<span class="pc bpc" id="L218" title="1 of 2 branches missed.">        if(obtenerPersonajes().contains(personaje)){</span>
+<span class="nc" id="L219">            return;</span>
+        }
+
+<span class="fc" id="L222">        String qryPersonaje = &quot;INSERT INTO Personajes (nombre, genero) VALUES ('&quot;+personaje.getNombre()+&quot;', '&quot;+personaje.getGenero()+&quot;')&quot;;</span>
+<span class="fc" id="L223">        actualizar(qryPersonaje);</span>
+
+<span class="fc" id="L225">        Integer idPersonaje = obtenerIdPersonaje(personaje);</span>
+<span class="fc" id="L226">        personaje.setId(idPersonaje);</span>
+
+<span class="fc" id="L228">        String qryAlias = &quot;INSERT INTO Alias (personaje_id, alias) VALUES (&quot;+idPersonaje+&quot;, '&quot;+personaje.getAlias().getAlias()+&quot;')&quot;;</span>
+<span class="fc" id="L229">        actualizar(qryAlias);</span>
+
+<span class="fc" id="L231">        Integer idAlias = obtenerIdAlias(personaje.getAlias());</span>
+<span class="fc" id="L232">        personaje.getAlias().setId(idAlias);</span>
+
+<span class="fc" id="L234">        Set&lt;String&gt; poderes = qryNombrePoderes(&quot;SELECT poder FROM Poderes&quot;);</span>
+<span class="fc" id="L235">        Set&lt;Poderes&gt; PersonajePoderes = personaje.getPoderes();</span>
+
+<span class="fc bfc" id="L237" title="All 2 branches covered.">        for(Poderes poder : PersonajePoderes){</span>
+<span class="fc bfc" id="L238" title="All 2 branches covered.">            if(!poderes.contains(poder.getPoder())){</span>
+<span class="fc" id="L239">                String qryPoder = &quot;INSERT INTO Poderes (poder) VALUES ('&quot;+poder.getPoder()+&quot;')&quot;;</span>
+<span class="fc" id="L240">                actualizar(qryPoder);</span>
+
+<span class="fc" id="L242">                Integer idPoder = obtenerIdPoder(poder);</span>
+<span class="fc" id="L243">                poder.setId(idPoder);</span>
+
+<span class="fc" id="L245">                String qryPersonajePoder = &quot;INSERT INTO Personajes_Poderes VALUES (&quot;+idPersonaje+&quot;, &quot;+idPoder+&quot;)&quot;;</span>
+<span class="fc" id="L246">                actualizar(qryPersonajePoder);</span>
+            }
+<span class="fc" id="L248">        }</span>
+<span class="fc" id="L249">    }</span>
+
+    public void actualizarPersonaje(Personajes personaje) throws PersonajeExcepcion{
+<span class="pc bpc" id="L252" title="1 of 2 branches missed.">        if(!obtenerPersonajes().contains(personaje)){</span>
+<span class="nc" id="L253">            return;</span>
+        }
+
+<span class="fc" id="L256">        String qry = &quot;UPDATE Personajes SET nombre='&quot;+personaje.getNombre()+&quot;', genero='&quot;+personaje.getGenero()+&quot;' WHERE id=&quot;+personaje.getId()+&quot;&quot;;</span>
+<span class="fc" id="L257">        actualizar(qry);</span>
+
+<span class="fc" id="L259">        String qryAlias = &quot;UPDATE Alias SET alias='&quot;+personaje.getAlias().getAlias()+&quot;' WHERE personaje_id=&quot;+personaje.getId()+&quot;&quot;;</span>
+<span class="fc" id="L260">        actualizar(qryAlias);</span>
+
+<span class="fc" id="L262">        Set&lt;Poderes&gt; poderes = qryPoderes(sqlPoderes());</span>
+<span class="fc" id="L263">        Set&lt;Poderes&gt; personajePoderes = personaje.getPoderes();</span>
+
+<span class="fc bfc" id="L265" title="All 2 branches covered.">        for(Poderes poder : personajePoderes){</span>
+<span class="pc bpc" id="L266" title="1 of 2 branches missed.">            if(poderes.contains(poder)){</span>
+<span class="nc" id="L267">                String qryPoder = &quot;UPDATE Poderes SET poder='&quot;+poder.getPoder()+&quot;' WHERE id=&quot;+poder.getId()+&quot;&quot;; </span>
+<span class="nc" id="L268">                actualizar(qryPoder);</span>
+            }
+<span class="fc" id="L270">        }</span>
+<span class="fc" id="L271">    }</span>
+
+    public void eliminarPersonaje(Personajes personaje) throws PersonajeExcepcion{
+<span class="pc bpc" id="L274" title="1 of 2 branches missed.">        if(!obtenerPersonajes().contains(personaje)){</span>
+<span class="nc" id="L275">            return;</span>
+        }
+        
+<span class="fc" id="L278">        String qryPersonaje = &quot;DELETE FROM Personajes WHERE id=&quot;+personaje.getId()+&quot;&quot;;</span>
+<span class="fc" id="L279">        actualizar(qryPersonaje);</span>
+
+<span class="fc" id="L281">        String qryAlias = &quot;DELETE FROM Alias WHERE personaje_id=&quot;+personaje.getId()+&quot;&quot;;</span>
+<span class="fc" id="L282">        actualizar(qryAlias);</span>
+
+<span class="fc" id="L284">        String qryPersonajePoder = &quot;DELETE FROM Personajes_Poderes WHERE personaje_id=&quot;+personaje.getId()+&quot;&quot;;</span>
+<span class="fc" id="L285">        actualizar(qryPersonajePoder);</span>
+<span class="fc" id="L286">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>

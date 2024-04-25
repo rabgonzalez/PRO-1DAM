@@ -13,14 +13,14 @@ public class Alias implements Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
+    @Column(name = "id")
     private Integer id;
-    @Column(name = "personaje_id", insertable = false, updatable = false) 
-    private Integer personaje_id;
-    @Column(name = "alias", nullable = false)
+
+    @Column(name = "alias")
     private String alias;
 
     @OneToOne
+    @JoinColumn(name = "personaje_id")
     private Personajes personaje;
     
     public Alias() {
@@ -30,9 +30,9 @@ public class Alias implements Serializable {
         this.id = id;
     }
 
-    public Alias(Integer id, Integer personaje_id, String alias) {
+    public Alias(Integer id, Personajes personaje, String alias) {
         this.id = id;
-        this.personaje_id = personaje_id;
+        this.personaje = personaje;
         this.alias = alias;
     }
     public void setId(Integer id) {
@@ -49,14 +49,6 @@ public class Alias implements Serializable {
 
     public Integer getId() {
         return this.id;
-    }
-    
-    public Integer getPersonaje_id() {
-        return this.personaje_id;
-    }
-
-    public void setPersonaje_id(Integer personaje_id) {
-        this.personaje_id = personaje_id;
     }
 
     public String getAlias() {
@@ -95,7 +87,7 @@ public class Alias implements Serializable {
     public String toString() {
         return "{" +
             " id='" + getId() + "'" +
-            ", personaje_id='" + getPersonaje_id() + "'" +
+            ", personaje='" + getPersonaje() + "'" +
             ", alias='" + getAlias() + "'" +
             "}";
     }
