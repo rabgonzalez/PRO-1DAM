@@ -1,8 +1,10 @@
+ies/puerto/modelo/excepcion/PersonajeExcepcion.class
+ies/puerto/modelo/impl/Poderes.class
+ies/puerto/modelo/util/SQLiteDialect.class
+ies/puerto/modelo/db/impl/OperacionesHibernate.class
 ies/puerto/modelo/db/conexion/AppConexion.class
 ies/puerto/modelo/db/impl/OperacionesJDBC.class
 ies/puerto/modelo/impl/Personajes.class
 ies/puerto/modelo/db/conexion/Conexion.class
-ies/puerto/modelo/excepcion/PersonajeExcepcion.class
-ies/puerto/modelo/impl/Poderes.class
+ies/puerto/modelo/db/abstractas/EntityManagerAbstract.class
 ies/puerto/modelo/impl/Alias.class
-ies/puerto/modelo/util/SQLiteDialect.class

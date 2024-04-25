@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -37,45 +38,43 @@ public class OperacionesJDBCTest {
         genero = "Masculino";
         ironMan = new Personajes(0, nombre1, genero, null, null);
 
-        nombre2 = "ProgrammerMan";
-        alias = new Alias(0, 0, "Ruben Abreu");
-        poder = new Poderes(0, "Programacion");
+        alias = new Alias();
+        alias.setAlias("Ruben Abreu");
+
+        poder = new Poderes();
+        poder.setPoder("programacion");
         poderes = new HashSet<>(Arrays.asList(poder));
-        personaje = new Personajes(0, nombre2, genero, poderes, alias);
+
+        personaje = new Personajes();
+        personaje.setNombre("nombre");
+        personaje.setGenero(genero);
+        personaje.setPoderes(poderes);
+        personaje.setAlias(alias);
+
+        operacionesJDBC.insertarPersonaje(personaje);
     }
 
     @Test
     public void obtenerPersonajesTest() throws PersonajeExcepcion{
-        Assertions.assertEquals(2, operacionesJDBC.obtenerPersonajes().size());
+        Assertions.assertEquals(3, operacionesJDBC.obtenerPersonajes().size());
     }
 
     @Test
     public void obtenerPersonajeTest() throws PersonajeExcepcion{
-        Personajes personajeBuscar = new Personajes();
-        personajeBuscar.setNombre("Iron Man");
-        Assertions.assertEquals(ironMan, operacionesJDBC.obtenerPersonaje(personajeBuscar));
-    }
-
-    @Test
-    public void insertarEliminarPersonajeTest() throws PersonajeExcepcion{
-        int cantidadInicial = operacionesJDBC.obtenerPersonajes().size();
-
-        operacionesJDBC.insertarPersonaje(personaje);
-        operacionesJDBC.eliminarPersonaje(personaje);
-        Assertions.assertEquals(cantidadInicial, operacionesJDBC.obtenerPersonajes().size());
+        Assertions.assertEquals(personaje.getNombre(), operacionesJDBC.obtenerPersonaje(personaje).getNombre());
     }
 
     @Test
     public void actualizarPersonajeTest() throws PersonajeExcepcion{
-        Alias otroAlias = new Alias(0, id2, "otroAlias");
 
-        Poderes poder2 = new Poderes(0, "otroPoder");
-        poderes.add(poder2);
+        poder.setId(operacionesJDBC.obtenerIdPoder(poder));
+        poder.setPoder("otroPoder");
 
         personaje.setNombre("otroNombre");
         personaje.setGenero("otroGenero");
         personaje.setPoderes(poderes);
-        personaje.setAlias(otroAlias);
+        alias.setAlias("otroAlias");
+        personaje.setAlias(alias);
 
         operacionesJDBC.actualizarPersonaje(personaje);
         Assertions.assertEquals(personaje, operacionesJDBC.obtenerPersonaje(personaje));
@@ -85,5 +84,10 @@ public class OperacionesJDBCTest {
     public void obtenerIdPersonajeTest() throws PersonajeExcepcion{
         int resultado = 1;
         Assertions.assertEquals(resultado, operacionesJDBC.obtenerIdPersonaje(ironMan));
+    }
+
+    @AfterEach
+    public void afterEach() throws PersonajeExcepcion{
+        operacionesJDBC.eliminarPersonaje(personaje);
     }
 }

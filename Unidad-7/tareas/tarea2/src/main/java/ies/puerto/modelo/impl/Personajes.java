@@ -25,7 +25,7 @@ public class Personajes implements Serializable {
     @ManyToMany(mappedBy = "personajes", cascade = CascadeType.ALL)
     private Set<Poderes> poderes;
 
-    @OneToOne(mappedBy = "personaje")
+    @OneToOne(mappedBy = "personaje", cascade = CascadeType.ALL)
     private Alias alias;
 
     public Personajes() {
@@ -97,12 +97,12 @@ public class Personajes implements Serializable {
             return false;
         }
         Personajes personajes = (Personajes) o;
-        return Objects.equals(nombre, personajes.nombre);
+        return Objects.equals(id, personajes.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, nombre, genero, poderes, alias);
+        return Objects.hash(id);
     }
 
     @Override

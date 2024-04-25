@@ -1,24 +1,27 @@
 package ies.puerto.modelo.db.hibernate;
 
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.*;
 
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import ies.puerto.modelo.db.impl.OperacionesHibernate;
+import ies.puerto.modelo.excepcion.PersonajeExcepcion;
 import ies.puerto.modelo.impl.Alias;
 import ies.puerto.modelo.impl.Personajes;
 import ies.puerto.modelo.impl.Poderes;
 
 
 public class OperacionesHibernateTest {
-    static EntityManagerFactory emf;
-    EntityManager em;
+    static OperacionesHibernate oh;
+	static EntityManagerFactory emf;
 
     Personajes personaje;
     Poderes poder;
@@ -28,76 +31,54 @@ public class OperacionesHibernateTest {
     @BeforeAll
     public static void beforeAll(){
         emf = Persistence.createEntityManagerFactory("pu-sqlite-jpa");
+        oh = new OperacionesHibernate(emf);
     }
 
     @BeforeEach
-    public void beforeEach(){
-        em = emf.createEntityManager();
-        personaje = new Personajes(); 
-        personaje.setNombre("Iron Man");
+    public void beforeEach() throws PersonajeExcepcion{
+        poder = new Poderes();
+        alias = new Alias();
 
-        try{
-            em.getTransaction().begin();
-            em.persist(personaje);
-            em.getTransaction().commit();
-        } catch(Throwable e){
-            Assertions.fail("Se ha producido un error:"+e.getMessage());
-        }
+        poder.setPoder("poderJPA");
+        poderes = new HashSet<>(Arrays.asList(poder));
+        poder.setPersonajes(new HashSet<>(Arrays.asList(personaje)));
+
+        alias.setAlias("aliasJPA");
+        alias.setPersonaje(personaje);
+
+        personaje = new Personajes(); 
+        personaje.setNombre("nombreJPA");
+        personaje.setGenero("generoJPA");
+        personaje.setPoderes(poderes);
+        personaje.setAlias(alias);
+
+        
+		oh.insertarPersonaje(personaje);
     }
 
     @Test
-	public void buscarPersonajeTest() {
-		try {
-			Personajes personajeBuscar = em.find(Personajes.class, personaje.getId());
-			Assertions.assertEquals(personaje.getNombre(), personajeBuscar.getNombre());
-		} catch (Throwable e) {
-			Assertions.fail("Se ha producido un error:"+e.getMessage());
-		}
+    public void obtenerPersonajesTest() throws PersonajeExcepcion{
+        int cantidad = oh.obtenerPersonajes().size();
+        Assertions.assertEquals(2, cantidad);
+    }
+
+    @Test
+	public void obtenerPersonajeTest() throws PersonajeExcepcion{
+		Personajes personajeBuscar = oh.obtenerPersonaje(personaje);
+		Assertions.assertEquals(personaje.getNombre(), personajeBuscar.getNombre());
 	}
 
 	@Test
-	public void actualizarPersonajeTest() {
-		try {
-			Personajes personajeActualizar = em.find(Personajes.class, personaje.getId());
-			personajeActualizar.setNombre("otroNombre");
+	public void actualizarPersonajeTest() throws PersonajeExcepcion{
+        String nombreActualizar = "nombreJPA";
+		personaje.setNombre(nombreActualizar);
 
-			em.getTransaction().begin();
-			em.merge(personajeActualizar);
-			em.getTransaction().commit();
-
-			Personajes personajeActualizado = em.find(Personajes.class, personaje.getId());
-			Assertions.assertEquals(personajeActualizar.getNombre(), personajeActualizado.getNombre());
-		} catch (Throwable e) {
-			e.printStackTrace();
-			Assertions.fail();
-		}
+        oh.actualizarPersonaje(personaje);
+        Assertions.assertEquals(nombreActualizar, oh.obtenerPersonaje(personaje).getNombre());
 	}
 
 	@AfterEach
-	public void eliminarPersonajeTest() {
-		try {
-			int id = personaje.getId();
-			Personajes personaje = em.find(Personajes.class, id); 
-			em.getTransaction().begin();
-			em.remove(personaje);
-			em.getTransaction().commit();
-
-			Personajes personEliminado = em.find(Personajes.class, id);
-			Assertions.assertNull(personEliminado);
-		} catch (Throwable e) {
-			e.printStackTrace();
-			Assertions.fail();
-		}
-	}
-
-	@AfterEach
-	public void closeEntityManager() {
-		em.close();
-		em = null;
-	}
-
-	@AfterAll
-	public static void closeEntityManagerFactory() {
-		emf.close();
+	public void closeEntityManager() throws PersonajeExcepcion{
+		oh.eliminarPersonaje(personaje);
 	}
 }

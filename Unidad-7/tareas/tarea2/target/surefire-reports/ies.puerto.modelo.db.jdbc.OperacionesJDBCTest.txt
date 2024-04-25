@@ -1,20 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: ies.puerto.modelo.db.jdbc.OperacionesJDBCTest
 -------------------------------------------------------------------------------
-Tests run: 5, Failures: 0, Errors: 3, Skipped: 0, Time elapsed: 0.417 s <<< FAILURE! - in ies.puerto.modelo.db.jdbc.OperacionesJDBCTest
-ies.puerto.modelo.db.jdbc.OperacionesJDBCTest.insertarPersonajeTest  Time elapsed: 0.295 s  <<< ERROR!
-ies.puerto.modelo.excepcion.PersonajeExcepcion: [SQLITE_ERROR] SQL error or missing database (unrecognized token: "'Ruben Abreu'')")
-	at ies.puerto.modelo.db.jdbc.OperacionesJDBCTest.insertarPersonajeTest(OperacionesJDBCTest.java:71)
-Caused by: org.sqlite.SQLiteException: [SQLITE_ERROR] SQL error or missing database (unrecognized token: "'Ruben Abreu'')")
-	at ies.puerto.modelo.db.jdbc.OperacionesJDBCTest.insertarPersonajeTest(OperacionesJDBCTest.java:71)
-
-ies.puerto.modelo.db.jdbc.OperacionesJDBCTest.actualizarPersonajeTest  Time elapsed: 0.021 s  <<< ERROR!
+Tests run: 4, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.545 s <<< FAILURE! - in ies.puerto.modelo.db.jdbc.OperacionesJDBCTest
+ies.puerto.modelo.db.jdbc.OperacionesJDBCTest.obtenerPersonajeTest  Time elapsed: 0.054 s  <<< ERROR!
 java.util.NoSuchElementException
-	at ies.puerto.modelo.db.jdbc.OperacionesJDBCTest.actualizarPersonajeTest(OperacionesJDBCTest.java:80)
-
-ies.puerto.modelo.db.jdbc.OperacionesJDBCTest.insertarEliminarPersonajeTest  Time elapsed: 0.032 s  <<< ERROR!
-ies.puerto.modelo.excepcion.PersonajeExcepcion: [SQLITE_ERROR] SQL error or missing database (unrecognized token: "'Ruben Abreu'')")
-	at ies.puerto.modelo.db.jdbc.OperacionesJDBCTest.insertarEliminarPersonajeTest(OperacionesJDBCTest.java:62)
-Caused by: org.sqlite.SQLiteException: [SQLITE_ERROR] SQL error or missing database (unrecognized token: "'Ruben Abreu'')")
-	at ies.puerto.modelo.db.jdbc.OperacionesJDBCTest.insertarEliminarPersonajeTest(OperacionesJDBCTest.java:62)
+	at ies.puerto.modelo.db.jdbc.OperacionesJDBCTest.obtenerPersonajeTest(OperacionesJDBCTest.java:66)
 

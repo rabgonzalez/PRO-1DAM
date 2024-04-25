@@ -35,11 +35,21 @@ public class Alias implements Serializable {
         this.personaje_id = personaje_id;
         this.alias = alias;
     }
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Personajes getPersonaje() {
+        return this.personaje;
+    }
+
+    public void setPersonaje(Personajes personaje) {
+        this.personaje = personaje;
+    }
 
     public Integer getId() {
         return this.id;
     }
-
     
     public Integer getPersonaje_id() {
         return this.personaje_id;
@@ -78,7 +88,7 @@ public class Alias implements Serializable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, personaje_id, alias);
+        return Objects.hash(id);
     }
 
     @Override
