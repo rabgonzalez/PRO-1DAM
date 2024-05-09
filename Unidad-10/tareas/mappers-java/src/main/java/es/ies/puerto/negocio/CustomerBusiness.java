@@ -1,10 +1,10 @@
-package main.java.es.ies.puerto.negocio;
+package es.ies.puerto.negocio;
 
 import es.ies.puerto.dto.CustomerDTO;
 import es.ies.puerto.model.entity.Address;
 import es.ies.puerto.model.entity.Customer;
-import main.java.es.ies.puerto.mapper.classic.MapperAdress;
-import main.java.es.ies.puerto.mapper.classic.MapperCustomer;
+import es.ies.puerto.mapper.classic.MapperAddress;
+import es.ies.puerto.mapper.classic.MapperCustomer;
 
 public class CustomerBusiness {
     public CustomerDTO obtenerCustomer(CustomerDTO customerDTO){
@@ -12,7 +12,7 @@ public class CustomerBusiness {
             return null;
         }
         Customer customer = MapperCustomer.customerDtoToCustomerEntity(customerDTO);
-        Address address = MapperAdress.customerDtoToAdress(customerDTO);
+        Address address = MapperAddress.customerDtoToAdress(customerDTO);
         
         return MapperCustomer.customerEntityToCustomerDto(customer, address);
     }

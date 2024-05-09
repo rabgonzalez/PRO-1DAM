@@ -17,6 +17,16 @@ public class Address {
 	private String address;
 	@Column(name="zipcode")
 	private String zipCode;
+    @Column(name="provincia")
+    private String provincia;
+
+    public String getProvincia() {
+        return this.provincia;
+    }
+
+    public void setProvincia(String provincia) {
+        this.provincia = provincia;
+    }
 
     public Address(){}
 

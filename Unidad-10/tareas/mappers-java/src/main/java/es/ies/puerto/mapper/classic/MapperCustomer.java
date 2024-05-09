@@ -1,4 +1,4 @@
-package main.java.es.ies.puerto.mapper.classic;
+package es.ies.puerto.mapper.classic;
 
 import es.ies.puerto.dto.CustomerDTO;
 import es.ies.puerto.model.entity.Address;

@@ -1,27 +1,38 @@
 package es.ies.puerto.dto;
-
-import java.io.Serializable;
 import java.util.Objects;
 
-public class CustomerDTO implements Serializable{
-    private Long id;
-	private String fullName;
+import es.ies.puerto.model.entity.Customer;
+
+public class AddressDTO {
+	private Long id;
+	private Customer customer;
 	private String country;
 	private String address;
 	private String zipCode;
+    private String isla;
 
-    public CustomerDTO(){}
+    public AddressDTO() {
+    }
 
-    public CustomerDTO(Long id){
+    public AddressDTO(Long id){
         this.id = id;
     }
 
-    public CustomerDTO(Long id, String fullName, String country, String address, String zipCode) {
+    public AddressDTO(Long id, Customer customer, String country, String address, String zipCode, String isla) {
         this.id = id;
-        this.fullName = fullName;
+        this.customer = customer;
         this.country = country;
         this.address = address;
         this.zipCode = zipCode;
+        this.isla = isla;
+    }
+
+    public String getIsla() {
+        return this.isla;
+    }
+
+    public void setIsla(String isla) {
+        this.isla = isla;
     }
 
     public Long getId() {
@@ -32,12 +43,12 @@ public class CustomerDTO implements Serializable{
         this.id = id;
     }
 
-    public String getFullName() {
-        return this.fullName;
+    public Customer getCustomer() {
+        return this.customer;
     }
 
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
     }
 
     public String getCountry() {
@@ -68,26 +79,26 @@ public class CustomerDTO implements Serializable{
     public boolean equals(Object o) {
         if (o == this)
             return true;
-        if (!(o instanceof CustomerDTO)) {
+        if (!(o instanceof AddressDTO)) {
             return false;
         }
-        CustomerDTO customerDTO = (CustomerDTO) o;
-        return Objects.equals(id, customerDTO.id);
+        AddressDTO addressDTO = (AddressDTO) o;
+        return Objects.equals(id, addressDTO.id) && Objects.equals(customer, addressDTO.customer) && Objects.equals(country, addressDTO.country) && Objects.equals(address, addressDTO.address) && Objects.equals(zipCode, addressDTO.zipCode);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, fullName, country, address, zipCode);
+        return Objects.hash(id, customer, country, address, zipCode);
     }
 
     @Override
     public String toString() {
         return "{" +
             " id='" + getId() + "'" +
-            ", fullName='" + getFullName() + "'" +
+            ", customer='" + getCustomer() + "'" +
             ", country='" + getCountry() + "'" +
             ", address='" + getAddress() + "'" +
             ", zipCode='" + getZipCode() + "'" +
             "}";
-    }
+    }    
 }
