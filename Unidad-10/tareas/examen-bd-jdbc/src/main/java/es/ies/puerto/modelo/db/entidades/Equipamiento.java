@@ -3,11 +3,23 @@ package es.ies.puerto.modelo.db.entidades;
 import java.io.Serializable;
 import java.util.Objects;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "Equipamiento")
 public class Equipamiento implements Serializable {
 
+    private static final long serialVersionUID = -7250234396452258822L;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     String id;
     String nombre;
     String descripcion;
+
+    @ManyToOne
+    @JoinColumn(name = "personaje_id")
     String personaje_id;
 
     public Equipamiento() {
@@ -49,7 +61,7 @@ public class Equipamiento implements Serializable {
     }
 
     public String getPersonaje_id() {
-        return personaje_id;
+        return this.personaje_id;
     }
 
     public void setPersonaje_id(String personaje_id) {

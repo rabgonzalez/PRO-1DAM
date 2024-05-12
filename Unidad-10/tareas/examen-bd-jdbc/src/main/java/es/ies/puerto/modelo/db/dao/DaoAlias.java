@@ -3,6 +3,7 @@ package es.ies.puerto.modelo.db.dao;
 import es.ies.puerto.exception.MarvelException;
 import es.ies.puerto.modelo.db.Conexion;
 import es.ies.puerto.modelo.db.entidades.Alias;
+import es.ies.puerto.modelo.db.entidades.Personaje;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
