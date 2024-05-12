@@ -27,7 +27,7 @@ public class MappersHelp {
         addressEntity = new Address();
         addressEntity.setAddress(DIRECCION);
         addressEntity.setCountry(PAIS);
-        addressEntity.setId(1L);
+        addressEntity.setId(ID);
         addressEntity.setZipCode(CODIGO);
         addressEntity.setProvincia(PROVISLA);
     }
