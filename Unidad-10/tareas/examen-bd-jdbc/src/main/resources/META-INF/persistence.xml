@@ -6,7 +6,7 @@
 	<persistence-unit name="pu-sqlite-jpa">
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 		<properties>
-		<property name="hibernate.dialect" value="ies.puerto.modelo.util.SQLiteDialect"/>
+		<property name="hibernate.dialect" value="es.ies.puerto.modelo.db.util.SQLiteDialect.java"/>
 			<property name="hibernate.hbm2ddl.auto" value="validate"/>
 			<!--
 			<property name="hibernate.hbm2ddl.auto" value="create"/>
