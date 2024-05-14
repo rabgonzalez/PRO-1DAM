@@ -1,7 +1,7 @@
 package es.ies.puerto.modelo.db.dao;
 
 import es.ies.puerto.exception.MarvelException;
-import es.ies.puerto.modelo.db.Conexion;
+import es.ies.puerto.config.Conexion;
 import es.ies.puerto.modelo.db.entidades.Alias;
 import es.ies.puerto.modelo.db.entidades.Equipamiento;
 import es.ies.puerto.modelo.db.entidades.Personaje;
@@ -12,7 +12,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.HashSet;
 import java.util.Set;
-import java.util.Objects;
 
 public class DaoPersonaje extends Conexion {
 
