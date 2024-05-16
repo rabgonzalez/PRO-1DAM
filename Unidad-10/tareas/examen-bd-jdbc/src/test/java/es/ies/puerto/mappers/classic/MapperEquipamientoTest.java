@@ -13,16 +13,15 @@ public class MapperEquipamientoTest extends MappersHelp{
 
     @Test
     public void equipamientoEntityToEquipamientoDTOTest(){
-        equipamientoDTOMapper = mapperEquipamiento.equipamientoEntityToEquipamientoDTO(equipamiento, personaje);
+        equipamientoDTOMapper = mapperEquipamiento.equipamientoEntityToEquipamientoDTO(equipamiento);
         Assertions.assertEquals(equipamientoDTO.getId(), equipamientoDTOMapper.getId());
         Assertions.assertEquals(equipamientoDTO.getNombre(), equipamientoDTOMapper.getNombre());
         Assertions.assertEquals(equipamientoDTO.getDescripcion(), equipamientoDTOMapper.getDescripcion());
-        Assertions.assertEquals(equipamientoDTO.getPersonaje_id(), equipamientoDTOMapper.getPersonaje_id());
     }
 
     @Test
     public void equipamientoDTOToEquipamientoEntityTest(){
-        equipamientoMapper = mapperEquipamiento.equipamientoDTOToEquipamientoEntity(equipamientoDTO, personajeDTO);
+        equipamientoMapper = mapperEquipamiento.equipamientoDTOToEquipamientoEntity(equipamientoDTO, personaje);
         Assertions.assertEquals(equipamiento.getId(), equipamientoMapper.getId());
         Assertions.assertEquals(equipamiento.getNombre(), equipamientoMapper.getNombre());
         Assertions.assertEquals(equipamiento.getDescripcion(), equipamientoMapper.getDescripcion());

@@ -13,15 +13,14 @@ public class MapperAliasTest extends MappersHelp{
 
     @Test
     public void aliasEntityToAliasDTOTest(){
-        aliasDTOMapper = mapperAlias.aliasEntityToAliasDTO(alias, personaje);
+        aliasDTOMapper = mapperAlias.aliasEntityToAliasDTO(alias);
         Assertions.assertEquals(aliasDTO.getId(), aliasDTOMapper.getId());
         Assertions.assertEquals(aliasDTO.getDescripcion(), aliasDTOMapper.getDescripcion());
-        Assertions.assertEquals(aliasDTO.getPersonaje_id(), aliasDTOMapper.getPersonaje_id());
     }
 
     @Test
     public void aliasDTOToAliasEntityTest(){
-        aliasMapper = mapperAlias.aliasDTOToAliasEntity(aliasDTO, personajeDTO);
+        aliasMapper = mapperAlias.aliasDTOToAliasEntity(aliasDTO, personaje);
         Assertions.assertEquals(alias.getId(), aliasMapper.getId());
         Assertions.assertEquals(alias.getDescripcion(), aliasMapper.getDescripcion());
         Assertions.assertEquals(alias.getPersonaje_id(), aliasMapper.getPersonaje_id());

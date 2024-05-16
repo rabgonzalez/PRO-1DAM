@@ -75,7 +75,7 @@ public class Poder implements Serializable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, nombre);
+        return Objects.hash(id, nombre, personaje);
     }
 
     @Override
@@ -83,6 +83,7 @@ public class Poder implements Serializable {
         return "{" +
             " id='" + getId() + "'" +
             ", nombre='" + getNombre() + "'" +
+            ", personaje='" + getPersonaje() + "'" +
             "}";
     }
 

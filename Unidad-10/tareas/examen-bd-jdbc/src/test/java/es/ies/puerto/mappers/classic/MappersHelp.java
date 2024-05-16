@@ -46,7 +46,6 @@ public class MappersHelp {
         aliasDTO = new AliasDTO();
         aliasDTO.setId(ID);
         aliasDTO.setDescripcion(DESCRIPCION);
-        aliasDTO.setPersonaje_id(PERSONAJE_ID);
 
         equipamiento = new Equipamiento();
         equipamiento.setId(ID);
@@ -58,7 +57,6 @@ public class MappersHelp {
         equipamientoDTO.setId(ID);
         equipamientoDTO.setDescripcion(DESCRIPCION);
         equipamientoDTO.setNombre(NOMBRE);
-        equipamientoDTO.setPersonaje_id(PERSONAJE_ID);
 
         poder = new Poder();
         poder.setId(ID);

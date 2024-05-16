@@ -4,15 +4,13 @@ import java.util.Objects;
 public class AliasDTO {
     String id;
     String descripcion;
-    String personaje_id;
 
     public AliasDTO() {
     }
 
-    public AliasDTO(String id, String descripcion, String personaje_id) {
+    public AliasDTO(String id, String descripcion) {
         this.id = id;
         this.descripcion = descripcion;
-        this.personaje_id = personaje_id;
     }
 
     public String getId() {
@@ -31,14 +29,6 @@ public class AliasDTO {
         this.descripcion = descripcion;
     }
 
-    public String getPersonaje_id() {
-        return this.personaje_id;
-    }
-
-    public void setPersonaje_id(String personaje_id) {
-        this.personaje_id = personaje_id;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (o == this)
@@ -47,12 +37,12 @@ public class AliasDTO {
             return false;
         }
         AliasDTO aliasDTO = (AliasDTO) o;
-        return Objects.equals(id, aliasDTO.id) && Objects.equals(descripcion, aliasDTO.descripcion) && Objects.equals(personaje_id, aliasDTO.personaje_id);
+        return Objects.equals(id, aliasDTO.id) && Objects.equals(descripcion, aliasDTO.descripcion);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, descripcion, personaje_id);
+        return Objects.hash(id, descripcion);
     }
 
     @Override
@@ -60,7 +50,6 @@ public class AliasDTO {
         return "{" +
             " id='" + getId() + "'" +
             ", descripcion='" + getDescripcion() + "'" +
-            ", personaje_id='" + getPersonaje_id() + "'" +
             "}";
     }
 }

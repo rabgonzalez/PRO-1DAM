@@ -20,8 +20,9 @@ public class MapperPoderTest extends MappersHelp {
 
     @Test
     public void poderDTOToPoderEntity(){
-        poderMapper = mapperPoder.poderDTOToPoderEntity(poderDTO);
+        poderMapper = mapperPoder.poderDTOToPoderEntity(poderDTO, personaje);
         Assertions.assertEquals(poder.getId(), poderMapper.getId());
         Assertions.assertEquals(poder.getNombre(), poderMapper.getNombre());
+        Assertions.assertEquals(poder.getPersonaje(), poderMapper.getPersonaje());
     }
 }
