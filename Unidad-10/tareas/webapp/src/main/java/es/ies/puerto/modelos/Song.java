@@ -1,5 +1,9 @@
 package es.ies.puerto.modelos;
 
+import javax.xml.bind.annotation.XmlRootElement;
+import java.util.Objects;
+
+@XmlRootElement
 public class Song {
     private String id;
     private String name;
@@ -13,6 +17,10 @@ public class Song {
     }
 
     public Song() {
+    }
+
+    public Song(String id){
+        this.id = id;
     }
 
     public String getId() {
@@ -37,5 +45,21 @@ public class Song {
 
     public void setDuration(String duration) {
         this.duration = duration;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == this)
+            return true;
+        if (!(o instanceof Song)) {
+            return false;
+        }
+        Song song = (Song) o;
+        return Objects.equals(id, song.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 }
