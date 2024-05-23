@@ -7,7 +7,7 @@ import es.ies.puerto.modelo.db.entidades.Poder;
 public class MapperPoder {
     
     public static Poder poderDTOToPoderEntity(PoderDTO poderDTO, Personaje personaje){
-        if(poderDTO == null){
+        if(poderDTO == null || personaje == null){
             return null;
         }
         Poder poder = new Poder();

@@ -1,6 +1,7 @@
 package es.ies.puerto.mappers.struct;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import es.ies.puerto.dto.EquipamientoDTO;

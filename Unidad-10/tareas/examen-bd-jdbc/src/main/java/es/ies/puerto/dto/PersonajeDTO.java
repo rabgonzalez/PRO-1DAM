@@ -15,8 +15,17 @@ public class PersonajeDTO {
     private Set<Equipamiento> equipamientos;
     private Set<Poder> poderes;
 
-
     public PersonajeDTO() {
+    }
+
+    public PersonajeDTO(String id){
+        this.id = id;
+    }
+
+    public PersonajeDTO(String id, String nombre, String genero){
+        this.id = id;
+        this.nombre = nombre;
+        this.genero = genero;
     }
 
     public PersonajeDTO(String id, String nombre, String genero, Alias alias, Set<Equipamiento> equipamientos, Set<Poder> poderes) {

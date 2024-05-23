@@ -8,6 +8,10 @@ public class PoderDTO {
     public PoderDTO() {
     }
 
+    public PoderDTO(String id){
+        this.id = id;
+    }
+
     public PoderDTO(String id, String nombre) {
         this.id = id;
         this.nombre = nombre;

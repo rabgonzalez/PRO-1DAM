@@ -1,6 +1,7 @@
 package es.ies.puerto.mappers.struct;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import es.ies.puerto.dto.PoderDTO;
@@ -10,6 +11,12 @@ import es.ies.puerto.modelo.db.entidades.Poder;
 public class MapperPoderTest extends MappersHelp {
     Poder poderMapper;
     PoderDTO poderDTOMapper;
+
+    @BeforeEach
+    public void init(){
+        this.beforeEach();
+        poder.setPersonaje(personaje);
+    }
 
     @Test
     public void poderEntityToPoderDTO(){
