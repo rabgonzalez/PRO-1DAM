@@ -26,6 +26,6 @@
 
     <servlet-mapping>
         <servlet-name>CXFServlet</servlet-name>
-        <url-pattern>/poder-rest/*</url-pattern>
+        <url-pattern>/api-marvel/*</url-pattern>
     </servlet-mapping>
 </web-app>

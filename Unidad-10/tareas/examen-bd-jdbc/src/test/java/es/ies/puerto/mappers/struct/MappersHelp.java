@@ -1,4 +1,4 @@
-package es.ies.puerto.mappers.classic;
+package es.ies.puerto.mappers.struct;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -58,10 +58,6 @@ public class MappersHelp {
         equipamientoDTO.setDescripcion(DESCRIPCION);
         equipamientoDTO.setNombre(NOMBRE);
 
-        poder = new Poder();
-        poder.setId(ID);
-        poder.setNombre(NOMBRE);
-
         poderDTO = new PoderDTO();
         poderDTO.setId(ID);
         poderDTO.setNombre(NOMBRE);
@@ -71,15 +67,25 @@ public class MappersHelp {
         personaje.setNombre(NOMBRE);
         personaje.setGenero(GENERO);
         personaje.setAlias(alias);
+        equipamientos = new HashSet<>(Arrays.asList(equipamiento));
         personaje.setEquipamientos(equipamientos);
+        
+        poder = new Poder();
+        poder.setId(ID);
+        poder.setNombre(NOMBRE);
+        poder.setPersonaje(new HashSet<>(Arrays.asList(personaje)));
+
+        poderes = new HashSet<>(Arrays.asList(poder));
         personaje.setPoderes(poderes);
 
         personajeDTO = new PersonajeDTO();
         personajeDTO.setId(ID);
         personajeDTO.setNombre(NOMBRE);
         personajeDTO.setGenero(GENERO);
-        personajeDTO.setAlias(alias);
-        personajeDTO.setEquipamientos(equipamientos);   
-        personajeDTO.setPoderes(poderes);
+        personajeDTO.setAlias(aliasDTO);
+        equipamientosDTO = new HashSet<>(Arrays.asList(equipamientoDTO));
+        personajeDTO.setEquipamientos(equipamientosDTO);
+        poderesDTO = new HashSet<>(Arrays.asList(poderDTO));
+        personajeDTO.setPoderes(poderesDTO);
     }
 }

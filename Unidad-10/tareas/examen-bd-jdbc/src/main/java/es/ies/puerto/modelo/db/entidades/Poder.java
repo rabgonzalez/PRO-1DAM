@@ -2,23 +2,12 @@ package es.ies.puerto.modelo.db.entidades;
 
 import java.io.Serializable;
 import java.util.Objects;
+import java.util.Set;
 
-import javax.persistence.*;
-
-@Entity
-@Table(name = "Poder")
 public class Poder implements Serializable {
-
-    private static final long serialVersionUID = -7250234396452258822L;
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
     String id;
     String nombre;
-
-    @ManyToMany(mappedBy = "poderes")
-    private Personaje personaje;
+    private Set<Personaje> personaje;
 
     public Poder() {
     }
@@ -32,7 +21,7 @@ public class Poder implements Serializable {
         this.nombre = nombre;
     }
 
-    public Poder(String id, String nombre, Personaje personaje) {
+    public Poder(String id, String nombre, Set<Personaje> personaje) {
         this.id = id;
         this.nombre = nombre;
         this.personaje = personaje;
@@ -54,11 +43,11 @@ public class Poder implements Serializable {
         this.nombre = nombre;
     }
 
-    public Personaje getPersonaje() {
+    public Set<Personaje> getPersonaje() {
         return this.personaje;
     }
 
-    public void setPersonaje(Personaje personaje) {
+    public void setPersonaje(Set<Personaje> personaje) {
         this.personaje = personaje;
     }
 
@@ -75,7 +64,7 @@ public class Poder implements Serializable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, nombre, personaje);
+        return Objects.hash(id);
     }
 
     @Override
@@ -83,7 +72,6 @@ public class Poder implements Serializable {
         return "{" +
             " id='" + getId() + "'" +
             ", nombre='" + getNombre() + "'" +
-            ", personaje='" + getPersonaje() + "'" +
             "}";
     }
 

@@ -1,19 +1,15 @@
 package es.ies.puerto.dto;
 
 import java.util.Set;
-
-import es.ies.puerto.modelo.db.entidades.Alias;
-import es.ies.puerto.modelo.db.entidades.Equipamiento;
-import es.ies.puerto.modelo.db.entidades.Poder;
 import java.util.Objects;
 
 public class PersonajeDTO {
     private String id;
     private String nombre;
     private String genero;
-    private Alias alias;
-    private Set<Equipamiento> equipamientos;
-    private Set<Poder> poderes;
+    private AliasDTO alias;
+    private Set<EquipamientoDTO> equipamientos;
+    private Set<PoderDTO> poderes;
 
     public PersonajeDTO() {
     }
@@ -28,7 +24,7 @@ public class PersonajeDTO {
         this.genero = genero;
     }
 
-    public PersonajeDTO(String id, String nombre, String genero, Alias alias, Set<Equipamiento> equipamientos, Set<Poder> poderes) {
+    public PersonajeDTO(String id, String nombre, String genero, AliasDTO alias, Set<EquipamientoDTO> equipamientos, Set<PoderDTO> poderes) {
         this.id = id;
         this.nombre = nombre;
         this.genero = genero;
@@ -61,27 +57,27 @@ public class PersonajeDTO {
         this.genero = genero;
     }
 
-    public Alias getAlias() {
+    public AliasDTO getAlias() {
         return this.alias;
     }
 
-    public void setAlias(Alias alias) {
+    public void setAlias(AliasDTO alias) {
         this.alias = alias;
     }
 
-    public Set<Equipamiento> getEquipamientos() {
+    public Set<EquipamientoDTO> getEquipamientos() {
         return this.equipamientos;
     }
 
-    public void setEquipamientos(Set<Equipamiento> equipamientos) {
+    public void setEquipamientos(Set<EquipamientoDTO> equipamientos) {
         this.equipamientos = equipamientos;
     }
 
-    public Set<Poder> getPoderes() {
+    public Set<PoderDTO> getPoderes() {
         return this.poderes;
     }
 
-    public void setPoderes(Set<Poder> poderes) {
+    public void setPoderes(Set<PoderDTO> poderes) {
         this.poderes = poderes;
     }
 
@@ -93,12 +89,12 @@ public class PersonajeDTO {
             return false;
         }
         PersonajeDTO mapperPersonaje = (PersonajeDTO) o;
-        return Objects.equals(id, mapperPersonaje.id) && Objects.equals(nombre, mapperPersonaje.nombre) && Objects.equals(genero, mapperPersonaje.genero) && Objects.equals(alias, mapperPersonaje.alias) && Objects.equals(equipamientos, mapperPersonaje.equipamientos) && Objects.equals(poderes, mapperPersonaje.poderes);
+        return Objects.equals(id, mapperPersonaje.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, nombre, genero, alias, equipamientos, poderes);
+        return Objects.hash(id);
     }
 
     @Override

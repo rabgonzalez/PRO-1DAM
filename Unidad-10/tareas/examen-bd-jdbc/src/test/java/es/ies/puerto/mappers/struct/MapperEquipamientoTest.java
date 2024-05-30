@@ -1,11 +1,9 @@
 package es.ies.puerto.mappers.struct;
 
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import es.ies.puerto.dto.EquipamientoDTO;
-import es.ies.puerto.mappers.classic.MappersHelp;
 import es.ies.puerto.modelo.db.entidades.Equipamiento;
 
 public class MapperEquipamientoTest extends MappersHelp{
@@ -22,7 +20,7 @@ public class MapperEquipamientoTest extends MappersHelp{
 
     @Test
     public void equipamientoDTOToEquipamientoEntityTest(){
-        equipamientoMapper = IMapperEquipamiento.INSTANCE.equipamientoDTOToEquipamientoEntity(equipamientoDTO, personaje);
+        equipamientoMapper = IMapperEquipamiento.INSTANCE.equipamientoDTOToEquipamientoEntity(equipamientoDTO, personajeDTO);
         Assertions.assertEquals(equipamiento.getId(), equipamientoMapper.getId());
         Assertions.assertEquals(equipamiento.getNombre(), equipamientoMapper.getNombre());
         Assertions.assertEquals(equipamiento.getDescripcion(), equipamientoMapper.getDescripcion());

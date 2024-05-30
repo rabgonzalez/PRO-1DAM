@@ -3,23 +3,12 @@ package es.ies.puerto.modelo.db.entidades;
 import java.io.Serializable;
 import java.util.Objects;
 
-import javax.persistence.*;
-
-@Entity
-@Table(name = "Equipamiento")
 public class Equipamiento implements Serializable {
 
-    private static final long serialVersionUID = -7250234396452258822L;
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
     String id;
     String nombre;
     String descripcion;
 
-    @ManyToOne
-    @JoinColumn(name = "personaje_id")
     String personaje_id;
 
     public Equipamiento() {
@@ -81,7 +70,7 @@ public class Equipamiento implements Serializable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, nombre, descripcion, personaje_id);
+        return Objects.hash(id);
     }
 
     @Override
@@ -90,7 +79,6 @@ public class Equipamiento implements Serializable {
             " id='" + getId() + "'" +
             ", nombre='" + getNombre() + "'" +
             ", descripcion='" + getDescripcion() + "'" +
-            ", personaje_id='" + getPersonaje_id() + "'" +
             "}";
     }
 

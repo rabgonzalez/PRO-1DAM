@@ -4,30 +4,12 @@ import java.io.Serializable;
 import java.util.Objects;
 import java.util.Set;
 
-import javax.persistence.*;
-
-@Entity
-@Table(name = "Personaje")
 public class Personaje implements Serializable {
-
-    private static final long serialVersionUID = -7250234396452258822L;
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
     private String id;
     private String nombre;
     private String genero;
-
-    @OneToOne(mappedBy = "personaje")
     private Alias alias;
-
-    @OneToMany
-    @JoinColumn(name = "personaje_id")
     private Set<Equipamiento> equipamientos;
-
-    @ManyToMany
-    @JoinTable(name = "Personaje_Poder")
     private Set<Poder> poderes;
 
     public Personaje() {
@@ -107,7 +89,7 @@ public class Personaje implements Serializable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, nombre, genero, alias, equipamientos, poderes);
+        return Objects.hash(id);
     }
 
     @Override

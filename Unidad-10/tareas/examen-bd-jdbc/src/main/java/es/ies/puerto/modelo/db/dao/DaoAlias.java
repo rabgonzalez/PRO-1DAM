@@ -14,7 +14,7 @@ public class DaoAlias extends Conexion {
 
 
     public DaoAlias() throws MarvelException {
-
+        
     }
 
         public void cerrar(ResultSet rs, Statement statement) throws MarvelException {

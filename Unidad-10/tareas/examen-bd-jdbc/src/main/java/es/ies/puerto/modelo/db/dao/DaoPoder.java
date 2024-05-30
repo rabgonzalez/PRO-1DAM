@@ -12,7 +12,6 @@ import java.util.Set;
 
 public class DaoPoder extends Conexion{
     public DaoPoder() throws MarvelException {
-
     }
 
     public void cerrar(ResultSet rs, Statement statement) throws MarvelException {

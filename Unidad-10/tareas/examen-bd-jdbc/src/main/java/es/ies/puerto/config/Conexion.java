@@ -10,6 +10,11 @@ public class Conexion extends AppConfig {
     private Connection con;
 
     public Conexion() throws MarvelException {
+        try{
+            Class.forName("org.sqlite.JDBC");
+        } catch(Exception e){
+            throw new MarvelException(e.getMessage());
+        }
         this.url = "jdbc:sqlite:"+getUrlBd();
     }
     
@@ -19,6 +24,6 @@ public class Conexion extends AppConfig {
         } catch(Exception e){
             throw new MarvelException(e.getMessage(), e);
         }
-        return con;
+        return con; 
     }
 }

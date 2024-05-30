@@ -1,11 +1,9 @@
 package es.ies.puerto.mappers.struct;
 
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import es.ies.puerto.dto.PersonajeDTO;
-import es.ies.puerto.mappers.classic.MappersHelp;
 import es.ies.puerto.modelo.db.entidades.Personaje;
 
 public class MapperPersonajeTest extends MappersHelp {
