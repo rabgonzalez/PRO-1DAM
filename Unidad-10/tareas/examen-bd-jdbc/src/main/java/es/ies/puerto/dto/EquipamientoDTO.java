@@ -9,6 +9,10 @@ public class EquipamientoDTO {
     public EquipamientoDTO() {
     }
 
+    public EquipamientoDTO(String id) {
+        this.id = id;
+    }
+
     public EquipamientoDTO(String id, String nombre, String descripcion) {
         this.id = id;
         this.nombre = nombre;
