@@ -1,4 +1,4 @@
-package es.ies.puerto.dto;
+package es.ies.puerto.model;
 import java.util.Objects;
 
 public class User {

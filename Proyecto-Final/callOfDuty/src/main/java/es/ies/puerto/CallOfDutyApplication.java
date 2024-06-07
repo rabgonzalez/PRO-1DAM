@@ -9,5 +9,4 @@ public class CallOfDutyApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(CallOfDutyApplication.class, args);
 	}
-
 }
