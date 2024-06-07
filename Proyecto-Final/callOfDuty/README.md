@@ -10,15 +10,32 @@ Dicho proyecto consiste en la creación de una API rest securizada acerca de la 
 ## Índice
 - [Tecnologías a utilizar](#tecnologías-a-utilizar)
 - [Enlace de conexión a Swagger](#enlace-de-conexión-a-swagger)
+---
 
-### Tecnologías a utilizar
-- Spring Data
-- Swagger
-- Mockito
-- Mapstruct
-- Hibernate/JPA
+## Tecnologías a utilizar
+- ### Spring Data
+<img src="#">
 
-### Enlace de conexión a Swagger
+- ### MongoDB
+<img src="#">
+
+- ### Hibernate/JPA
+<img src="#">
+
+- ### Swagger
+<img src="#">
+
+- ### JUnit 5
+<img src="#">
+
+- ### Mockito
+<img src="#">
+
+- ### Mapstruct
+<img src="#">
+
+
+## Enlace de conexión a Swagger
 ```code
 http://localhost:8080/swagger-ui/index.html
 ```

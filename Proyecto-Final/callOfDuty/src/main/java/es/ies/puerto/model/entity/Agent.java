@@ -1,4 +1,4 @@
-package es.ies.puerto.model;
+package es.ies.puerto.model.entity;
 
 import java.util.Set;
 import java.util.Objects;
@@ -77,7 +77,6 @@ public class Agent {
             "name='" + getName() + "'" +
             ", rarity='" + getRarity() + "'" +
             ", age='" + getAge() + "'" +
-            ", guns='" + getGuns() + "'" +
             "}";
     }    
 }

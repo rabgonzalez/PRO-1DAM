@@ -1,4 +1,4 @@
-package es.ies.puerto.model;
+package es.ies.puerto.model.entity;
 import java.util.Objects;
 
 public class User {
