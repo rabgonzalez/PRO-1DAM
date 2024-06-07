@@ -12,4 +12,4 @@ Repositorio dedicado a la asignatura de programacion
 - [Unidad 7](Unidad-7)
 - [Unidad 10](Unidad-10)
 - [Repaso 1 Evaluacion](Repaso-1Ev)
-- [Proyecto Final](Proyecto-Final/callOfDuty)
+- [Proyecto Final (Call of Duty)](Proyecto-Final/callOfDuty)
