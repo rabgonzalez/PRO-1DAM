@@ -1,32 +1,45 @@
 package es.ies.puerto.model.entity;
 
+import java.io.Serializable;
 import java.util.Objects;
 import java.util.Set;
 
-public class Game {
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "Game")
+public class Game implements Serializable {
+
+    private static final long serialVersionUID = -9058773902L;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String gameName;
     private String releaseDate;
     private Float rating;
+
+    @ManyToMany
     private Set<Gamemode> gamemodes;
+
+    @ManyToOne
     private Set<Map> maps;
+
+    @ManyToMany
     private Set<Gun> guns;
+
+    @ManyToOne
+    private Set<Agent> agents;
 
     public Game() {
     }
 
-    public Game(String gameName) {
-        this.gameName = gameName;
+    public int getId() {
+        return this.id;
     }
 
-    public Game(String gameName, String releaseDate, Float rating, Set<Gamemode> gamemodes, Set<Map> maps,
-            Set<Gun> guns) {
-        this.gameName = gameName;
-        this.releaseDate = releaseDate;
-        this.rating = rating;
-        this.gamemodes = gamemodes;
-        this.maps = maps;
-        this.guns = guns;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getGameName() {
@@ -77,6 +90,14 @@ public class Game {
         this.guns = guns;
     }
 
+    public Set<Agent> getAgents() {
+        return this.agents;
+    }
+
+    public void setAgents(Set<Agent> agents) {
+        this.agents = agents;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (o == this)
@@ -85,20 +106,22 @@ public class Game {
             return false;
         }
         Game game = (Game) o;
-        return Objects.equals(gameName, game.gameName);
+        return id == game.id;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(gameName);
+        return Objects.hash(id);
     }
 
     @Override
     public String toString() {
         return "{" +
-                " gameName='" + getGameName() + "'" +
-                ", releaseDate='" + getReleaseDate() + "'" +
-                ", rating='" + getRating() + "'" +
-                "}";
+            " id='" + getId() + "'" +
+            ", gameName='" + getGameName() + "'" +
+            ", releaseDate='" + getReleaseDate() + "'" +
+            ", rating='" + getRating() + "'" +
+            ", gamemodes='" + getGamemodes() + "'" +
+            "}";
     }
 }

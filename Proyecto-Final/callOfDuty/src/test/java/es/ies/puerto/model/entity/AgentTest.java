@@ -22,7 +22,7 @@ class AgentTest {
         gun.setName(NAME);
         gun.setRarity(RARITY);
         gun.setType(TYPE);
-        agent2 = new Agent(ID, NAME, RARITY, 0);
+        agent2 = new Agent(ID, NAME, RARITY, 0, new Game());
     }
 
     @Test

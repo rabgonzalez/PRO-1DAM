@@ -1,23 +1,37 @@
 package es.ies.puerto.model.entity;
 
 import java.util.Set;
+
+import jakarta.persistence.*;
+
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Gamemode {
+@Entity
+@Table(name = "Gamemode")
+public class Gamemode implements Serializable {
+
+    private static final long serialVersionUID = -9058773902L;
+
+    @Id
     private int id;
     private String name;
+
+    @ManyToMany
     private Set<Map> maps;
+
+    @ManyToOne
+    private Game game;
 
     public Gamemode() {
     }
 
-    public Gamemode(String name) {
-        this.name = name;
+    public int getId() {
+        return this.id;
     }
 
-    public Gamemode(String name, Set<Map> maps) {
-        this.name = name;
-        this.maps = maps;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -36,6 +50,14 @@ public class Gamemode {
         this.maps = maps;
     }
 
+    public Game getGame() {
+        return this.game;
+    }
+
+    public void setGame(Game game) {
+        this.game = game;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (o == this)
@@ -44,18 +66,19 @@ public class Gamemode {
             return false;
         }
         Gamemode gamemode = (Gamemode) o;
-        return Objects.equals(name, gamemode.name);
+        return id == gamemode.id;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name);
+        return Objects.hash(id, name, maps, game);
     }
 
     @Override
     public String toString() {
         return "{" +
-                " name='" + getName() + "'" +
-                "}";
+            " id='" + getId() + "'" +
+            ", name='" + getName() + "'" +
+            "}";
     }
 }

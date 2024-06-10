@@ -1,24 +1,35 @@
 package es.ies.puerto.model.entity;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Gun {
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "Gun")
+public class Gun implements Serializable {
+
+    private static final long serialVersionUID = -9058773902L;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String name;
     private String type;
     private String rarity;
 
+    @ManyToOne
+    private Game game;
+
     public Gun() {
     }
 
-    public Gun(String name) {
-        this.name = name;
+    public int getId() {
+        return this.id;
     }
 
-    public Gun(String name, String type, String rarity) {
-        this.name = name;
-        this.type = type;
-        this.rarity = rarity;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -43,6 +54,14 @@ public class Gun {
 
     public void setRarity(String rarity) {
         this.rarity = rarity;
+    }
+
+    public Game getGame() {
+        return this.game;
+    }
+
+    public void setGame(Game game) {
+        this.game = game;
     }
 
     @Override

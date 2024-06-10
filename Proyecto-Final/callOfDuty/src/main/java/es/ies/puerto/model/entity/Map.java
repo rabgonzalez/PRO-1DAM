@@ -1,19 +1,30 @@
 package es.ies.puerto.model.entity;
 
+import java.io.Serializable;
 import java.util.Objects;
+import java.util.Set;
 
-public class Map {
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "Map")
+public class Map implements Serializable {
+
+    private static final long serialVersionUID = -9058773902L;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String name;
     private String country;
 
-    public Map() {
-    }
+    @ManyToOne
+    private Game game;
 
-    public Map(int id, String name, String country) {
-        this.id = id;
-        this.name = name;
-        this.country = country;
+    @ManyToMany
+    private Set<Gamemode> gamemodes;
+
+    public Map() {
     }
 
     public int getId() {
@@ -40,19 +51,20 @@ public class Map {
         this.country = country;
     }
 
-    public Map id(int id) {
-        setId(id);
-        return this;
+    public Game getGame() {
+        return this.game;
     }
 
-    public Map name(String name) {
-        setName(name);
-        return this;
+    public void setGame(Game game) {
+        this.game = game;
     }
 
-    public Map country(String country) {
-        setCountry(country);
-        return this;
+    public Set<Gamemode> getGamemodes() {
+        return this.gamemodes;
+    }
+
+    public void setGamemodes(Set<Gamemode> gamemodes) {
+        this.gamemodes = gamemodes;
     }
 
     @Override
@@ -74,9 +86,9 @@ public class Map {
     @Override
     public String toString() {
         return "{" +
-            " id='" + getId() + "'" +
-            ", name='" + getName() + "'" +
-            ", country='" + getCountry() + "'" +
-            "}";
+                " id='" + getId() + "'" +
+                ", name='" + getName() + "'" +
+                ", country='" + getCountry() + "'" +
+                "}";
     }
 }
