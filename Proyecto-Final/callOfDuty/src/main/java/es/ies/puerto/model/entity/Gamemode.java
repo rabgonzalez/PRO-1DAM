@@ -4,13 +4,14 @@ import java.util.Set;
 import java.util.Objects;
 
 public class Gamemode {
+    private int id;
     private String name;
-    Set<Map> maps;
+    private Set<Map> maps;
 
     public Gamemode() {
     }
 
-    public Gamemode(String name){
+    public Gamemode(String name) {
         this.name = name;
     }
 
@@ -54,7 +55,7 @@ public class Gamemode {
     @Override
     public String toString() {
         return "{" +
-            " name='" + getName() + "'" +
-            "}";
-    }    
+                " name='" + getName() + "'" +
+                "}";
+    }
 }

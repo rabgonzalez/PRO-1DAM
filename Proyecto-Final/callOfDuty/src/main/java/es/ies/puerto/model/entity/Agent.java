@@ -1,26 +1,39 @@
 package es.ies.puerto.model.entity;
 
-import java.util.Set;
 import java.util.Objects;
 
+import org.springframework.data.annotation.Id;
+
+//@Entity
+//@Table(name = "Agent")
 public class Agent {
+    @Id
+    // @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
     private String name;
     private String rarity;
     private int age;
-    private Set<Gun> guns;
 
     public Agent() {
     }
 
-    public Agent(String name){
-        this.name = name;
+    public Agent(int id) {
+        this.id = id;
     }
 
-    public Agent(String name, String rarity, int age, Set<Gun> guns) {
+    public Agent(Integer id, String name, String rarity, int age) {
+        this.id = id;
         this.name = name;
         this.rarity = rarity;
         this.age = age;
-        this.guns = guns;
+    }
+
+    public Integer getId() {
+        return this.id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -47,14 +60,6 @@ public class Agent {
         this.age = age;
     }
 
-    public Set<Gun> getGuns() {
-        return this.guns;
-    }
-
-    public void setGuns(Set<Gun> guns) {
-        this.guns = guns;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (o == this)
@@ -63,20 +68,21 @@ public class Agent {
             return false;
         }
         Agent agent = (Agent) o;
-        return name == agent.name;
+        return id == agent.id;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name);
+        return Objects.hash(id);
     }
 
     @Override
     public String toString() {
         return "{" +
-            "name='" + getName() + "'" +
-            ", rarity='" + getRarity() + "'" +
-            ", age='" + getAge() + "'" +
-            "}";
-    }    
+                " id='" + getId() + "'" +
+                ", name='" + getName() + "'" +
+                ", rarity='" + getRarity() + "'" +
+                ", age='" + getAge() + "'" +
+                "}";
+    }
 }

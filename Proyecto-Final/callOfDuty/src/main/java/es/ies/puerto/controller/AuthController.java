@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
 @RequestMapping("/auth")
-public class AuthController implements IAuthController{
+public class AuthController implements IAuthController {
 
     @Override
     @PostMapping("/login")

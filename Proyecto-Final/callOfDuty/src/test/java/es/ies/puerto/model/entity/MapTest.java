@@ -6,30 +6,29 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class MapTest {
+    private static final int ID = 1;
     private static final String COUNTRY = "type";
     private static final String NAME = "name";
     Map map;
     Map map2;
-    Map map3;
     Game game;
 
     @BeforeEach
     void beforeEach(){
-        map = new Map(NAME);
-        map.setCountry(COUNTRY);
-        map2 = new Map(NAME, COUNTRY);
-        map3 = new Map();
+        map2 = new Map(ID, NAME, COUNTRY);
+        map = new Map();
+        map.setId(ID);
     }
 
     @Test
     void NotNullTest(){
         Assertions.assertNotNull(map);
         Assertions.assertNotNull(map2);
-        Assertions.assertNotNull(map3);
     }
 
     @Test
     void gettersSetters(){
+        map.setName(NAME);
         map.setCountry(COUNTRY);
         Assertions.assertEquals(NAME, map.getName());
         Assertions.assertEquals(COUNTRY, map.getCountry());
@@ -42,7 +41,7 @@ class MapTest {
 
     @Test
     void hashCodeTest() {
-        Assertions.assertEquals(Objects.hash(NAME), map.hashCode());
+        Assertions.assertEquals(Objects.hash(ID), map.hashCode());
     }
 
     @Test
@@ -62,7 +61,7 @@ class MapTest {
 
     @Test
     void equalsFalseTest(){
-        map.setName("NAME");
+        map.setId(0);
         Assertions.assertNotEquals(map, map2);
     }
 }

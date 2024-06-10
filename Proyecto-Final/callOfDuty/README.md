@@ -37,5 +37,5 @@ Dicho proyecto consiste en la creación de una API rest securizada acerca de la 
 
 ## Enlace de conexión a Swagger
 ```code
-http://localhost:8080/swagger-ui/index.html
+http://localhost:8080/api-cod/swagger-ui/index.html
 ```

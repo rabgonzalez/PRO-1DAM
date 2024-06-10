@@ -6,6 +6,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class UserTest {
+    private static final int ID = 1;
     private static final String NAME = "name";
     private static final String PASSWORD = "password";
     User user;
@@ -15,9 +16,10 @@ class UserTest {
     @BeforeEach
     void beforeEach(){
         user = new User();
+        user.setId(ID);
         user.setUsername(NAME);
         user.setPassword(PASSWORD);
-        user2 = new User(NAME, PASSWORD);
+        user2 = new User(ID, NAME, PASSWORD);
     }
 
     @Test
@@ -41,7 +43,7 @@ class UserTest {
 
     @Test
     void hashCodeTest() {
-        Assertions.assertEquals(Objects.hash(NAME, PASSWORD), user.hashCode());
+        Assertions.assertEquals(Objects.hash(ID, NAME, PASSWORD), user.hashCode());
     }
 
     @Test

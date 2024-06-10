@@ -1,7 +1,9 @@
 package es.ies.puerto.model.entity;
+
 import java.util.Objects;
 
 public class Gun {
+    private int id;
     private String name;
     private String type;
     private String rarity;
@@ -9,7 +11,7 @@ public class Gun {
     public Gun() {
     }
 
-    public Gun(String name){
+    public Gun(String name) {
         this.name = name;
     }
 
@@ -62,8 +64,8 @@ public class Gun {
     @Override
     public String toString() {
         return "{" +
-            " name='" + getName() + "'" +
-            ", type='" + getType() + "'" +
-            "}";
-    }    
+                " name='" + getName() + "'" +
+                ", type='" + getType() + "'" +
+                "}";
+    }
 }
