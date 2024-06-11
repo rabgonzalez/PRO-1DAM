@@ -22,13 +22,13 @@ public class Game implements Serializable {
     @ManyToMany
     private Set<Gamemode> gamemodes;
 
-    @ManyToOne
+    @OneToMany(mappedBy = "game")
     private Set<Map> maps;
 
     @ManyToMany
     private Set<Gun> guns;
 
-    @ManyToOne
+    @OneToMany(mappedBy = "game")
     private Set<Agent> agents;
 
     public Game() {

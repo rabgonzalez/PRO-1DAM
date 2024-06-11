@@ -2,6 +2,7 @@ package es.ies.puerto.model.entity;
 
 import java.io.Serializable;
 import java.util.Objects;
+import java.util.Set;
 
 import jakarta.persistence.*;
 
@@ -18,8 +19,8 @@ public class Gun implements Serializable {
     private String type;
     private String rarity;
 
-    @ManyToOne
-    private Game game;
+    @ManyToMany
+    private Set<Game> games;
 
     public Gun() {
     }
@@ -56,12 +57,12 @@ public class Gun implements Serializable {
         this.rarity = rarity;
     }
 
-    public Game getGame() {
-        return this.game;
+    public Set<Game> getGames() {
+        return this.games;
     }
 
-    public void setGame(Game game) {
-        this.game = game;
+    public void setGames(Set<Game> games) {
+        this.games = games;
     }
 
     @Override

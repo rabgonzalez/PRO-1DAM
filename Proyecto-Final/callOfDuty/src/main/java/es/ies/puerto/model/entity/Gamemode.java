@@ -14,14 +14,15 @@ public class Gamemode implements Serializable {
     private static final long serialVersionUID = -9058773902L;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String name;
 
     @ManyToMany
     private Set<Map> maps;
 
-    @ManyToOne
-    private Game game;
+    @ManyToMany
+    private Set<Game> games;
 
     public Gamemode() {
     }
@@ -50,12 +51,12 @@ public class Gamemode implements Serializable {
         this.maps = maps;
     }
 
-    public Game getGame() {
-        return this.game;
+    public Set<Game> getGames() {
+        return this.games;
     }
 
-    public void setGame(Game game) {
-        this.game = game;
+    public void setGame(Set<Game> games) {
+        this.games = games;
     }
 
     @Override
@@ -71,7 +72,7 @@ public class Gamemode implements Serializable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, maps, game);
+        return Objects.hash(id);
     }
 
     @Override
