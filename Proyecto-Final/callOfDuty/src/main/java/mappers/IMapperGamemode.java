@@ -19,8 +19,8 @@ public interface IMapperGamemode {
 
     public Gamemode toGamemode(GamemodeDTO gamemodeDTO);
 
-    @Mapping(source = "gamemode", target = "games_id", qualifiedByName = "gamesToIds")
-    @Mapping(source = "gamemode", target = "maps_id", qualifiedByName = "mapsToIds")
+    // @Mapping(source = "gamemode", target = "games_id", qualifiedByName = "gamesToIds")
+    // @Mapping(source = "gamemode", target = "maps_id", qualifiedByName = "mapsToIds")
     public GamemodeDTO toGamemodeDTO(Gamemode gamemode);
 
     @Named("gamesToIds")

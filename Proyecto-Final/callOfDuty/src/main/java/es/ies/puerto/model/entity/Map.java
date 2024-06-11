@@ -21,7 +21,7 @@ public class Map implements Serializable {
     @ManyToOne
     private Game game;
 
-    @ManyToMany
+    @ManyToMany(mappedBy = "maps")
     private Set<Gamemode> gamemodes;
 
     public Map() {

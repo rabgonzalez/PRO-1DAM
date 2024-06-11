@@ -19,7 +19,7 @@ public class Gun implements Serializable {
     private String type;
     private String rarity;
 
-    @ManyToMany
+    @ManyToMany(mappedBy = "guns")
     private Set<Game> games;
 
     public Gun() {

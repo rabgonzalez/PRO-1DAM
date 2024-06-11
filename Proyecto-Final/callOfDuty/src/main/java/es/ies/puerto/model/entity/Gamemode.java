@@ -21,7 +21,7 @@ public class Gamemode implements Serializable {
     @ManyToMany
     private Set<Map> maps;
 
-    @ManyToMany
+    @ManyToMany(mappedBy = "gamemodes")
     private Set<Game> games;
 
     public Gamemode() {
