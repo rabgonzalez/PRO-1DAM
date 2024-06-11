@@ -14,7 +14,7 @@ public class Game implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private Integer id;
     private String gameName;
     private String releaseDate;
     private Float rating;

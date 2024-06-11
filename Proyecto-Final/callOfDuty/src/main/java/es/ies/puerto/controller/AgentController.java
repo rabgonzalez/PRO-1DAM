@@ -1,14 +1,16 @@
 package es.ies.puerto.controller;
 
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import es.ies.puerto.controller.interfaces.IAgentController;
+import es.ies.puerto.model.dto.AgentDTO;
 import es.ies.puerto.model.entity.Agent;
 import es.ies.puerto.model.repository.IAgentRepository;
+import mappers.IMapperAgent;
 
 @Controller
 public class AgentController implements IAgentController {
@@ -26,18 +28,25 @@ public class AgentController implements IAgentController {
     }
 
     @Override
-    public Optional<Agent> findById(Integer id) {
-        return agentRepository.findById(id);
+    public AgentDTO findById(Integer id) {
+        return IMapperAgent.INSTANCE.toAgentDTO(agentRepository.findById(id).get());
     }
 
     @Override
-    public List<Agent> findAll() {
-        return agentRepository.findAll();
+    public List<AgentDTO> findAll() {
+        List<Agent> list = agentRepository.findAll();
+        List<AgentDTO> result = new ArrayList<>();
+        for (Agent agent : list) {
+            result.add(IMapperAgent.INSTANCE.toAgentDTO(agent));
+        }
+        return result;
     }
 
     @Override
-    public Agent save(Agent agent) {
-        return agentRepository.save(agent);
+    public AgentDTO save(AgentDTO agent) {
+        int game_id = agent.getGame_id();
+        Agent agentEntity = IMapperAgent.INSTANCE.toAgent(agent);
+        return IMapperAgent.INSTANCE.toAgentDTO(agentEntity);
     }
 
     @Override

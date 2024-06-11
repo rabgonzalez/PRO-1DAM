@@ -1,9 +1,8 @@
 package es.ies.puerto.controller.interfaces;
 
 import java.util.List;
-import java.util.Optional;
 
-import es.ies.puerto.model.entity.Agent;
+import es.ies.puerto.model.dto.AgentDTO;
 import es.ies.puerto.model.repository.IAgentRepository;
 
 public interface IAgentController {
@@ -11,11 +10,11 @@ public interface IAgentController {
 
     public void setAgentRepository(IAgentRepository agent);
 
-    public Optional<Agent> findById(Integer id);
+    public AgentDTO findById(Integer id);
 
-    public List<Agent> findAll();
+    public List<AgentDTO> findAll();
 
-    public Agent save(Agent agent);
+    public AgentDTO save(AgentDTO agent);
 
     public void deleteById(Integer id);
 }

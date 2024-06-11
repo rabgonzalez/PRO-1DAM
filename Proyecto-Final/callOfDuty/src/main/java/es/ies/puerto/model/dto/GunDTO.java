@@ -1,28 +1,28 @@
-package es.ies.puerto.model.entity;
+package es.ies.puerto.model.dto;
 
-import java.io.Serializable;
 import java.util.Objects;
 import java.util.Set;
 
-import jakarta.persistence.*;
-
-@Entity
-@Table(name = "Gun")
-public class Gun implements Serializable {
-
-    private static final long serialVersionUID = -9058773902L;
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+public class GunDTO {
+    private int id;
     private String name;
     private String type;
     private String rarity;
+    private Set<Integer> games_id;
 
-    @ManyToMany
-    private Set<Game> games;
+    public Set<Integer> getGames_id() {
+        return this.games_id;
+    }
 
-    public Gun() {
+    public void setGames_id(Set<Integer> games_id) {
+        this.games_id = games_id;
+    }
+
+    public GunDTO() {
+    }
+
+    public GunDTO(int id){
+        this.id = id;
     }
 
     public int getId() {
@@ -57,35 +57,30 @@ public class Gun implements Serializable {
         this.rarity = rarity;
     }
 
-    public Set<Game> getGames() {
-        return this.games;
-    }
-
-    public void setGames(Set<Game> games) {
-        this.games = games;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (o == this)
             return true;
-        if (!(o instanceof Gun)) {
+        if (!(o instanceof GunDTO)) {
             return false;
         }
-        Gun gun = (Gun) o;
-        return Objects.equals(name, gun.name);
+        GunDTO gunDTO = (GunDTO) o;
+        return id == gunDTO.id;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name);
+        return Objects.hash(id);
     }
 
     @Override
     public String toString() {
         return "{" +
-                " name='" + getName() + "'" +
+                " id='" + getId() + "'" +
+                ", name='" + getName() + "'" +
                 ", type='" + getType() + "'" +
+                ", rarity='" + getRarity() + "'" +
+                ", games_id='" + getGames_id() + "'" +
                 "}";
     }
 }

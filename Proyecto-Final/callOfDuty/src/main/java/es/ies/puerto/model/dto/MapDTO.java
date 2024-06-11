@@ -1,37 +1,42 @@
-package es.ies.puerto.model.entity;
+package es.ies.puerto.model.dto;
 
-import java.io.Serializable;
 import java.util.Objects;
-import java.util.Set;
 
-import jakarta.persistence.*;
-
-@Entity
-@Table(name = "Map")
-public class Map implements Serializable {
-
-    private static final long serialVersionUID = -9058773902L;
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+public class MapDTO {
     private Integer id;
     private String name;
     private String country;
+    private int game_id;
+    private int gamemode_id;
 
-    @ManyToOne
-    private Game game;
-
-    @ManyToMany
-    private Set<Gamemode> gamemodes;
-
-    public Map() {
+    public int getGame_id() {
+        return this.game_id;
     }
 
-    public int getId() {
+    public void setGame_id(int game_id) {
+        this.game_id = game_id;
+    }
+
+    public int getGamemode_id() {
+        return this.gamemode_id;
+    }
+
+    public void setGamemode_id(int gamemode_id) {
+        this.gamemode_id = gamemode_id;
+    }
+
+    public MapDTO() {
+    }
+
+    public MapDTO(Integer id) {
+        this.id = id;
+    }
+
+    public Integer getId() {
         return this.id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -51,31 +56,15 @@ public class Map implements Serializable {
         this.country = country;
     }
 
-    public Game getGame() {
-        return this.game;
-    }
-
-    public void setGame(Game game) {
-        this.game = game;
-    }
-
-    public Set<Gamemode> getGamemodes() {
-        return this.gamemodes;
-    }
-
-    public void setGamemodes(Set<Gamemode> gamemodes) {
-        this.gamemodes = gamemodes;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (o == this)
             return true;
-        if (!(o instanceof Map)) {
+        if (!(o instanceof MapDTO)) {
             return false;
         }
-        Map map = (Map) o;
-        return id == map.id;
+        MapDTO mapDTO = (MapDTO) o;
+        return Objects.equals(id, mapDTO.id);
     }
 
     @Override
@@ -89,6 +78,8 @@ public class Map implements Serializable {
                 " id='" + getId() + "'" +
                 ", name='" + getName() + "'" +
                 ", country='" + getCountry() + "'" +
+                ", game_id='" + getGame_id() + "'" +
+                ", map_id='" + getGamemode_id() + "'" +
                 "}";
     }
 }
