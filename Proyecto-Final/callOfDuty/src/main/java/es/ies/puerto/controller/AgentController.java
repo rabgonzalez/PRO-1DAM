@@ -9,12 +9,15 @@ import org.springframework.stereotype.Controller;
 import es.ies.puerto.controller.interfaces.IAgentController;
 import es.ies.puerto.model.dto.AgentDTO;
 import es.ies.puerto.model.entity.Agent;
+import es.ies.puerto.model.entity.Game;
 import es.ies.puerto.model.repository.IAgentRepository;
+import es.ies.puerto.model.repository.IGameRepository;
 import mappers.IMapperAgent;
 
 @Controller
 public class AgentController implements IAgentController {
     private IAgentRepository agentRepository;
+    private IGameRepository gameRepository;
 
     @Override
     public IAgentRepository getAgentRepository() {
@@ -44,8 +47,10 @@ public class AgentController implements IAgentController {
 
     @Override
     public AgentDTO save(AgentDTO agent) {
-        int game_id = agent.getGame_id();
+        Game game = gameRepository.findById(agent.getGame_id()).get();
         Agent agentEntity = IMapperAgent.INSTANCE.toAgent(agent);
+        agentEntity.setGame(game);
+        agentRepository.save(agentEntity);
         return IMapperAgent.INSTANCE.toAgentDTO(agentEntity);
     }
 

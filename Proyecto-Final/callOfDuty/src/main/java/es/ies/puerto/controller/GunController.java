@@ -1,16 +1,21 @@
 package es.ies.puerto.controller;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import es.ies.puerto.controller.interfaces.IGunController;
 import es.ies.puerto.model.dto.GunDTO;
+import es.ies.puerto.model.entity.Game;
 import es.ies.puerto.model.entity.Gun;
+import es.ies.puerto.model.repository.IGameRepository;
 import es.ies.puerto.model.repository.IGunRepository;
 import mappers.IMapperGun;
 
 public class GunController implements IGunController {
     private IGunRepository iGunRepository;
+    private IGameRepository iGameRepository;
 
     @Override
     public IGunRepository getGunRepository() {
@@ -39,7 +44,15 @@ public class GunController implements IGunController {
 
     @Override
     public GunDTO save(GunDTO gun) {
-        return IMapperGun.INSTANCE.toGunDTO(iGunRepository.save(IMapperGun.INSTANCE.toGun(gun)));
+        Gun gunEntity = IMapperGun.INSTANCE.toGun(gun);
+        Set<Integer> games_id = gun.getGames_id();
+        Set<Game> games = new HashSet<>();
+        for(Integer id : games_id){
+            games.add(iGameRepository.findById(id).get());
+        }
+        gunEntity.setGames(games);
+        iGunRepository.save(gunEntity);
+        return IMapperGun.INSTANCE.toGunDTO(gunEntity);
     }
 
     @Override
