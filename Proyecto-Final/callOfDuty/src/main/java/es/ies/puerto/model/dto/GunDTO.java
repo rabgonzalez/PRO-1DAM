@@ -80,7 +80,6 @@ public class GunDTO {
                 ", name='" + getName() + "'" +
                 ", type='" + getType() + "'" +
                 ", rarity='" + getRarity() + "'" +
-                ", games_id='" + getGames_id() + "'" +
                 "}";
     }
 }

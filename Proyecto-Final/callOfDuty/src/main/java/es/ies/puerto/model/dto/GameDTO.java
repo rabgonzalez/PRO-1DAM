@@ -1,5 +1,6 @@
 package es.ies.puerto.model.dto;
 
+import java.util.Set;
 import java.util.Objects;
 
 public class GameDTO {
@@ -7,41 +8,41 @@ public class GameDTO {
     private String gameName;
     private String releaseDate;
     private Float rating;
-    private int gamemode_id;
-    private int map_id;
-    private int agent_id;
-    private int gun_id;
+    private Set<Integer> gamemodes_id;
+    private Set<Integer> maps_id;
+    private Set<Integer> agents_id;
+    private Set<Integer> guns_id;
 
-    public int getGamemode_id() {
-        return this.gamemode_id;
+    public Set<Integer> getGamemodes_id() {
+        return this.gamemodes_id;
     }
 
-    public void setGamemode_id(int gamemode_id) {
-        this.gamemode_id = gamemode_id;
+    public void setGamemodes_id(Set<Integer> gamemodes_id) {
+        this.gamemodes_id = gamemodes_id;
     }
 
-    public int getMap_id() {
-        return this.map_id;
+    public Set<Integer> getMaps_id() {
+        return this.maps_id;
     }
 
-    public void setMap_id(int map_id) {
-        this.map_id = map_id;
+    public void setMaps_id(Set<Integer> maps_id) {
+        this.maps_id = maps_id;
     }
 
-    public int getAgent_id() {
-        return this.agent_id;
+    public Set<Integer> getAgents_id() {
+        return this.agents_id;
     }
 
-    public void setAgent_id(int agent_id) {
-        this.agent_id = agent_id;
+    public void setAgents_id(Set<Integer> agents_id) {
+        this.agents_id = agents_id;
     }
 
-    public int getGun_id() {
-        return this.gun_id;
+    public Set<Integer> getGuns_id() {
+        return this.guns_id;
     }
 
-    public void setGun_id(int gun_id) {
-        this.gun_id = gun_id;
+    public void setGuns_id(Set<Integer> guns_id) {
+        this.guns_id = guns_id;
     }
 
     public GameDTO() {
@@ -106,9 +107,6 @@ public class GameDTO {
                 ", gameName='" + getGameName() + "'" +
                 ", releaseDate='" + getReleaseDate() + "'" +
                 ", rating='" + getRating() + "'" +
-                ", agent_id='" + getAgent_id() + "'" +
-                ", gamemode_id='" + getGamemode_id() + "'" +
-                ", map_id='" + getMap_id() + "'" +
                 "}";
     }
 }

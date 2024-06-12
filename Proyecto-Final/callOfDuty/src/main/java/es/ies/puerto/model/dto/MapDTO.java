@@ -1,13 +1,14 @@
 package es.ies.puerto.model.dto;
 
 import java.util.Objects;
+import java.util.Set;
 
 public class MapDTO {
     private Integer id;
     private String name;
     private String country;
     private int game_id;
-    private int gamemode_id;
+    private Set<Integer> gamemodes_id;
 
     public int getGame_id() {
         return this.game_id;
@@ -17,12 +18,12 @@ public class MapDTO {
         this.game_id = game_id;
     }
 
-    public int getGamemode_id() {
-        return this.gamemode_id;
+    public Set<Integer> getGamemodes_id() {
+        return this.gamemodes_id;
     }
 
-    public void setGamemode_id(int gamemode_id) {
-        this.gamemode_id = gamemode_id;
+    public void setGamemodes_id(Set<Integer> gamemodes_id) {
+        this.gamemodes_id = gamemodes_id;
     }
 
     public MapDTO() {
@@ -78,8 +79,6 @@ public class MapDTO {
                 " id='" + getId() + "'" +
                 ", name='" + getName() + "'" +
                 ", country='" + getCountry() + "'" +
-                ", game_id='" + getGame_id() + "'" +
-                ", map_id='" + getGamemode_id() + "'" +
                 "}";
     }
 }

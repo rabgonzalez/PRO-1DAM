@@ -79,7 +79,6 @@ public class AgentDTO {
                 ", name='" + getName() + "'" +
                 ", rarity='" + getRarity() + "'" +
                 ", age='" + getAge() + "'" +
-                ", game_id='" + getGame_id() + "'" +
                 "}";
     }
 }
