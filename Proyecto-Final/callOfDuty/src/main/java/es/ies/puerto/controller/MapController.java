@@ -5,6 +5,9 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
 import es.ies.puerto.controller.interfaces.IMapController;
 import es.ies.puerto.model.dto.MapDTO;
 import es.ies.puerto.model.entity.Game;
@@ -15,6 +18,7 @@ import es.ies.puerto.model.repository.IGamemodeRepository;
 import es.ies.puerto.model.repository.IMapRepository;
 import mappers.IMapperMap;
 
+@Controller
 public class MapController implements IMapController {
     private IMapRepository iMapRepository;
     private IGameRepository iGameRepository;
@@ -25,6 +29,7 @@ public class MapController implements IMapController {
         return this.iMapRepository;
     }
 
+    @Autowired
     @Override
     public void setMapRepository(IMapRepository iMapRepository) {
         this.iMapRepository = iMapRepository;

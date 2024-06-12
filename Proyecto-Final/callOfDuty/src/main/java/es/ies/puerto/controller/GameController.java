@@ -1,47 +1,110 @@
 package es.ies.puerto.controller;
 
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 
 import es.ies.puerto.controller.interfaces.IGameController;
 import es.ies.puerto.model.dto.GameDTO;
+import es.ies.puerto.model.entity.Agent;
+import es.ies.puerto.model.entity.Game;
+import es.ies.puerto.model.entity.Gamemode;
+import es.ies.puerto.model.entity.Gun;
+import es.ies.puerto.model.entity.Map;
+import es.ies.puerto.model.repository.IAgentRepository;
 import es.ies.puerto.model.repository.IGameRepository;
+import es.ies.puerto.model.repository.IGamemodeRepository;
+import es.ies.puerto.model.repository.IGunRepository;
+import es.ies.puerto.model.repository.IMapRepository;
+import mappers.IMapperGame;
 
+@Controller
 public class GameController implements IGameController {
+    private IGameRepository iGameRepository;
+    private IGunRepository iGunRepository;
+    private IGamemodeRepository iGamemodeRepository;
+    private IMapRepository iMapRepository;
+    private IAgentRepository iAgentRepository;
 
     @Override
     public IGameRepository getGameRepository() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getGameRepository'");
+        return this.iGameRepository;
     }
 
+    @Autowired
     @Override
-    public void setGameRepository(IGameRepository game) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'setGameRepository'");
+    public void setGameRepository(IGameRepository iGameRepository) {
+        this.iGameRepository = iGameRepository;
     }
 
     @Override
     public GameDTO findById(Integer id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findById'");
+        return IMapperGame.INSTANCE.toGameDTO(iGameRepository.findById(id).get());
     }
 
     @Override
     public List<GameDTO> findAll() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findAll'");
+        List<GameDTO> result = new ArrayList<>();
+        List<Game> games = iGameRepository.findAll();
+        for (Game game : games) {
+            result.add(IMapperGame.INSTANCE.toGameDTO(game));
+        }
+        return result;
     }
 
     @Override
     public GameDTO save(GameDTO game) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'save'");
+        Set<Integer> agents_id = game.getAgents_id();
+        Set<Integer> guns_id = game.getGuns_id();
+        Set<Integer> maps_id = game.getMaps_id();
+        Set<Integer> gamemodes_id = game.getGamemodes_id();
+        Game gameEntity = IMapperGame.INSTANCE.toGame(game);
+        gameEntity.setAgents(agentsByGame(agents_id));
+        gameEntity.setGuns(gunsByGame(guns_id));
+        gameEntity.setMaps(mapsByGame(maps_id));
+        gameEntity.setGamemodes(gamemodesByGame(gamemodes_id));
+        iGameRepository.save(gameEntity);
+        return IMapperGame.INSTANCE.toGameDTO(gameEntity);
     }
 
     @Override
     public void deleteById(Integer id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'deleteById'");
+        iGameRepository.deleteById(id);
     }
 
+    public Set<Agent> agentsByGame(Set<Integer> ids) {
+        Set<Agent> agents = new HashSet();
+        for (int id : ids) {
+            agents.add(iAgentRepository.findById(id).get());
+        }
+        return agents;
+    }
+
+    public Set<Gun> gunsByGame(Set<Integer> ids) {
+        Set<Gun> guns = new HashSet();
+        for (int id : ids) {
+            guns.add(iGunRepository.findById(id).get());
+        }
+        return guns;
+    }
+
+    public Set<Map> mapsByGame(Set<Integer> ids) {
+        Set<Map> maps = new HashSet();
+        for (int id : ids) {
+            maps.add(iMapRepository.findById(id).get());
+        }
+        return maps;
+    }
+
+    public Set<Gamemode> gamemodesByGame(Set<Integer> ids) {
+        Set<Gamemode> gamemodes = new HashSet();
+        for (int id : ids) {
+            gamemodes.add(iGamemodeRepository.findById(id).get());
+        }
+        return gamemodes;
+    }
 }

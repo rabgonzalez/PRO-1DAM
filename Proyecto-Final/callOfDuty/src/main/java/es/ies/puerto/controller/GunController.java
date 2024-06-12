@@ -5,6 +5,9 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
 import es.ies.puerto.controller.interfaces.IGunController;
 import es.ies.puerto.model.dto.GunDTO;
 import es.ies.puerto.model.entity.Game;
@@ -13,6 +16,7 @@ import es.ies.puerto.model.repository.IGameRepository;
 import es.ies.puerto.model.repository.IGunRepository;
 import mappers.IMapperGun;
 
+@Controller
 public class GunController implements IGunController {
     private IGunRepository iGunRepository;
     private IGameRepository iGameRepository;
@@ -22,6 +26,7 @@ public class GunController implements IGunController {
         return this.iGunRepository;
     }
 
+    @Autowired
     @Override
     public void setGunRepository(IGunRepository iGunRepository) {
         this.iGunRepository = iGunRepository;
