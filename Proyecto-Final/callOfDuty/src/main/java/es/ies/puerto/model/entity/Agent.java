@@ -24,14 +24,6 @@ public class Agent implements Serializable {
     public Agent() {
     }
 
-    public Agent(Integer id, String name, String rarity, int age, Game game) {
-        this.id = id;
-        this.name = name;
-        this.rarity = rarity;
-        this.age = age;
-        this.game = game;
-    }
-
     public Integer getId() {
         return this.id;
     }
@@ -105,12 +97,12 @@ public class Agent implements Serializable {
             return false;
         }
         Agent agent = (Agent) o;
-        return Objects.equals(id, agent.id) && Objects.equals(name, agent.name) && Objects.equals(rarity, agent.rarity) && age == agent.age && Objects.equals(game, agent.game);
+        return Objects.equals(id, agent.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, rarity, age, game);
+        return Objects.hash(id);
     }
 
     @Override
