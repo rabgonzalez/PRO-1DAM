@@ -18,6 +18,7 @@ import es.ies.puerto.model.entity.Gun;
 import es.ies.puerto.model.entity.Map;
 
 public abstract class InitializeHelp {
+    private static final String COUNTRY = "España";
     public static final float RATING = 5f;
     public static final int AGE = 20;
     public static final String TYPE = "type";
@@ -120,5 +121,17 @@ public abstract class InitializeHelp {
         gamemode.setName(NAME);
         gamemode.setGame(games);
         gamemode.setMaps(maps);
+        gamemodeDTO.setName(NAME);
+        gamemodeDTO.setGames_id(games_id);
+        gamemodeDTO.setMaps_id(maps_id);
+
+        map.setName(NAME);
+        map.setCountry(COUNTRY);
+        map.setGame(game);
+        map.setGamemodes(gamemodes);
+        mapDTO.setName(NAME);
+        mapDTO.setCountry(COUNTRY);
+        mapDTO.setGame_id(game.getId());
+        mapDTO.setGamemodes_id(gamemodes_id);
     }
 }

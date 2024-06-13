@@ -14,7 +14,7 @@ class MapperAgentTest extends InitializeHelp {
     AgentDTO agentDTOMapper;
 
     @Test
-    void toAgentTest(){
+    void toAgentTest() {
         agentMapper = IMapperAgent.INSTANCE.toAgent(agentDTO);
         Assertions.assertEquals(agentMapper, agent);
         Assertions.assertEquals(agentMapper.getId(), agent.getId());
@@ -26,7 +26,7 @@ class MapperAgentTest extends InitializeHelp {
     }
 
     @Test
-    void toAgentDTOTest(){
+    void toAgentDTOTest() {
         agentDTOMapper = IMapperAgent.INSTANCE.toAgentDTO(agent);
         Assertions.assertEquals(agentDTOMapper, agentDTO);
         Assertions.assertEquals(agentDTOMapper.getId(), agentDTO.getId());

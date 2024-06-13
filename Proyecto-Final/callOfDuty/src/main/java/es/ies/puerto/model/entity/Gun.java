@@ -73,18 +73,19 @@ public class Gun implements Serializable {
             return false;
         }
         Gun gun = (Gun) o;
-        return Objects.equals(name, gun.name);
+        return Objects.equals(id, gun.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name);
+        return Objects.hash(id);
     }
 
     @Override
     public String toString() {
         return "{" +
-                " name='" + getName() + "'" +
+                " id='" + getId() + "'" +
+                ", name='" + getName() + "'" +
                 ", type='" + getType() + "'" +
                 "}";
     }
