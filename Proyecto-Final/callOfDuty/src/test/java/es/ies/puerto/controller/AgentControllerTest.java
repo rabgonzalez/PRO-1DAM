@@ -41,7 +41,7 @@ class AgentControllerTest {
     }
 
     @Test
-    void getRepositoryTest() {
+    void notNullTest() {
         Assertions.assertNotNull(iAgentController.getAgentRepository());
         Assertions.assertNotNull(iGameController.getGameRepository());
     }
