@@ -24,6 +24,24 @@ public class GamemodeController implements IGamemodeController {
     private IGameRepository iGameRepository;
     private IMapRepository iMapRepository;
 
+    public IGameRepository getIGameRepository() {
+        return this.iGameRepository;
+    }
+
+    @Autowired
+    public void setIGameRepository(IGameRepository iGameRepository) {
+        this.iGameRepository = iGameRepository;
+    }
+
+    public IMapRepository getIMapRepository() {
+        return this.iMapRepository;
+    }
+
+    @Autowired
+    public void setIMapRepository(IMapRepository iMapRepository) {
+        this.iMapRepository = iMapRepository;
+    }
+
     @Override
     public IGamemodeRepository getGamemodeRepository() {
         return this.iGamemodeRepository;
@@ -44,7 +62,7 @@ public class GamemodeController implements IGamemodeController {
     public List<GamemodeDTO> findAll() {
         List<GamemodeDTO> result = new ArrayList<>();
         List<Gamemode> gamemodes = iGamemodeRepository.findAll();
-        for(Gamemode gamemode : gamemodes){
+        for (Gamemode gamemode : gamemodes) {
             result.add(IMapperGamemode.INSTANCE.toGamemodeDTO(gamemode));
         }
         return result;
@@ -56,10 +74,10 @@ public class GamemodeController implements IGamemodeController {
         Set<Map> maps = new HashSet<>();
         Set<Integer> games_id = gamemode.getGames_id();
         Set<Integer> maps_id = gamemode.getMaps_id();
-        for(int id : games_id){
+        for (int id : games_id) {
             games.add(iGameRepository.findById(id).get());
         }
-        for(int id : maps_id){
+        for (int id : maps_id) {
             maps.add(iMapRepository.findById(id).get());
         }
         Gamemode gamemodeEntity = IMapperGamemode.INSTANCE.toGamemode(gamemode);

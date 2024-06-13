@@ -30,6 +30,42 @@ public class GameController implements IGameController {
     private IMapRepository iMapRepository;
     private IAgentRepository iAgentRepository;
 
+    public IGunRepository getIGunRepository() {
+        return this.iGunRepository;
+    }
+
+    @Autowired
+    public void setIGunRepository(IGunRepository iGunRepository) {
+        this.iGunRepository = iGunRepository;
+    }
+
+    public IGamemodeRepository getIGamemodeRepository() {
+        return this.iGamemodeRepository;
+    }
+
+    @Autowired
+    public void setIGamemodeRepository(IGamemodeRepository iGamemodeRepository) {
+        this.iGamemodeRepository = iGamemodeRepository;
+    }
+
+    public IMapRepository getIMapRepository() {
+        return this.iMapRepository;
+    }
+
+    @Autowired
+    public void setIMapRepository(IMapRepository iMapRepository) {
+        this.iMapRepository = iMapRepository;
+    }
+
+    public IAgentRepository getIAgentRepository() {
+        return this.iAgentRepository;
+    }
+
+    @Autowired
+    public void setIAgentRepository(IAgentRepository iAgentRepository) {
+        this.iAgentRepository = iAgentRepository;
+    }
+
     @Override
     public IGameRepository getGameRepository() {
         return this.iGameRepository;

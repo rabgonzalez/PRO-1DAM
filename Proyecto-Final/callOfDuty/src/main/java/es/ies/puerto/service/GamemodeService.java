@@ -29,7 +29,7 @@ public class GamemodeService {
         this.gamemodeController = gamemodeController;
     }
 
-    @GetMapping
+    @GetMapping("/")
     public List<GamemodeDTO> getAllGamemode() {
         return gamemodeController.findAll();
     }
@@ -39,7 +39,7 @@ public class GamemodeService {
         return gamemodeController.findById(id);
     }
 
-    @PostMapping
+    @PostMapping("/")
     public GamemodeDTO postGamemode(@RequestBody final GamemodeDTO gamemode) {
         return gamemodeController.save(gamemode);
     }

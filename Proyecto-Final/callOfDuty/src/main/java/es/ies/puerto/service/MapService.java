@@ -29,7 +29,7 @@ public class MapService {
         this.mapController = mapController;
     }
 
-    @GetMapping
+    @GetMapping("/")
     public List<MapDTO> getAllMap() {
         return mapController.findAll();
     }
@@ -39,7 +39,7 @@ public class MapService {
         return mapController.findById(id);
     }
 
-    @PostMapping
+    @PostMapping("/")
     public MapDTO postMap(@RequestBody final MapDTO map) {
         return mapController.save(map);
     }

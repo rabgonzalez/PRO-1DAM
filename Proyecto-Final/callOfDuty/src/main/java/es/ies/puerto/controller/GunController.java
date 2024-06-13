@@ -21,6 +21,15 @@ public class GunController implements IGunController {
     private IGunRepository iGunRepository;
     private IGameRepository iGameRepository;
 
+    public IGameRepository getIGameRepository() {
+        return this.iGameRepository;
+    }
+
+    @Autowired
+    public void setIGameRepository(IGameRepository iGameRepository) {
+        this.iGameRepository = iGameRepository;
+    }
+
     @Override
     public IGunRepository getGunRepository() {
         return this.iGunRepository;

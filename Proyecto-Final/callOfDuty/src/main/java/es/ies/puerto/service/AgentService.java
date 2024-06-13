@@ -24,12 +24,16 @@ public class AgentService {
     Logger logger = LoggerFactory.getLogger(AgentService.class);
     private AgentController agentController;
 
+    public AgentController getAgentController() {
+        return this.agentController;
+    }
+
     @Autowired
     public void setAgentController(AgentController agentController) {
         this.agentController = agentController;
     }
 
-    @GetMapping
+    @GetMapping("/")
     public List<AgentDTO> getAllAgent() {
         return agentController.findAll();
     }
@@ -39,7 +43,7 @@ public class AgentService {
         return agentController.findById(id);
     }
 
-    @PostMapping
+    @PostMapping("/")
     public AgentDTO postAgent(@RequestBody final AgentDTO agent) {
         return agentController.save(agent);
     }

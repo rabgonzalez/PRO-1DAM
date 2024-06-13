@@ -24,6 +24,24 @@ public class MapController implements IMapController {
     private IGameRepository iGameRepository;
     private IGamemodeRepository iGamemodeRepository;
 
+    public IGameRepository getIGameRepository() {
+        return this.iGameRepository;
+    }
+
+    @Autowired
+    public void setIGameRepository(IGameRepository iGameRepository) {
+        this.iGameRepository = iGameRepository;
+    }
+
+    public IGamemodeRepository getIGamemodeRepository() {
+        return this.iGamemodeRepository;
+    }
+
+    @Autowired
+    public void setIGamemodeRepository(IGamemodeRepository iGamemodeRepository) {
+        this.iGamemodeRepository = iGamemodeRepository;
+    }
+
     @Override
     public IMapRepository getMapRepository() {
         return this.iMapRepository;

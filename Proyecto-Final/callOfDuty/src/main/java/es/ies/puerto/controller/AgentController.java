@@ -2,6 +2,7 @@ package es.ies.puerto.controller;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -30,6 +31,15 @@ public class AgentController implements IAgentController {
         this.agentRepository = agentRepository;
     }
 
+    public IGameRepository getGameRepository() {
+        return gameRepository;
+    }
+
+    @Autowired
+    public void setGameRepository(IGameRepository gameRepository) {
+        this.gameRepository = gameRepository;
+    }
+
     @Override
     public AgentDTO findById(Integer id) {
         return IMapperAgent.INSTANCE.toAgentDTO(agentRepository.findById(id).get());
@@ -50,8 +60,7 @@ public class AgentController implements IAgentController {
         Game game = gameRepository.findById(agent.getGame_id()).get();
         Agent agentEntity = IMapperAgent.INSTANCE.toAgent(agent);
         agentEntity.setGame(game);
-        agentRepository.save(agentEntity);
-        return IMapperAgent.INSTANCE.toAgentDTO(agentEntity);
+        return IMapperAgent.INSTANCE.toAgentDTO(agentRepository.save(agentEntity));
     }
 
     @Override

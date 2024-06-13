@@ -28,7 +28,7 @@ public class GameService {
         this.gameController = gameController;
     }
 
-    @GetMapping
+    @GetMapping("/")
     public List<GameDTO> getAllGame() {
         return gameController.findAll();
     }
@@ -38,7 +38,7 @@ public class GameService {
         return gameController.findById(id);
     }
 
-    @PostMapping
+    @PostMapping("/")
     public GameDTO postGame(@RequestBody final GameDTO game) {
         return gameController.save(game);
     }

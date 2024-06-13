@@ -29,7 +29,7 @@ public class GunService {
         this.gunController = gunController;
     }
 
-    @GetMapping
+    @GetMapping("/")
     public List<GunDTO> getAllGun() {
         return gunController.findAll();
     }
@@ -39,7 +39,7 @@ public class GunService {
         return gunController.findById(id);
     }
 
-    @PostMapping
+    @PostMapping("/")
     public GunDTO postGun(@RequestBody final GunDTO gun) {
         return gunController.save(gun);
     }
