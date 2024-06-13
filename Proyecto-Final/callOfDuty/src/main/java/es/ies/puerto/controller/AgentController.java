@@ -8,12 +8,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import es.ies.puerto.controller.interfaces.IAgentController;
+import es.ies.puerto.mappers.IMapperAgent;
 import es.ies.puerto.model.dto.AgentDTO;
 import es.ies.puerto.model.entity.Agent;
 import es.ies.puerto.model.entity.Game;
 import es.ies.puerto.model.repository.IAgentRepository;
 import es.ies.puerto.model.repository.IGameRepository;
-import mappers.IMapperAgent;
 
 @Controller
 public class AgentController implements IAgentController {

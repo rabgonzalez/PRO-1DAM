@@ -9,12 +9,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import es.ies.puerto.controller.interfaces.IGunController;
+import es.ies.puerto.mappers.IMapperGun;
 import es.ies.puerto.model.dto.GunDTO;
 import es.ies.puerto.model.entity.Game;
 import es.ies.puerto.model.entity.Gun;
 import es.ies.puerto.model.repository.IGameRepository;
 import es.ies.puerto.model.repository.IGunRepository;
-import mappers.IMapperGun;
 
 @Controller
 public class GunController implements IGunController {

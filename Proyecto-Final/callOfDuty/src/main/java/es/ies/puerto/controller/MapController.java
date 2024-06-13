@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import es.ies.puerto.controller.interfaces.IMapController;
+import es.ies.puerto.mappers.IMapperMap;
 import es.ies.puerto.model.dto.MapDTO;
 import es.ies.puerto.model.entity.Game;
 import es.ies.puerto.model.entity.Gamemode;
@@ -16,7 +17,6 @@ import es.ies.puerto.model.entity.Map;
 import es.ies.puerto.model.repository.IGameRepository;
 import es.ies.puerto.model.repository.IGamemodeRepository;
 import es.ies.puerto.model.repository.IMapRepository;
-import mappers.IMapperMap;
 
 @Controller
 public class MapController implements IMapController {

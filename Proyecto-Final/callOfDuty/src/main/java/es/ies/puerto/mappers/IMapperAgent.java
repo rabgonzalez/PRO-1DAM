@@ -1,4 +1,4 @@
-package mappers;
+package es.ies.puerto.mappers;
 
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;

@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import es.ies.puerto.controller.interfaces.IGameController;
+import es.ies.puerto.mappers.IMapperGame;
 import es.ies.puerto.model.dto.GameDTO;
 import es.ies.puerto.model.entity.Agent;
 import es.ies.puerto.model.entity.Game;
@@ -20,7 +21,6 @@ import es.ies.puerto.model.repository.IGameRepository;
 import es.ies.puerto.model.repository.IGamemodeRepository;
 import es.ies.puerto.model.repository.IGunRepository;
 import es.ies.puerto.model.repository.IMapRepository;
-import mappers.IMapperGame;
 
 @Controller
 public class GameController implements IGameController {
