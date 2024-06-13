@@ -1,21 +1,41 @@
-.callofDuty{
-    margin: auto;
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.fondo {
+    background: url(../img/cabecera.png) center center/cover no-repeat fixed;
+}
+
+.callofDuty {
+    margin-top: 500px;
     text-align: center;
-    width: 300px;
-    height: 300px;
-    background-color: lightgray;
-    border: 3px gray solid;
-    border-radius: 25px;
-    box-shadow: 1px 1px 10px gray;
+    width: 100vw;
+    height: 100vh;
+    background-color: #D7D7D9;
 }
 
-#agents{
-    font-size: 15px;
-    padding: 15px;
-    margin-top: 50%;
+#agents {
+    margin-top: 50px;
+    width: 200px;
+    font-size: 20px;
+    padding: 10px;
 }
 
-button{
-    background-color: lightskyblue;
+button {
+    color: #F9F9F9;
+    background-color: #41A0F2;
     border-radius: 10px;
+    border: none;
+}
+
+button:hover {
+    background-color: #0583F2;
+    border: 1px solid #F9F9F9;
+}
+
+#agentsInfo {
+    margin-top: 50px;
+    text-align: center;
+    background-color: #F9F9F9;
 }

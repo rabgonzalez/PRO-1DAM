@@ -1,7 +1,7 @@
 const getAgentButton = document.getElementById('agents');
 getAgentButton.addEventListener('click', fetchAgents);
 
-function fetchUrl(){
+function fetchUrl(url){
     fetch(url)
         .then(response => response.json())
         .then(jsonObj => type(jsonObj))
@@ -45,6 +45,34 @@ function getAgents(agents){
     </tr>
     </table>
     </div>`
-    const agentsZone = document.getElementById('agents');
+    const agentsZone = document.getElementById('agentsInfo');
+    agentsZone.innerHTML = template;
+}
+
+function getAgentByID(id){
+    let objects = ``
+    id.forEach(agent => {
+        objects += `<tr>
+        <td>${agent.id}</td>
+        <td>${agent.name}</td>
+        <td>${agent.rarity}</td>
+        <td>${agent.age}</td>
+        <td>${agent.game_id}</td>
+        </tr>`
+    });
+    const template = `
+    <div>
+    <table>
+    <tr>
+    <th>ID</th>
+    <th>NAME</th>
+    <th>RARITY</th>
+    <th>AGE</th>
+    <th>GAME<th>
+    `+ objects + `
+    </tr>
+    </table>
+    </div>`
+    const agentsZone = document.getElementById('agentsInfo');
     agentsZone.innerHTML = template;
 }
