@@ -24,6 +24,10 @@ public class GunService {
     Logger logger = LoggerFactory.getLogger(GunService.class);
     private GunController gunController;
 
+    public GunController getGunController() {
+        return this.gunController;
+    }
+
     @Autowired
     public void setGunController(GunController gunController) {
         this.gunController = gunController;

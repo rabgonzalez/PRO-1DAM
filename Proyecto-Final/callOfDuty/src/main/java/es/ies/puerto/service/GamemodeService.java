@@ -24,8 +24,12 @@ public class GamemodeService {
     Logger logger = LoggerFactory.getLogger(GamemodeService.class);
     private GamemodeController gamemodeController;
 
+    public GamemodeController getGamemodeController() {
+        return this.gamemodeController;
+    }
+
     @Autowired
-    public void setGameController(GamemodeController gamemodeController) {
+    public void setGamemodeController(GamemodeController gamemodeController) {
         this.gamemodeController = gamemodeController;
     }
 

@@ -22,7 +22,7 @@ public interface IMapperGun {
     public GunDTO toGunDTO(Gun gun);
 
     @Named("gamesToIds")
-    default Set<Integer> gomesToIds(Gun gun) {
+    default Set<Integer> gamesToIds(Gun gun) {
         Set<Integer> result = new HashSet<>();
         Set<Game> games = gun.getGames();
         for (Game game : games) {

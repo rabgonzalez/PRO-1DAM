@@ -24,6 +24,11 @@ public class MapService {
     Logger logger = LoggerFactory.getLogger(MapService.class);
     private MapController mapController;
 
+    public MapController getMapController() {
+        return this.mapController;
+    }
+
+
     @Autowired
     public void setMapController(MapController mapController) {
         this.mapController = mapController;

@@ -1,6 +1,5 @@
 package es.ies.puerto.controller;
 
-import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.Mockito.when;
 
@@ -17,17 +16,15 @@ import org.mockito.MockitoAnnotations;
 
 import es.ies.puerto.model.dto.AgentDTO;
 import es.ies.puerto.model.entity.Agent;
-import es.ies.puerto.model.entity.Game;
 import es.ies.puerto.model.repository.IAgentRepository;
 import es.ies.puerto.model.repository.IGameRepository;
 
 class AgentControllerTest {
     AgentController iAgentController;
-    GameController iGameController;
 
     @Mock
     IAgentRepository iAgentRepository;
-    
+
     @Mock
     IGameRepository iGameRepository;
 
@@ -35,15 +32,14 @@ class AgentControllerTest {
     void beforeEach() {
         MockitoAnnotations.openMocks(this);
         iAgentController = new AgentController();
-        iGameController = new GameController();
         iAgentController.setAgentRepository(iAgentRepository);
-        iGameController.setGameRepository(iGameRepository);
+        iAgentController.setGameRepository(iGameRepository);
     }
 
     @Test
     void notNullTest() {
         Assertions.assertNotNull(iAgentController.getAgentRepository());
-        Assertions.assertNotNull(iGameController.getGameRepository());
+        Assertions.assertNotNull(iAgentController.getGameRepository());
     }
 
     @Test
@@ -60,15 +56,17 @@ class AgentControllerTest {
         Assertions.assertNotNull(agentDTO);
     }
 
-    /*@Test
-    void saveTest() {
-        when(iGameRepository.findById(anyInt())).thenReturn(Optional.of(new Game()));
-        when(iAgentRepository.save(any())).thenReturn(new Agent());
-        AgentDTO agentDTO= new AgentDTO();
-        agentDTO.setGame_id(1);
-        AgentDTO result = iAgentController.save(agentDTO);
-        Assertions.assertNotNull(result);
-    }*/
+    /*
+     * @Test
+     * void saveTest() {
+     * when(iGameRepository.findById(anyInt())).thenReturn(Optional.of(new Game()));
+     * when(iAgentRepository.save(any())).thenReturn(new Agent());
+     * AgentDTO agentDTO= new AgentDTO();
+     * agentDTO.setGame_id(1);
+     * AgentDTO result = iAgentController.save(agentDTO);
+     * Assertions.assertNotNull(result);
+     * }
+     */
 
     @Test
     void deleteByIdTest() {

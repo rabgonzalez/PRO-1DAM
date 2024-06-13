@@ -23,6 +23,11 @@ public class GameService {
     Logger logger = LoggerFactory.getLogger(GameService.class);
     private GameController gameController;
 
+    public GameController getGameController() {
+        return this.gameController;
+    }
+
+
     @Autowired
     public void setGameController(GameController gameController) {
         this.gameController = gameController;
