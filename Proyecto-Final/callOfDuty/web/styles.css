@@ -1,41 +1,62 @@
 * {
-    margin: 0;
+    margin: 0px;
     padding: 0;
 }
 
 .fondo {
+    height: 500px;
     background: url(../img/cabecera.png) center center/cover no-repeat fixed;
+    filter: blur(2px);
 }
 
-.callofDuty {
-    margin-top: 500px;
+body {
+    background-color: #191919;
+}
+
+ul>li{
+    position: sticky;
+    list-style: none;
+    width: 20%;
     text-align: center;
-    width: 100vw;
-    height: 100vh;
-    background-color: #D7D7D9;
+    float: left;
 }
 
-#agents {
-    margin-top: 50px;
-    width: 200px;
+ul{
+    width: 100%;
+    float: left;
+    margin-bottom: 70px;
+}
+
+button {
+    color: black;
+    background-color: #89F336;
+    border: none;
+    width: 100%;
     font-size: 20px;
     padding: 10px;
 }
 
-button {
-    color: #F9F9F9;
-    background-color: #41A0F2;
-    border-radius: 10px;
-    border: none;
-}
-
 button:hover {
-    background-color: #0583F2;
-    border: 1px solid #F9F9F9;
+    background-color: #32CD32;
+    border: 1px solid black;
 }
 
-#agentsInfo {
-    margin-top: 50px;
+table {
+    width: 40%;
     text-align: center;
-    background-color: #F9F9F9;
+    padding: 10px;
+    border: 5px solid #89F336;
+    border-radius: 20px;
+    margin: auto;
+    text-indent: 40px;
+}
+
+table td {
+    color: #32CD32;
+    border: 1px solid;
+}
+
+table th {
+    color: white;
+    border: 1px solid;
 }
