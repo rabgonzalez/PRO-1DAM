@@ -24,7 +24,7 @@ ul>li{
 ul{
     width: 100%;
     float: left;
-    margin-bottom: 70px;
+    margin-bottom: 50px;
 }
 
 button {
@@ -47,6 +47,7 @@ table {
     padding: 10px;
     border: 5px solid #89F336;
     border-radius: 20px;
+    box-shadow: 1px 1px 7px #89F336;
     margin: auto;
     text-indent: 40px;
 }
