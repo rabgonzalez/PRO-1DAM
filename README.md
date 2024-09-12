@@ -1,5 +1,5 @@
 # programacion
-Repositorio dedicado a la asignatura de programacion
+Repositorio dedicado a la asignatura de programacion de 1ºDAM en 2023-24
 
 ## Unidades
 - [Lógica](Logica)
